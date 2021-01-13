@@ -1,0 +1,8 @@
+User-agent:AspiegelBot
+Disallow:/
+
+User-agent:*
+Disallow:/comment
+
+User-agent: Wandoujia Spider
+Disallow: /
