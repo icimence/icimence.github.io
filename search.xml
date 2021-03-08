@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>在Ubuntu中使用docker安装Jenkins</title>
+      <link href="2021/03/08/%E5%9C%A8Ubuntu%E4%B8%AD%E4%BD%BF%E7%94%A8docker%E5%AE%89%E8%A3%85Jenkins/"/>
+      <url>2021/03/08/%E5%9C%A8Ubuntu%E4%B8%AD%E4%BD%BF%E7%94%A8docker%E5%AE%89%E8%A3%85Jenkins/</url>
+      
+        <content type="html"><![CDATA[<h2 id="环境说明"><a href="#环境说明" class="headerlink" title="环境说明"></a>环境说明</h2><p>本案例中使用的是<code>Ubuntu20.04LTS</code>。</p><p>本示例中docker使用发文时的最新版本，全部使用默认配置，如需自定义配置，请参考<a href="https://docs.docker.com/engine/install/ubuntu/">官方文档</a></p><h2 id="安装配置步骤"><a href="#安装配置步骤" class="headerlink" title="安装配置步骤"></a>安装配置步骤</h2><h3 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h3><ol><li><p>首先确保卸载所有的老版本docker</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get remove docker docker-engine docker.io containerd runc</span><br></pre></td></tr></table></figure></li><li><p>更新apt源，安装仓库</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line">sudo apt-get install \</span><br><span class="line"> apt-transport-https \</span><br><span class="line"> ca-certificates \</span><br><span class="line"> curl \</span><br><span class="line"> gnupg</span><br></pre></td></tr></table></figure></li><li><p>增加Docker的官方GPG key</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg</span><br></pre></td></tr></table></figure></li><li><p>安装docker仓库</p><ul><li><p>X86/amd64安装命令</p> <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> \</span><br><span class="line">   <span class="string">&quot;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \</span></span><br><span class="line"><span class="string">   <span class="subst">$(lsb_release -cs)</span> stable&quot;</span> | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</span><br></pre></td></tr></table></figure></li><li><p>armhf安装命令</p> <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> \</span><br><span class="line">   <span class="string">&quot;deb [arch=armhf signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \</span></span><br><span class="line"><span class="string">   <span class="subst">$(lsb_release -cs)</span> stable&quot;</span> | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</span><br></pre></td></tr></table></figure></li><li><p>arm64安装命令</p> <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> \</span><br><span class="line">   <span class="string">&quot;deb [arch=arm64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \</span></span><br><span class="line"><span class="string">   <span class="subst">$(lsb_release -cs)</span> stable&quot;</span> | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/nullces.list.d/docker.list &gt; /dev/null</span><br></pre></td></tr></table></figure></li></ul></li><li><p>安装docker引擎（使用默认版本）</p> <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install docker-ce docker-ce-cli containerd.io</span><br></pre></td></tr></table></figure></li><li><p>验证docker安装</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo docker run hello-world</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Docker </tag>
+            
+            <tag> Jenkins </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>商务智能复习提纲（三）</title>
       <link href="2021/01/05/%E5%95%86%E5%8A%A1%E6%99%BA%E8%83%BD%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2%EF%BC%88%E4%B8%89%EF%BC%89/"/>
       <url>2021/01/05/%E5%95%86%E5%8A%A1%E6%99%BA%E8%83%BD%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2%EF%BC%88%E4%B8%89%EF%BC%89/</url>
