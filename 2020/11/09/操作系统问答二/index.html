@@ -1,0 +1,345 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>操作系统问答二 | icimence's Tech Blog</title><meta name="keywords" content="OS"><meta name="author" content="icimence"><meta name="copyright" content="icimence"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="PPT相关内容 什么是实模式，什么是保护模式  实模式就是用基地址加偏移量就可以直接拿到物理地址的模式 保护模式就是不能直接拿到物理地址的模式   什么是选择子  选择子共16位，放在段选择寄存器里 低2位表示请求特权级 第3位表示选择GDT方式还是LDT方式 高13位表示在描述符表中的偏移(故描述符表的项数最多是2的 13次方)   什么是描述符   BASE:段基址，由上图的两部分（BASE">
+<meta property="og:type" content="article">
+<meta property="og:title" content="操作系统问答二">
+<meta property="og:url" content="https://icimence.cn/2020/11/09/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%97%AE%E7%AD%94%E4%BA%8C/index.html">
+<meta property="og:site_name" content="icimence&#39;s Tech Blog">
+<meta property="og:description" content="PPT相关内容 什么是实模式，什么是保护模式  实模式就是用基地址加偏移量就可以直接拿到物理地址的模式 保护模式就是不能直接拿到物理地址的模式   什么是选择子  选择子共16位，放在段选择寄存器里 低2位表示请求特权级 第3位表示选择GDT方式还是LDT方式 高13位表示在描述符表中的偏移(故描述符表的项数最多是2的 13次方)   什么是描述符   BASE:段基址，由上图的两部分（BASE">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/os.jpg">
+<meta property="article:published_time" content="2020-11-08T16:06:19.000Z">
+<meta property="article:modified_time" content="2020-11-09T09:47:06.496Z">
+<meta property="article:author" content="icimence">
+<meta property="article:tag" content="OS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/os.jpg"><link rel="shortcut icon" href="https://gitee.com/icimence/CDN/raw/master/cover/shield.png"><link rel="canonical" href="https://icimence.cn/2020/11/09/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%97%AE%E7%AD%94%E4%BA%8C/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '操作系统问答二',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2020-11-09 17:47:06'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.0.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://gitee.com/icimence/CDN/raw/master/cover/shield.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">83</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">41</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-rocket"></i><span> 导航</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-history"></i><span> 时间线</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fas fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-address-book"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user-circle"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="mailto:icimence@outlook.com"><i class="fa-fw fas fa-paper-plane"></i><span> 戳我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/icimence/CDN/cover/os.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">icimence's Tech Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-rocket"></i><span> 导航</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-history"></i><span> 时间线</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fas fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-address-book"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user-circle"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="mailto:icimence@outlook.com"><i class="fa-fw fas fa-paper-plane"></i><span> 戳我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">操作系统问答二</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-08T16:06:19.000Z" title="发表于 2020-11-09 00:06:19">2020-11-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-09T09:47:06.496Z" title="更新于 2020-11-09 17:47:06">2020-11-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="操作系统问答二"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2020/11/09/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%97%AE%E7%AD%94%E4%BA%8C/#post-comment"><span class="gitalk-comment-count"></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="PPT相关内容"><a href="#PPT相关内容" class="headerlink" title="PPT相关内容"></a>PPT相关内容</h2><ol>
+<li><p>什么是实模式，什么是保护模式</p>
+<ul>
+<li>实模式就是用基地址加偏移量就可以直接拿到物理地址的模式</li>
+<li>保护模式就是不能直接拿到物理地址的模式</li>
+</ul>
+</li>
+<li><p>什么是选择子</p>
+<ul>
+<li>选择子共16位，放在段选择寄存器里</li>
+<li>低2位表示请求特权级</li>
+<li>第3位表示选择GDT方式还是LDT方式</li>
+<li>高13位表示在描述符表中的偏移(故描述符表的项数最多是2的 13次方)</li>
+</ul>
+</li>
+<li><p>什么是描述符</p>
+<p><img src="https://cdn.jsdelivr.net/gh/icimence/CDN/postimg/os_ques1.png" alt="描述符"></p>
+<blockquote>
+<p>BASE:段基址，由上图的两部分（BASE 31-24和 BASE 23-16）</p>
+<p>G:LIMIT的单位，该位0表示单位是字节，1表示单位是4KB</p>
+<p>D/B:该位是0表示这是一个16位的段，1表示这是一个32位段</p>
+<p>AVL:该位是用户位，可以被用户自由使用</p>
+<p>LIMIT:段的界限，单位由G位决定，数值上（经过单位换算后的值）等于段的长度</p>
+<p>P:段存在位，该位为0表示该段不存在，为1表示存在</p>
+<p>DPL:段权限</p>
+<p>S:该位为1表示这是一个数据段或者代码段，为0表示这是一个系统段（比如调用门，中断门等）</p>
+<p>TYPE:根据S位的结果，再次对段类型进行细分</p>
+</blockquote>
+<p>其中，段界限表示段边界的扩张最值，即最大扩展多少或最小扩展多少，用20位来表示，它的单位可以是字节，也可以是4KB，这是由G位决定的(G为1时表示单位为4KB)。</p>
+<p>实际段界限边界值=(描述符中的段界限+1)*（段界限的单位大小(即字节或4KB))-1，如果偏移地址超过了段界限，CPU会抛出异常。</p>
+<p>全局描述符表位于内存中，需要用专门的寄存器指向它后， CPU 才知道它在哪里。这个专门的寄存器便是GDTR(一个48位的寄存器),专门用来存储 GDT 的内存地址及大小。</p>
+</li>
+<li><p>什么是GDT，什么是LDT</p>
+<ul>
+<li>GDT:全局描述符表，是全局唯一的。存放一些公用的描述符、 和包含各进程局部描述符表首地址的描述符。</li>
+<li>LDT:局部描述符表，每个进程都可以有一个。存放本进程内使 用的描述符。</li>
+</ul>
+</li>
+<li><p>请分别说明GDTR和LDTR的结构</p>
+<ul>
+<li>GDTR:48位寄存器，高32位放置GDT首地址，低16位放置GDT 限长(限长决定了可寻址的大小，注意低16位放的不是选择子)</li>
+<li>LDTR:16位寄存器，放置一个特殊的选择子，用于查找当前进 程的LDT首地址。</li>
+</ul>
+</li>
+<li><p>请说明GDT直接查找物理地址的具体步骤</p>
+<ul>
+<li>给出段选择子(放在段选择寄存器里)+偏移量</li>
+<li>若选择了GDT方式，则从GDTR获取GDT首地址，用段选择 子中的13位做偏移，拿到GDT中的描述符</li>
+<li>如果合法且有权限，用描述符中的段首地址加上(1)中的 偏移量找到物理地址。寻址结束</li>
+</ul>
+</li>
+<li><p>请说明通过LDT查找物理地址的具体步骤</p>
+<ul>
+<li>给出段选择子(放在段选择寄存器中)+偏移量</li>
+<li>若选择了LDT方式，则从GDTR获取GDT首地址，用LDTR 中的偏移量做偏移，拿到GDT中的描述符1</li>
+<li>从描述符1中获取LDT首地址，用段选择子中的13位做偏移， 拿到LDT中的描述符2</li>
+<li>如果合法且有权限，用描述符2中的段首地址加上(1)中 的偏移量找到物理地址。寻址结束。</li>
+</ul>
+</li>
+<li><p>根目录区大小一定吗？扇区号是多少？为什么？</p>
+<ul>
+<li>不一定，通过BPB_RootEntCnt（根目录文件数的最大值，比如0xE0）来计算根目录的大小，具体计算公式是</li>
+<li>根目录区占用扇区数 = RootDirSectors = (BPB_RootEntCnt*32(一个目录项占32个字节))/BPB_BytesPerSec（一个扇区的字节数，比如512）</li>
+<li>典型值：19</li>
+</ul>
+</li>
+<li><p>数据区第一个簇号是多少？为什么</p>
+<ul>
+<li>起始簇号是2</li>
+<li>在 1.44M 软盘上，FAT 前三个字节的值必须是固定的，分别是 0xF0、0xFF、0xFF，用于表示这是一个应用在 1.44M 软盘上的 FAT12 文件系统。本来序号为 0 和 1 的 FAT 表项应该对应于簇 0 和簇 1，但是由于这两个表项被设置成了固定值，簇 0 和簇 1 就没有存在的意义了。</li>
+</ul>
+</li>
+<li><p>FAT表的作用</p>
+<p>文件分配表被划分为紧密排列的若干个表项，每个表项都与数据区中的一个簇相对应，而且表项的序号也是与簇号一一对应的。用于寻找下一个簇号</p>
+</li>
+<li><p>解释静态链接的过程</p>
+<ul>
+<li><p>静态链接是由链接器在链接时将库的内容加入到可执行程序中的做法。</p>
+<p>在编译 main.c 的时候，编译器还不知道 printf 函数的地址，所以在编译阶段只是将一个“临时地址”放到目标文件中，在链接阶段，这个“临时地址”将被修正为正确的地址，这个过程叫重定位。所以链接器还要知道该目标文件中哪些符号需要重定位，这些信息是放在了重定位表中。</p>
+<p>在链接的时候，我们需要告诉链接器需要链接的目标文件和库文件（默认 gcc 会把标准库作为链接器输入的一部分）。链接器会根据输入的目标文件从库文件中提取需要目标文件。</p>
+<p>知道了这些信息后，链接器就可以开始工作了，分为两个步骤：</p>
+<p>1）合并相似段，把所有需要链接的目标文件的相似段放在可执行文件的对应段中。</p>
+<p>2）重定位符号使得目标文件能正确调用到其他目标文件提供的函数。</p>
+</li>
+</ul>
+</li>
+<li><p>解释动态链接的过程</p>
+<p>所谓动态链接就是在运行的时候再去链接。从动态库的角度来看，动态库像普通的可执行文件一样，有其代码段和数据段。为了使得动态库在内存中只有一份，需要做到不管动态库装载到什么位置，都不需要修改动态库中代码段的内容，从而实现动态库中代码段的共享。而数据段中的内容需要做到进程间的隔离，因此必须是私有的，也就是每个进程都有一份。因此，动态库的做法是把代码段中变化的部分放到数据段中去，这样代码段中剩下的就是不变的内容，就可以装载到虚拟内存的任何位置。那代码段中变化的内容是什么，主要包括了对外部函数和变量的引用。</p>
+<p>动态库是把地址相关的内容放到了数据段中来实现地址无关的代码，从而使得动态库能被多个进程共享。</p>
+<p>动态链接生成的可执行文件运行前，系统会首先将动态链接库加载到内存中。当所有的库都被加载进来以后，类似于静态链接，动态链接器从各个动态库中可以知道每个库都提供什么函数（符号表）和哪些函数引用需要重定位（重定位表），然后修正.got 和.got.plt 中的符号到正确的地址，完成之后就可以将控制权交给可执行文件的入口地址，从而开始执行我们编写的代码了。</p>
+</li>
+<li><p>静态链接相关PPT中为什么使用ld链接而不是gcc</p>
+<p>用 gcc 的话有可能去调 C 库，使程序环境变得复杂，所以用 ld</p>
+<p>gcc会自动链接操作系统的库，有时我们并不想这么操作。ld就老实多了，只会链接参数中所规定的。</p>
+</li>
+<li><p>Linux下可执行文件的虚拟地址空间默认从哪里开始</p>
+<p>linux 下，ELF 可执行文件默认从地址 0x08048000 开始分配</p>
+</li>
+</ol>
+<h2 id="实验相关内容"><a href="#实验相关内容" class="headerlink" title="实验相关内容"></a>实验相关内容</h2><ol>
+<li><p>BPB指定字段的含义</p>
+<p><img src="https://cdn.jsdelivr.net/gh/icimence/CDN/postimg/os_ques2.png" alt="BPB"></p>
+</li>
+<li><p>如何进入子目录并输出</p>
+</li>
+<li><p>如何获得指定文件的内容，即如何获得数据区的内容</p>
+</li>
+<li><p>如何进行C代码和汇编之间的参数传递和返回值传递</p>
+</li>
+<li><p>汇编代码中对I/O的处理方式，说明指定寄存器所存值的含义</p>
+</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">icimence</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://icimence.cn/2020/11/09/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%97%AE%E7%AD%94%E4%BA%8C/">https://icimence.cn/2020/11/09/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%97%AE%E7%AD%94%E4%BA%8C/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://icimence.cn" target="_blank">icimence's Tech Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/OS/">OS</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/os.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/11/06/%E5%AF%B9Hexo%E5%8D%9A%E5%AE%A2%E7%89%88%E6%9C%AC%E8%BF%9B%E8%A1%8C%E5%8D%87%E7%BA%A7/"><img class="prev-cover" src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/hexo.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">对Hexo博客版本进行升级</div></div></a></div><div class="next-post pull-right"><a href="/2020/11/13/%E5%95%86%E5%8A%A1%E6%99%BA%E8%83%BD%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2%EF%BC%88%E4%B8%80%EF%BC%89/"><img class="next-cover" src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/business_intelligence.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">商务智能复习提纲（一）</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2020/11/30/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%97%AE%E7%AD%94%E4%B8%89/" title="操作系统问答三"><img class="cover" src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/os.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-11-30</div><div class="title">操作系统问答三</div></div></a></div><div><a href="/2020/12/28/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%97%AE%E7%AD%94%E5%9B%9B/" title="操作系统问答四"><img class="cover" src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/os.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-28</div><div class="title">操作系统问答四</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://gitee.com/icimence/CDN/raw/master/cover/shield.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">icimence</div><div class="author-info__description">一个菜鸡的技术博客</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">83</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">41</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/icimence"><i class="fab fa-github"></i><span>个人GitHub主页</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/icimence" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:icimence@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://icimence.cn/atom.xml" target="_blank" title="RSS订阅"><i class="fas fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">这是我的技术博客<br />请多多指教，若有任何问题希望您通过邮箱或者是gitalk评论插件给我留言，谢谢！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#PPT%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9"><span class="toc-number">1.</span> <span class="toc-text">PPT相关内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9"><span class="toc-number">2.</span> <span class="toc-text">实验相关内容</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/03/20/%E6%80%8E%E4%B9%88%E5%9C%A8hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E4%BD%BF%E7%94%A8latex%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/" title="怎么在hexo博客中使用latex格式的数学公式"><img src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/hexo.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="怎么在hexo博客中使用latex格式的数学公式"/></a><div class="content"><a class="title" href="/2020/03/20/%E6%80%8E%E4%B9%88%E5%9C%A8hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E4%BD%BF%E7%94%A8latex%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/" title="怎么在hexo博客中使用latex格式的数学公式">怎么在hexo博客中使用latex格式的数学公式</a><time datetime="2022-01-09T15:04:09.159Z" title="更新于 2022-01-09 23:04:09">2022-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/04/10/%E5%9C%A8%E8%87%AA%E5%B7%B1%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%83%A8%E7%BD%B2hexo%E5%8D%9A%E5%AE%A2/" title="在自己的服务器上部署hexo博客"><img src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/hexo.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="在自己的服务器上部署hexo博客"/></a><div class="content"><a class="title" href="/2020/04/10/%E5%9C%A8%E8%87%AA%E5%B7%B1%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%83%A8%E7%BD%B2hexo%E5%8D%9A%E5%AE%A2/" title="在自己的服务器上部署hexo博客">在自己的服务器上部署hexo博客</a><time datetime="2022-01-09T07:35:32.204Z" title="更新于 2022-01-09 15:35:32">2022-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/05/15/Packet%20Tracer%E8%BF%9B%E8%A1%8C%E6%A8%A1%E6%8B%9FRIP%E8%B7%AF%E7%94%B1%E5%9B%9E%E8%B7%AF/" title="用Packet Tracer进行模拟RIP路由回路"><img src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/packet_tracer.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="用Packet Tracer进行模拟RIP路由回路"/></a><div class="content"><a class="title" href="/2020/05/15/Packet%20Tracer%E8%BF%9B%E8%A1%8C%E6%A8%A1%E6%8B%9FRIP%E8%B7%AF%E7%94%B1%E5%9B%9E%E8%B7%AF/" title="用Packet Tracer进行模拟RIP路由回路">用Packet Tracer进行模拟RIP路由回路</a><time datetime="2021-12-18T15:21:07.903Z" title="更新于 2021-12-18 23:21:07">2021-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/04/19/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/" title="概率论常用公式（持续更新）"><img src="https://gitee.com/icimence/CDN/raw/master/cover/macos.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="概率论常用公式（持续更新）"/></a><div class="content"><a class="title" href="/2020/04/19/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/" title="概率论常用公式（持续更新）">概率论常用公式（持续更新）</a><time datetime="2021-12-03T14:50:41.385Z" title="更新于 2021-12-03 22:50:41">2021-12-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/04/26/%E9%9D%A2%E5%90%91%E6%9C%8D%E5%8A%A1%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/" title="面向服务复习提纲"><img src="https://gitee.com/icimence/CDN/raw/master/cover/macos.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="面向服务复习提纲"/></a><div class="content"><a class="title" href="/2021/04/26/%E9%9D%A2%E5%90%91%E6%9C%8D%E5%8A%A1%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/" title="面向服务复习提纲">面向服务复习提纲</a><time datetime="2021-04-27T12:29:22.575Z" title="更新于 2021-04-27 20:29:22">2021-04-27</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://cdn.jsdelivr.net/gh/icimence/CDN/cover/os.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By icimence</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Welcome to icimence's blog <br /> <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/"><img class="icp-icon" src="https://gitee.com/icimence/CDN/raw/master/icp.png"><span>浙ICP备19026454号-1</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'default',
+      })
+      false && mermaid.init()
+    })
+  }
+}</script><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: 'ce919651fa86e8e33e76',
+      clientSecret: 'bed4296deb273c7d9a31f4227b76f9593dedf7a8',
+      repo: 'icimence.github.io',
+      owner: 'icimence',
+      admin: ['icimence'],
+      id: '01ed577bfc5487309cb31cb3f19c7a2c',
+      language: 'zh-CN',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !false) {
+  if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

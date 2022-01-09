@@ -1,0 +1,420 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>数据库复习提纲 | icimence's Tech Blog</title><meta name="keywords" content="MySQL"><meta name="author" content="icimence"><meta name="copyright" content="icimence"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="前言本复习提纲由Dart完成整理。 内容没有按题号来，主要按6+上课复习涉及到的知识点 1. B+树索引1.1 B+树的结构索引结构为树状层次结构，根节点会将数值分成若干区间，每个区间用指针指向下一层节点，下一层节点同样划分成若干区间，指向再下一层节点，依次往下 最底层的节点——叶节点，叶节点记录索引字段的值和此值所对应的基本表相关的记录存放的地址，将这个地址称为rowid  读取文件的步骤为：在">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库复习提纲">
+<meta property="og:url" content="https://icimence.cn/2021/04/22/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/index.html">
+<meta property="og:site_name" content="icimence&#39;s Tech Blog">
+<meta property="og:description" content="前言本复习提纲由Dart完成整理。 内容没有按题号来，主要按6+上课复习涉及到的知识点 1. B+树索引1.1 B+树的结构索引结构为树状层次结构，根节点会将数值分成若干区间，每个区间用指针指向下一层节点，下一层节点同样划分成若干区间，指向再下一层节点，依次往下 最底层的节点——叶节点，叶节点记录索引字段的值和此值所对应的基本表相关的记录存放的地址，将这个地址称为rowid  读取文件的步骤为：在">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/icimence/CDN/raw/master/cover/MySQL.png">
+<meta property="article:published_time" content="2021-04-22T08:35:56.000Z">
+<meta property="article:modified_time" content="2021-04-24T14:40:46.634Z">
+<meta property="article:author" content="icimence">
+<meta property="article:tag" content="MySQL">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/icimence/CDN/raw/master/cover/MySQL.png"><link rel="shortcut icon" href="https://gitee.com/icimence/CDN/raw/master/cover/shield.png"><link rel="canonical" href="https://icimence.cn/2021/04/22/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '数据库复习提纲',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-04-24 22:40:46'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.0.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://gitee.com/icimence/CDN/raw/master/cover/shield.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">83</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">41</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-rocket"></i><span> 导航</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-history"></i><span> 时间线</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fas fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-address-book"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user-circle"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="mailto:icimence@outlook.com"><i class="fa-fw fas fa-paper-plane"></i><span> 戳我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://gitee.com/icimence/CDN/raw/master/cover/MySQL.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">icimence's Tech Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-rocket"></i><span> 导航</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-history"></i><span> 时间线</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fas fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-address-book"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user-circle"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="mailto:icimence@outlook.com"><i class="fa-fw fas fa-paper-plane"></i><span> 戳我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">数据库复习提纲</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-04-22T08:35:56.000Z" title="发表于 2021-04-22 16:35:56">2021-04-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-04-24T14:40:46.634Z" title="更新于 2021-04-24 22:40:46">2021-04-24</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>14分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="数据库复习提纲"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2021/04/22/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/#post-comment"><span class="gitalk-comment-count"></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本复习提纲由Dart完成整理。</p>
+<p>内容没有按题号来，主要按6+上课复习涉及到的知识点</p>
+<h3 id="1-B-树索引"><a href="#1-B-树索引" class="headerlink" title="1. B+树索引"></a>1. B+树索引</h3><h4 id="1-1-B-树的结构"><a href="#1-1-B-树的结构" class="headerlink" title="1.1 B+树的结构"></a>1.1 B+树的结构</h4><p>索引结构为树状层次结构，根节点会将数值分成若干区间，每个区间用指针指向下一层节点，下一层节点同样划分成若干区间，指向再下一层节点，依次往下</p>
+<p>最底层的节点——叶节点，叶节点记录索引字段的值和此值所对应的基本表相关的记录存放的地址，将这个地址称为rowid </p>
+<p>读取文件的步骤为：在b树中逐层向下找到rowid（索引的过程），之后根据rowid取读取基本表相关记录内容。读取每层节点的值都是一次io操作，下图中3次io操作是索引，再经历一次io操作查表即可获得基本表相关记录，即4次io</p>
+<p>所有的叶节点都是按顺序在底层横向连接在一起，属于顺序存储的数据结构，对于搜索范围数据非常有用</p>
+<p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/sql/1.jpg" alt="B+"></p>
+<h4 id="1-2-B-树索引能做什么，不能做什么，理由"><a href="#1-2-B-树索引能做什么，不能做什么，理由" class="headerlink" title="1.2 B+树索引能做什么，不能做什么，理由"></a>1.2 B+树索引能做什么，不能做什么，理由</h4><ul>
+<li><p>能做什么</p>
+<p>全键值查询（等值查询），每一次查询都是固定的次数的io操作（基于上图为4），3次索引+1次查表，不会受基本表大小的影响，效率一样</p>
+<p>范围查询，查询过程为：先通过等值查询找到范围最左侧的值对应的块，然后横向读取叶节点，直到读到范围最右侧的值对应的块为止，读完索引以后根据地址（rowid）找值即可。由于数据在叶节点中横向顺序查询，因此范围查询很方便，效率很高</p>
+<p>键前缀查询，与范围查询类似。</p>
+</li>
+<li><p>不能做什么</p>
+<p>后缀查询</p>
+</li>
+</ul>
+<h3 id="2-索引"><a href="#2-索引" class="headerlink" title="2. 索引"></a>2. 索引</h3><h4 id="2-1-作用"><a href="#2-1-作用" class="headerlink" title="2.1 作用"></a>2.1 作用</h4><p>索引是否合理取决于它是否有用，判断适用性的依据是检索比例（查询到的结果集在原数据中所占的比例，一般为10%，但是没有明确的分界线）</p>
+<p>查询结果所占的百分比越低，称查询越具有选择性</p>
+<p>越少的数据访问，越有必要通过索引来提升查询效率，如果比例过大，则可能还不如全表遍历</p>
+<p>两种b树索引适用情况：</p>
+<ul>
+<li><p>仅需要访问基本表中很少一部分行可以使用索引</p>
+</li>
+<li><p>访问基本表很多行，只使用索引，不使用表</p>
+<blockquote>
+<p>e.g</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> x,y</span><br><span class="line"><span class="keyword">From</span> T</span><br><span class="line"><span class="keyword">where</span> x</span><br></pre></td></tr></table></figure>
+<p>即所需查询的数据中，select需要筛选的字段只有x,y,则可以通过复合键索引（见2.2），读完整个索引，查询结果可得，不需要查询基本表</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="2-2-复合键索引"><a href="#2-2-复合键索引" class="headerlink" title="2.2 复合键索引"></a>2.2 复合键索引</h4><p>复合键索引，即对多个字段构建的索引</p>
+<blockquote>
+<p>e.g. index(x,y)</p>
+</blockquote>
+<p>复合键索引本质上是按照排名第一的字段进行的索引，如上例中index(x)和index(x,y)本质是一样的，如果有index(x,y)，则不需要index(x)，因为二者组织方式是一样的</p>
+<blockquote>
+<p>e.g. 对x,y进行复合键索引，本质上是对x构建索引一样，唯一的差别是在叶节点增加一列y的值，对每个x的取值，y进行排序</p>
+</blockquote>
+<h4 id="2-3-索引加外键的理由"><a href="#2-3-索引加外键的理由" class="headerlink" title="2.3 索引加外键的理由"></a>2.3 索引加外键的理由</h4><h5 id="对数据库的某些操作有影响："><a href="#对数据库的某些操作有影响：" class="headerlink" title="对数据库的某些操作有影响："></a>对数据库的某些操作有影响：</h5><blockquote>
+<p>e.g.表A student的外键参照了表B department的主键，两张表需要同时修改，stu表很大，而用户只是希望从department表删除一条记录，dbms为了避免表间依赖的不一致性，s tu需要检查stu表中是否包含了de表中待删除的记录，就会花费较多时间，并有可能影响到操作，而有索引之后会节省很多时间</p>
+</blockquote>
+<h5 id="对并发也有影响："><a href="#对并发也有影响：" class="headerlink" title="对并发也有影响："></a>对并发也有影响：</h5><p>外键不加索引有可能会造成死锁，若无，查找子记录的速度就会很慢，参照表被锁住的时间会很长，阻塞更多的操作，两个进程互锁对方需要的参照表就会引发死锁，加外键的必要性在于可以避免枷锁时间过长，进程需要的时间缩短，降低了出现死锁的概率</p>
+<h5 id="什么时候不需要："><a href="#什么时候不需要：" class="headerlink" title="什么时候不需要："></a>什么时候不需要：</h5><p>表b很少被修改，例如表b为字典表，其主键作为表a的外键不需要加索引，因为表b很难产生修改的情况，因而很难产生并发冲突</p>
+<h4 id="2-4-同一字段-多个索引-字段顺序问题"><a href="#2-4-同一字段-多个索引-字段顺序问题" class="headerlink" title="2.4 同一字段 多个索引 字段顺序问题"></a>2.4 同一字段 多个索引 字段顺序问题</h4><p>如果系统为外键自动增加索引，常常会导致同一字段属于多个索引的情况</p>
+<blockquote>
+<p>e.g. 多对多的情况：一个订单包含多个商品，一个商品也在多个订单中出现，因此需要在中间建立关联表（Order_Details(Order_id,article_id)）</p>
+</blockquote>
+<p>在索引中字段顺序很重要，可能会影响某引数量，导致多余索引的情况，从而影响性能</p>
+<blockquote>
+<p>e.g. 在上例中，如果Order_id在前，表会缺省地构建一个order_id和article_id的复合键索引，然后要手动为外键构建索引，Order_id不需要索引，因为跟复合键索index（o,a）引本质一样，因此只需要构建article_id的索引，而article是商品表，不太被修改，符合字典表原则，因此不需要构建索引。综上，只需对复合键构建索引，不需单独索引，仅有一个索引</p>
+<p>如果a在前，系统会构建一个a_id为主的复合键索引，同时要手工构建o_id的外键索引，因为order这张表要频繁更改，构建外键索引是必要的。综上，引入了额外的索引</p>
+</blockquote>
+<h4 id="2-5-自增字段-系统生成键"><a href="#2-5-自增字段-系统生成键" class="headerlink" title="2.5 自增字段 系统生成键"></a>2.5 自增字段 系统生成键</h4><p>构建数据库有时需要唯一的流水号作为主键，往往用自增字段/系统生成键来实现</p>
+<h5 id="怎么实现"><a href="#怎么实现" class="headerlink" title="怎么实现"></a>怎么实现</h5><p>系统提供的自增字段性能很高，使用系统提供的自增字段是最佳选择，远好于自己实现，系统会自动为当前自增字段构建主键索引以保证其唯一性</p>
+<ul>
+<li><p>自己实现：</p>
+<p>需要存储一个最大值，而这个最大值势必成为资源竞争的节点，所有的插入必须先读取该最大值，然后进行+1，再存储，此时该字段值只能串行化，无法支持并发</p>
+</li>
+</ul>
+<h5 id="资源竞争"><a href="#资源竞争" class="headerlink" title="资源竞争"></a>资源竞争</h5><p>如果用自增字段来实现系统生成键，可能会引发并发问题：插入并发性过高，在主键索引的创建操作上会发生严重的资源竞争问题</p>
+<p>主键索引的主要作用是保障主键的唯一性，如果仅存在一个系统生成键的生成器，生成的序列号就会很接近，在插入键值的过程中，所有的进程都会争夺相同的索引的page和块，而请求需要串行化各个进程，利用合适锁定机制来避免一个进程的复写(overwrite)。尽管在基本表的插入中由于堆文件、随机文件的存在使得基本表可以支持高并发的同时写入，但在索引写入上只能支持串行，即一个接一个的操作，这时就会出现瓶颈</p>
+<h5 id="怎么解决"><a href="#怎么解决" class="headerlink" title="怎么解决"></a>怎么解决</h5><p>反向键索引/逆向索引（reverse index）</p>
+<ul>
+<li><p>特殊的函数索引，将字段值反过来（9527-&gt;7259）</p>
+<p>如果有连续的记录并发插入，他们大概率会在索引结构上同一个叶节点的块中，此时必须要排队竞争该具体块从而插入</p>
+<p>反向键索引使得连续的值变得相差很远，他们大概率会落在索引结构的不同叶节点上，这时可以同时插入不同的块，不需要竞争</p>
+</li>
+</ul>
+<p>哈希索引(hash index)</p>
+<ul>
+<li>组织形式与b树索引类似，将值与等长数值（哈希值）对应起来，将哈希值组成索引结构</li>
+<li>与上一个方法类似，本质是将连续的内容离散化</li>
+</ul>
+<h5 id="该不该用毫无意义的字段作为主键，会带来什么问题（内容来自网络）"><a href="#该不该用毫无意义的字段作为主键，会带来什么问题（内容来自网络）" class="headerlink" title="该不该用毫无意义的字段作为主键，会带来什么问题（内容来自网络）"></a>该不该用毫无意义的字段作为主键，会带来什么问题（内容来自网络）</h5><p>优点：</p>
+<ul>
+<li>数据库自动编号，速度快，而且是增量增长，按顺序存放，对于检索非常有利；</li>
+<li>数字型，占用空间小，易排序，在程序中传递也方便；</li>
+<li>如果通过非系统增加记录时，可以不用指定该字段，不用担心主键重复问题</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>在系统集成或割接时，如果新旧系统主键不同是数字型就会导致修改主键数据类型，这也会导致其它有外键关联的表的修改，后果同样很严重</li>
+<li>高并发的情况下，竞争自增锁会降低数据库的吞吐能力</li>
+<li>导入旧数据时，可能会ID重复，导致导入失败</li>
+<li>分布式架构，多个Mysql实例可能会导致ID重复</li>
+</ul>
+<h3 id="3-SQL"><a href="#3-SQL" class="headerlink" title="3. SQL"></a>3. SQL</h3><h4 id="3-1-执行顺序"><a href="#3-1-执行顺序" class="headerlink" title="3.1 执行顺序"></a>3.1 执行顺序</h4><p>解析最消耗资源，是高效执行/优化的切入口。解析对每一次的表达式进行等价变换，生成解析树进行评估，最终形成执行计划，将计划抛入执行引擎中，进行查询，解析+生成执行计划是查询优化器最重要的工作</p>
+<p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/sql/2.jpg" alt="执行顺序"></p>
+<h4 id="3-2-优化方式"><a href="#3-2-优化方式" class="headerlink" title="3.2 优化方式"></a>3.2 优化方式</h4><ul>
+<li>使用好的过滤条件</li>
+<li>降低表连接的数量</li>
+</ul>
+<h5 id="过滤条件"><a href="#过滤条件" class="headerlink" title="过滤条件"></a>过滤条件</h5><ul>
+<li><p>含义</p>
+<p>join过滤条件——on，用于连接表</p>
+<p>select过滤条件——where，与需求、业务相关</p>
+</li>
+<li><p>过滤条件的好坏</p>
+<p>过滤条件是否高效：是否能够尽快减少必须处理的数据总量</p>
+<p>好的过滤条件需要先做，在复杂的、高并发的查询中，将好的过滤条件先做，可以有效减少中间结果集的大小，从而提高效率</p>
+</li>
+</ul>
+<h5 id="用exists嵌套子查询摆脱distinct"><a href="#用exists嵌套子查询摆脱distinct" class="headerlink" title="用exists嵌套子查询摆脱distinct"></a>用exists嵌套子查询摆脱distinct</h5><p>子查询和外层select关系很密切，但会执行很多次，这时如果在exists前使用较高效的过滤条件可以有效减少exists的执行次数</p>
+<h5 id="in构建非关联子查询"><a href="#in构建非关联子查询" class="headerlink" title="in构建非关联子查询"></a>in构建非关联子查询</h5><p>在关联子查询中，相关字段要有索引，而非关联子查询不需要，因为要用到的索引是主键索引，内层查询不再依赖外层查询，只需要执行一次</p>
+<h4 id="3-3-表结构"><a href="#3-3-表结构" class="headerlink" title="3.3 表结构"></a>3.3 表结构</h4><h5 id="回头看看订单和客户的例子"><a href="#回头看看订单和客户的例子" class="headerlink" title="回头看看订单和客户的例子"></a>回头看看订单和客户的例子</h5><h5 id="降低表连接数量-gt-反范式-逆范式"><a href="#降低表连接数量-gt-反范式-逆范式" class="headerlink" title="降低表连接数量-&gt;反范式/逆范式"></a>降低表连接数量-&gt;反范式/逆范式</h5><p>反范式化为了提升查询效率而考虑把原本符合第三范式的表适当增冗余，减少表连接数量</p>
+<p>合并1对1关系</p>
+<ul>
+<li><p>以全部参与的表为主，引入部分参入的表</p>
+<blockquote>
+<p>e.g. staff与nok(紧急联系人)是1对1，每个nok都对应一个staff，但不是每个staff都有nok，nok部分参与。对两表进行合并，以staff为主，引入nok</p>
+</blockquote>
+</li>
+<li><p>问题：</p>
+<ul>
+<li>空值问题</li>
+<li>如果全部参与的表很大，部分参与的表很小，会造成空间浪费</li>
+<li>如果两个表对于彼此都是部分参与，那么还需手动引入主键</li>
+</ul>
+</li>
+</ul>
+<p>为减少连接操作，在1对多关系中复制非关键字属性</p>
+<ul>
+<li>注意复制过来的属性的更新，需要触发器来进行两张表的同步更新</li>
+<li>一般对于钱这种属性，都需要打破范式进行存储</li>
+</ul>
+<p>为减少连接操作，在1对多关系中复制外部关键字</p>
+<ul>
+<li>与上述内容类似</li>
+</ul>
+<p>为减少连接操作，在多对多关系中复制非关键字属性</p>
+<p>引入重复组</p>
+<ul>
+<li>把重复组打包放进主表中（不通用）</li>
+<li>主表中存放缺省的一个值，等需要详细的全部内容时再访问相应的地址表和基本表</li>
+</ul>
+<p>合并基本表和查找表，创建提取表</p>
+<ul>
+<li>将查询慢的表全部连接起来形成一张大表</li>
+<li>不到必要不要使用，虽然很强大，但会带来很大的复杂性</li>
+</ul>
+<p>分区（存储层面的逆范式）</p>
+<h3 id="4-数据库的事务隔离级别"><a href="#4-数据库的事务隔离级别" class="headerlink" title="4. 数据库的事务隔离级别"></a>4. 数据库的事务隔离级别</h3><h4 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h4><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/sql/3.jpg" alt="隔离级别"></p>
+<h4 id="相关计算"><a href="#相关计算" class="headerlink" title="相关计算"></a>相关计算</h4><h5 id="脏读"><a href="#脏读" class="headerlink" title="脏读"></a>脏读</h5><p>一个事务读到另一个事务修改但未提交的数据时，就可能发生脏读</p>
+<p>e.g. from ppt</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*事务1*/</span></span><br><span class="line"><span class="keyword">SELECT</span> dept_id <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> id<span class="operator">=</span><span class="number">1</span></span><br><span class="line"><span class="comment">/* 结果是 1 */</span></span><br><span class="line"><span class="comment">/*事务2*/</span></span><br><span class="line">UPDATE users <span class="keyword">SET</span> dept_id<span class="operator">=</span><span class="number">2</span> <span class="keyword">WHERE</span> id<span class="operator">=</span><span class="number">1</span></span><br><span class="line"><span class="comment">/* No commit here */</span></span><br><span class="line"><span class="comment">/*事务1*/</span></span><br><span class="line"><span class="keyword">SELECT</span> dept_id <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> id<span class="operator">=</span><span class="number">1</span></span><br><span class="line"><span class="comment">/* 结果是 2 */</span></span><br></pre></td></tr></table></figure>
+<h5 id="不可重复读"><a href="#不可重复读" class="headerlink" title="不可重复读"></a>不可重复读</h5><p>（ppt）在当执行SELECT 操作时没有获得读锁或SELECT操作执行完后马上释放了读锁; 另外一个事务对数据进行了更新,读到了不同的结果</p>
+<p>（网络版本）在对于数据库中的某个数据，一个事务范围内多次查询却返回了不同的数据值，这是由于在查询间隔，被另一个事务修改并提交了</p>
+<p>e.g. 事务T1在读取某一数据，而事务T2立马修改了这个数据并且提交事务给数据库，事务T1再次读取该数据就得到了不同的结果，发送了不可重复读</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*事务1*/</span></span><br><span class="line"><span class="keyword">SELECT</span> dept_id <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> id<span class="operator">=</span><span class="number">1</span></span><br><span class="line"><span class="comment">/* 结果是 1 */</span></span><br><span class="line"><span class="comment">/*事务2*/</span></span><br><span class="line">UPDATE users <span class="keyword">SET</span> dept_id<span class="operator">=</span><span class="number">2</span> <span class="keyword">WHERE</span> id<span class="operator">=</span><span class="number">1</span></span><br><span class="line"><span class="keyword">COMMIT</span>;</span><br><span class="line"><span class="comment">/* No commit here */</span></span><br><span class="line"><span class="comment">/*事务1*/</span></span><br><span class="line"><span class="keyword">SELECT</span> dept_id <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> id<span class="operator">=</span><span class="number">1</span></span><br><span class="line"><span class="keyword">COMMIT</span>;</span><br><span class="line"><span class="comment">/* 结果是 2 */</span></span><br></pre></td></tr></table></figure>
+<p>注意，虽然你知道事务2改了，但是事务1可能不知道，连读两次数不一样的场面就很惊悚</p>
+<h5 id="幻读"><a href="#幻读" class="headerlink" title="幻读"></a>幻读</h5><p>是不可重复读的一种特殊场景，主要针对增和删</p>
+<ul>
+<li><p>当事务1两次执行’’SELECT … WHERE’’检索一定范围内数据的操作中间</p>
+</li>
+<li><p>事务2在这个表中创建了(如[[INSERT]])了一行新数据，这条新数据正好满足事务1的 “WHERE”子句。</p>
+</li>
+</ul>
+<p>e.g. from Internet</p>
+<p>系统管理员A将数据库中所有学生的成绩从具体分数改为ABCDE等级，但是系统管理员B就在这个时候插入了一条具体分数的记录，当系统管理员A改结束后发现还有一条记录没有改过来，就好像发生了幻觉一样，这就叫幻读</p>
+<h5 id="三者比较"><a href="#三者比较" class="headerlink" title="三者比较"></a>三者比较</h5><p>脏读：读到了别的事物未提交的数据</p>
+<p>不可重复读：读到了其他事务已经提交的数据</p>
+<p>幻读：不可重复读的特殊场景</p>
+<ul>
+<li>不可重复读与幻读都是读到其他事务已提交的数据，但是它们针对点不同.</li>
+<li>不可重复读:update.</li>
+<li>幻读:delete，insert</li>
+</ul>
+<h4 id="四种级别（如果你嫌弃我的例子炒前面的冷饭那就自己举！）"><a href="#四种级别（如果你嫌弃我的例子炒前面的冷饭那就自己举！）" class="headerlink" title="四种级别（如果你嫌弃我的例子炒前面的冷饭那就自己举！）"></a>四种级别（如果你嫌弃我的例子炒前面的冷饭那就自己举！）</h4><h5 id="未提交读"><a href="#未提交读" class="headerlink" title="未提交读"></a>未提交读</h5><p>是最低的隔离级别，在这种隔离级别下，如果一个事务 已经开始写数据，则另外一个事务则不允许同时进行写操作，但允许其他事务读此行数据</p>
+<p>在此隔离级别下，一个事务能够读到其他事务未提交的数据，因此可能存在脏读问题</p>
+<p>e.g. (前面脏读的例子罢了)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*事务1*/</span></span><br><span class="line"><span class="keyword">SELECT</span> dept_id <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> id<span class="operator">=</span><span class="number">1</span></span><br><span class="line"><span class="comment">/* 结果是 1 */</span></span><br><span class="line"><span class="comment">/*事务2*/</span></span><br><span class="line">UPDATE users <span class="keyword">SET</span> dept_id<span class="operator">=</span><span class="number">2</span> <span class="keyword">WHERE</span> id<span class="operator">=</span><span class="number">1</span></span><br><span class="line"><span class="comment">/* No commit here */</span></span><br><span class="line"><span class="comment">/*事务1*/</span></span><br><span class="line"><span class="keyword">SELECT</span> dept_id <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> id<span class="operator">=</span><span class="number">1</span></span><br><span class="line"><span class="comment">/* 结果是 2 */</span></span><br></pre></td></tr></table></figure>
+<p>隔离级别低到连其他未提交的数据都可以读到，因此可重复读和幻读问题也不可避免，举例与上述幻读和不可重复读一致</p>
+<h5 id="已提交读"><a href="#已提交读" class="headerlink" title="已提交读"></a>已提交读</h5><p>读取数据的事务允许其他事务继续访问该行数据，但是未提交的写事务将会禁止其他事务 访问该行，会对该写锁一直保持直到到事务提交</p>
+<p>e.g. </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*事务1*/</span></span><br><span class="line"><span class="keyword">SELECT</span> dept_id <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> id<span class="operator">=</span><span class="number">1</span></span><br><span class="line"><span class="comment">/* 结果是 1 */</span></span><br><span class="line"><span class="comment">/*事务2*/</span></span><br><span class="line">UPDATE users <span class="keyword">SET</span> dept_id<span class="operator">=</span><span class="number">2</span> <span class="keyword">WHERE</span> id<span class="operator">=</span><span class="number">1</span></span><br><span class="line"><span class="comment">/* No commit here ,But locked*/</span></span><br><span class="line"><span class="comment">/*事务1*/</span></span><br><span class="line"><span class="keyword">SELECT</span> dept_id <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> id<span class="operator">=</span><span class="number">1</span></span><br><span class="line"><span class="comment">/* waiting waiting/</span></span><br><span class="line"><span class="comment">/*事务2*/</span></span><br><span class="line"><span class="keyword">ROLLBACK</span>;</span><br><span class="line"><span class="keyword">SELECT</span> dept_id <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> id<span class="operator">=</span><span class="number">1</span></span><br><span class="line"><span class="comment">/* 结果是 1 */</span></span><br></pre></td></tr></table></figure>
+<p>解释：在事务2更新某条数据的时候，如果没有commit，那么针对此条数据的写锁一直保持，当事务1想要读时会因为写锁被阻塞，直到事务2commit或者rollback，写锁解除，才可以读</p>
+<p>但是防不了不可重复读的问题，即事务2 commit提交以后，事务1在前后两次读取相同行的内容是不同的</p>
+<p>e.g. (前面不可重复读的例子罢了)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*事务1*/</span></span><br><span class="line"><span class="keyword">SELECT</span> dept_id <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> id<span class="operator">=</span><span class="number">1</span></span><br><span class="line"><span class="comment">/* 结果是 1 */</span></span><br><span class="line"><span class="comment">/*事务2*/</span></span><br><span class="line">UPDATE users <span class="keyword">SET</span> dept_id<span class="operator">=</span><span class="number">2</span> <span class="keyword">WHERE</span> id<span class="operator">=</span><span class="number">1</span></span><br><span class="line"><span class="keyword">COMMIT</span>;</span><br><span class="line"><span class="comment">/*事务1*/</span></span><br><span class="line"><span class="keyword">SELECT</span> dept_id <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> id<span class="operator">=</span><span class="number">1</span></span><br><span class="line"><span class="keyword">COMMIT</span>;</span><br><span class="line"><span class="comment">/* 结果是 2 */</span></span><br></pre></td></tr></table></figure>
+<p>幻读作为不可重复读的特殊场景同样在这一隔离级别难以被避免（笔者此时心态崩了，不想写了，反正就事务2插入了，然后事务1恍惚间发现多了一条数据，就很迷）</p>
+<p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/sql/4.jpg" alt="图"></p>
+<h5 id="可重复读"><a href="#可重复读" class="headerlink" title="可重复读"></a>可重复读</h5><p>从名字就可以知道，它可以避免不可重复读的问题</p>
+<p>一个事务在执行过程中，<strong>可以访问其他事务成功提交的新插入的数据，但不可以访问成功修改的数据。读取数据的事务将会禁止写事务（但允许读事务）</strong>，写事务则禁止任何其他事务。此隔离级别可有效防止不可重复读和脏读，但防不住幻读，下图应该很清楚了，我就不解释了</p>
+<p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/sql/5.jpg" alt="图"></p>
+<h5 id="可串行化"><a href="#可串行化" class="headerlink" title="可串行化"></a>可串行化</h5><p>提供严格的事务隔离。它要求事务序列化执行，事务只能一个接着一个地执行，不能并发执行。此隔离级别可有效防止脏读、不可重复读和幻读。但这个级别可能导致大量的超时现象和锁竞争，在实际应用中很少使用</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">icimence</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://icimence.cn/2021/04/22/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/">https://icimence.cn/2021/04/22/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://icimence.cn" target="_blank">icimence's Tech Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/MySQL/">MySQL</a></div><div class="post_share"><div class="social-share" data-image="https://gitee.com/icimence/CDN/raw/master/cover/MySQL.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/04/21/Linux%E7%A8%8B%E8%AE%BE%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2%EF%BC%88%E4%B8%89%EF%BC%89/"><img class="prev-cover" src="https://gitee.com/icimence/CDN/raw/master/cover/linux.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Linux程设复习提纲（三）</div></div></a></div><div class="next-post pull-right"><a href="/2021/04/26/%E9%9D%A2%E5%90%91%E6%9C%8D%E5%8A%A1%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/"><img class="next-cover" src="https://gitee.com/icimence/CDN/raw/master/cover/macos.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">面向服务复习提纲</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2020/04/01/SpringBoot%E9%A1%B9%E7%9B%AEsql%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/" title="SpringBoot项目sql配置指南"><img class="cover" src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/springboot.svg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-04-01</div><div class="title">SpringBoot项目sql配置指南</div></div></a></div><div><a href="/2020/03/30/Spring%20Boot%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84MySQL%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" title="Spring Boot项目中的MySQL的相关问题"><img class="cover" src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/springboot.svg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-03-30</div><div class="title">Spring Boot项目中的MySQL的相关问题</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://gitee.com/icimence/CDN/raw/master/cover/shield.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">icimence</div><div class="author-info__description">一个菜鸡的技术博客</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">83</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">41</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/icimence"><i class="fab fa-github"></i><span>个人GitHub主页</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/icimence" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:icimence@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://icimence.cn/atom.xml" target="_blank" title="RSS订阅"><i class="fas fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">这是我的技术博客<br />请多多指教，若有任何问题希望您通过邮箱或者是gitalk评论插件给我留言，谢谢！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-B-%E6%A0%91%E7%B4%A2%E5%BC%95"><span class="toc-number">1.1.</span> <span class="toc-text">1. B+树索引</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-B-%E6%A0%91%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1 B+树的结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-B-%E6%A0%91%E7%B4%A2%E5%BC%95%E8%83%BD%E5%81%9A%E4%BB%80%E4%B9%88%EF%BC%8C%E4%B8%8D%E8%83%BD%E5%81%9A%E4%BB%80%E4%B9%88%EF%BC%8C%E7%90%86%E7%94%B1"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.2 B+树索引能做什么，不能做什么，理由</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%B4%A2%E5%BC%95"><span class="toc-number">1.2.</span> <span class="toc-text">2. 索引</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E4%BD%9C%E7%94%A8"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1 作用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E5%A4%8D%E5%90%88%E9%94%AE%E7%B4%A2%E5%BC%95"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2 复合键索引</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-%E7%B4%A2%E5%BC%95%E5%8A%A0%E5%A4%96%E9%94%AE%E7%9A%84%E7%90%86%E7%94%B1"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.3 索引加外键的理由</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AF%B9%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E6%9F%90%E4%BA%9B%E6%93%8D%E4%BD%9C%E6%9C%89%E5%BD%B1%E5%93%8D%EF%BC%9A"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">对数据库的某些操作有影响：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AF%B9%E5%B9%B6%E5%8F%91%E4%B9%9F%E6%9C%89%E5%BD%B1%E5%93%8D%EF%BC%9A"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">对并发也有影响：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E4%B8%8D%E9%9C%80%E8%A6%81%EF%BC%9A"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">什么时候不需要：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-%E5%90%8C%E4%B8%80%E5%AD%97%E6%AE%B5-%E5%A4%9A%E4%B8%AA%E7%B4%A2%E5%BC%95-%E5%AD%97%E6%AE%B5%E9%A1%BA%E5%BA%8F%E9%97%AE%E9%A2%98"><span class="toc-number">1.2.4.</span> <span class="toc-text">2.4 同一字段 多个索引 字段顺序问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-%E8%87%AA%E5%A2%9E%E5%AD%97%E6%AE%B5-%E7%B3%BB%E7%BB%9F%E7%94%9F%E6%88%90%E9%94%AE"><span class="toc-number">1.2.5.</span> <span class="toc-text">2.5 自增字段 系统生成键</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.2.5.1.</span> <span class="toc-text">怎么实现</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E7%AB%9E%E4%BA%89"><span class="toc-number">1.2.5.2.</span> <span class="toc-text">资源竞争</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3"><span class="toc-number">1.2.5.3.</span> <span class="toc-text">怎么解决</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AF%A5%E4%B8%8D%E8%AF%A5%E7%94%A8%E6%AF%AB%E6%97%A0%E6%84%8F%E4%B9%89%E7%9A%84%E5%AD%97%E6%AE%B5%E4%BD%9C%E4%B8%BA%E4%B8%BB%E9%94%AE%EF%BC%8C%E4%BC%9A%E5%B8%A6%E6%9D%A5%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%EF%BC%88%E5%86%85%E5%AE%B9%E6%9D%A5%E8%87%AA%E7%BD%91%E7%BB%9C%EF%BC%89"><span class="toc-number">1.2.5.4.</span> <span class="toc-text">该不该用毫无意义的字段作为主键，会带来什么问题（内容来自网络）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-SQL"><span class="toc-number">1.3.</span> <span class="toc-text">3. SQL</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F"><span class="toc-number">1.3.1.</span> <span class="toc-text">3.1 执行顺序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E4%BC%98%E5%8C%96%E6%96%B9%E5%BC%8F"><span class="toc-number">1.3.2.</span> <span class="toc-text">3.2 优化方式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4%E6%9D%A1%E4%BB%B6"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">过滤条件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%94%A8exists%E5%B5%8C%E5%A5%97%E5%AD%90%E6%9F%A5%E8%AF%A2%E6%91%86%E8%84%B1distinct"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">用exists嵌套子查询摆脱distinct</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#in%E6%9E%84%E5%BB%BA%E9%9D%9E%E5%85%B3%E8%81%94%E5%AD%90%E6%9F%A5%E8%AF%A2"><span class="toc-number">1.3.2.3.</span> <span class="toc-text">in构建非关联子查询</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-%E8%A1%A8%E7%BB%93%E6%9E%84"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.3 表结构</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9B%9E%E5%A4%B4%E7%9C%8B%E7%9C%8B%E8%AE%A2%E5%8D%95%E5%92%8C%E5%AE%A2%E6%88%B7%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">回头看看订单和客户的例子</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%99%8D%E4%BD%8E%E8%A1%A8%E8%BF%9E%E6%8E%A5%E6%95%B0%E9%87%8F-gt-%E5%8F%8D%E8%8C%83%E5%BC%8F-%E9%80%86%E8%8C%83%E5%BC%8F"><span class="toc-number">1.3.3.2.</span> <span class="toc-text">降低表连接数量-&gt;反范式&#x2F;逆范式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB"><span class="toc-number">1.4.</span> <span class="toc-text">4. 数据库的事务隔离级别</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A8%E6%A0%BC"><span class="toc-number">1.4.1.</span> <span class="toc-text">表格</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E8%AE%A1%E7%AE%97"><span class="toc-number">1.4.2.</span> <span class="toc-text">相关计算</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%84%8F%E8%AF%BB"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">脏读</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%8D%E5%8F%AF%E9%87%8D%E5%A4%8D%E8%AF%BB"><span class="toc-number">1.4.2.2.</span> <span class="toc-text">不可重复读</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B9%BB%E8%AF%BB"><span class="toc-number">1.4.2.3.</span> <span class="toc-text">幻读</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%89%E8%80%85%E6%AF%94%E8%BE%83"><span class="toc-number">1.4.2.4.</span> <span class="toc-text">三者比较</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E7%A7%8D%E7%BA%A7%E5%88%AB%EF%BC%88%E5%A6%82%E6%9E%9C%E4%BD%A0%E5%AB%8C%E5%BC%83%E6%88%91%E7%9A%84%E4%BE%8B%E5%AD%90%E7%82%92%E5%89%8D%E9%9D%A2%E7%9A%84%E5%86%B7%E9%A5%AD%E9%82%A3%E5%B0%B1%E8%87%AA%E5%B7%B1%E4%B8%BE%EF%BC%81%EF%BC%89"><span class="toc-number">1.4.3.</span> <span class="toc-text">四种级别（如果你嫌弃我的例子炒前面的冷饭那就自己举！）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9C%AA%E6%8F%90%E4%BA%A4%E8%AF%BB"><span class="toc-number">1.4.3.1.</span> <span class="toc-text">未提交读</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B7%B2%E6%8F%90%E4%BA%A4%E8%AF%BB"><span class="toc-number">1.4.3.2.</span> <span class="toc-text">已提交读</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%AF%E9%87%8D%E5%A4%8D%E8%AF%BB"><span class="toc-number">1.4.3.3.</span> <span class="toc-text">可重复读</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%AF%E4%B8%B2%E8%A1%8C%E5%8C%96"><span class="toc-number">1.4.3.4.</span> <span class="toc-text">可串行化</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/03/20/%E6%80%8E%E4%B9%88%E5%9C%A8hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E4%BD%BF%E7%94%A8latex%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/" title="怎么在hexo博客中使用latex格式的数学公式"><img src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/hexo.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="怎么在hexo博客中使用latex格式的数学公式"/></a><div class="content"><a class="title" href="/2020/03/20/%E6%80%8E%E4%B9%88%E5%9C%A8hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E4%BD%BF%E7%94%A8latex%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/" title="怎么在hexo博客中使用latex格式的数学公式">怎么在hexo博客中使用latex格式的数学公式</a><time datetime="2022-01-09T15:04:09.159Z" title="更新于 2022-01-09 23:04:09">2022-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/04/10/%E5%9C%A8%E8%87%AA%E5%B7%B1%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%83%A8%E7%BD%B2hexo%E5%8D%9A%E5%AE%A2/" title="在自己的服务器上部署hexo博客"><img src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/hexo.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="在自己的服务器上部署hexo博客"/></a><div class="content"><a class="title" href="/2020/04/10/%E5%9C%A8%E8%87%AA%E5%B7%B1%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%83%A8%E7%BD%B2hexo%E5%8D%9A%E5%AE%A2/" title="在自己的服务器上部署hexo博客">在自己的服务器上部署hexo博客</a><time datetime="2022-01-09T07:35:32.204Z" title="更新于 2022-01-09 15:35:32">2022-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/05/15/Packet%20Tracer%E8%BF%9B%E8%A1%8C%E6%A8%A1%E6%8B%9FRIP%E8%B7%AF%E7%94%B1%E5%9B%9E%E8%B7%AF/" title="用Packet Tracer进行模拟RIP路由回路"><img src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/packet_tracer.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="用Packet Tracer进行模拟RIP路由回路"/></a><div class="content"><a class="title" href="/2020/05/15/Packet%20Tracer%E8%BF%9B%E8%A1%8C%E6%A8%A1%E6%8B%9FRIP%E8%B7%AF%E7%94%B1%E5%9B%9E%E8%B7%AF/" title="用Packet Tracer进行模拟RIP路由回路">用Packet Tracer进行模拟RIP路由回路</a><time datetime="2021-12-18T15:21:07.903Z" title="更新于 2021-12-18 23:21:07">2021-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/04/19/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/" title="概率论常用公式（持续更新）"><img src="https://gitee.com/icimence/CDN/raw/master/cover/macos.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="概率论常用公式（持续更新）"/></a><div class="content"><a class="title" href="/2020/04/19/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/" title="概率论常用公式（持续更新）">概率论常用公式（持续更新）</a><time datetime="2021-12-03T14:50:41.385Z" title="更新于 2021-12-03 22:50:41">2021-12-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/04/26/%E9%9D%A2%E5%90%91%E6%9C%8D%E5%8A%A1%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/" title="面向服务复习提纲"><img src="https://gitee.com/icimence/CDN/raw/master/cover/macos.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="面向服务复习提纲"/></a><div class="content"><a class="title" href="/2021/04/26/%E9%9D%A2%E5%90%91%E6%9C%8D%E5%8A%A1%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/" title="面向服务复习提纲">面向服务复习提纲</a><time datetime="2021-04-27T12:29:22.575Z" title="更新于 2021-04-27 20:29:22">2021-04-27</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://gitee.com/icimence/CDN/raw/master/cover/MySQL.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By icimence</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Welcome to icimence's blog <br /> <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/"><img class="icp-icon" src="https://gitee.com/icimence/CDN/raw/master/icp.png"><span>浙ICP备19026454号-1</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'default',
+      })
+      false && mermaid.init()
+    })
+  }
+}</script><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: 'ce919651fa86e8e33e76',
+      clientSecret: 'bed4296deb273c7d9a31f4227b76f9593dedf7a8',
+      repo: 'icimence.github.io',
+      owner: 'icimence',
+      admin: ['icimence'],
+      id: 'afd845fc6a853ee697a70f7e3e642b53',
+      language: 'zh-CN',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !false) {
+  if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

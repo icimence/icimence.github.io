@@ -1,0 +1,302 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>软件工程与计算II重点整理(第20-23章) | icimence's Tech Blog</title><meta name="keywords" content="软件工程与计算Ⅱ"><meta name="author" content="icimence"><meta name="copyright" content="icimence"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="第20、21章 软件交付、软件维护与演化1.软件维护的重要性（1）由于会出现新的需求，如不维护软件将减小甚至失去服务用户的作用。 （2）随着软件产品的生命周期越来越长，在软件生存期内外界环境发生变化的可能性越来越大，因此，软件经常需要修改以适应外界环境的改变 （3）软件产品或多或少的会有缺陷，当缺陷暴露出来时，必须予以及时的解决 2.开发可维护软件的方法（1）考虑软件的可变性：分析需求易变性、为变">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件工程与计算II重点整理(第20-23章)">
+<meta property="og:url" content="https://icimence.cn/2020/07/25/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%8E%E8%AE%A1%E7%AE%97II%E9%87%8D%E7%82%B9%E6%95%B4%E7%90%86-%E7%AC%AC20-23%E7%AB%A0/index.html">
+<meta property="og:site_name" content="icimence&#39;s Tech Blog">
+<meta property="og:description" content="第20、21章 软件交付、软件维护与演化1.软件维护的重要性（1）由于会出现新的需求，如不维护软件将减小甚至失去服务用户的作用。 （2）随着软件产品的生命周期越来越长，在软件生存期内外界环境发生变化的可能性越来越大，因此，软件经常需要修改以适应外界环境的改变 （3）软件产品或多或少的会有缺陷，当缺陷暴露出来时，必须予以及时的解决 2.开发可维护软件的方法（1）考虑软件的可变性：分析需求易变性、为变">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/seec.png">
+<meta property="article:published_time" content="2020-07-25T03:56:13.000Z">
+<meta property="article:modified_time" content="2020-08-11T04:13:55.096Z">
+<meta property="article:author" content="icimence">
+<meta property="article:tag" content="软件工程与计算Ⅱ">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/seec.png"><link rel="shortcut icon" href="https://gitee.com/icimence/CDN/raw/master/cover/shield.png"><link rel="canonical" href="https://icimence.cn/2020/07/25/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%8E%E8%AE%A1%E7%AE%97II%E9%87%8D%E7%82%B9%E6%95%B4%E7%90%86-%E7%AC%AC20-23%E7%AB%A0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '软件工程与计算II重点整理(第20-23章)',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2020-08-11 12:13:55'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.0.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://gitee.com/icimence/CDN/raw/master/cover/shield.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">83</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">41</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-rocket"></i><span> 导航</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-history"></i><span> 时间线</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fas fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-address-book"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user-circle"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="mailto:icimence@outlook.com"><i class="fa-fw fas fa-paper-plane"></i><span> 戳我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/icimence/CDN/cover/seec.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">icimence's Tech Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-rocket"></i><span> 导航</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-history"></i><span> 时间线</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fas fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-address-book"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user-circle"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="mailto:icimence@outlook.com"><i class="fa-fw fas fa-paper-plane"></i><span> 戳我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">软件工程与计算II重点整理(第20-23章)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-07-25T03:56:13.000Z" title="发表于 2020-07-25 11:56:13">2020-07-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-08-11T04:13:55.096Z" title="更新于 2020-08-11 12:13:55">2020-08-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>9分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="软件工程与计算II重点整理(第20-23章)"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2020/07/25/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%8E%E8%AE%A1%E7%AE%97II%E9%87%8D%E7%82%B9%E6%95%B4%E7%90%86-%E7%AC%AC20-23%E7%AB%A0/#post-comment"><span class="gitalk-comment-count"></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="第20、21章-软件交付、软件维护与演化"><a href="#第20、21章-软件交付、软件维护与演化" class="headerlink" title="第20、21章 软件交付、软件维护与演化"></a>第20、21章 软件交付、软件维护与演化</h2><h3 id="1-软件维护的重要性"><a href="#1-软件维护的重要性" class="headerlink" title="1.软件维护的重要性"></a>1.软件维护的重要性</h3><p>（1）由于会出现新的需求，如不维护软件将减小甚至失去服务用户的作用。</p>
+<p>（2）随着软件产品的生命周期越来越长，在软件生存期内外界环境发生变化的可能性越来越大，因此，软件经常需要修改以适应外界环境的改变</p>
+<p>（3）软件产品或多或少的会有缺陷，当缺陷暴露出来时，必须予以及时的解决</p>
+<h3 id="2-开发可维护软件的方法"><a href="#2-开发可维护软件的方法" class="headerlink" title="2.开发可维护软件的方法"></a>2.开发可维护软件的方法</h3><p>（1）考虑软件的可变性：分析需求易变性、为变更进行设计</p>
+<p>（2）为降低维护困难而开发：编写详细的技术文档并保持及时更新、保证代码可读性、维护需求跟踪链、维护回归测试基线</p>
+<h3 id="3-演化式生命周期模型"><a href="#3-演化式生命周期模型" class="headerlink" title="3.演化式生命周期模型"></a>3.演化式生命周期模型</h3><p>初步开发—演化—服务—逐步淘汰—停止</p>
+<h4 id="（1）初步开发"><a href="#（1）初步开发" class="headerlink" title="（1）初步开发"></a>（1）初步开发</h4><p>初始开发阶段按照传统的软件开发方式完成第一个版本的软件产品开发。第一版的软件产品可以实现全部需求，也可以（通常是）只包含部分需求——对用户来说非常重要和紧急的最高优先级需求。</p>
+<h4 id="（2）演化"><a href="#（2）演化" class="headerlink" title="（2）演化"></a>（2）演化</h4><p>可能会有预先安排的需求增量，也可能完全是对变更请求的处理，它们的共同点都是保持软件产品的持续增值，让软件产品能够满足用户越来越多的需要，实现更大的业务价值。</p>
+<p>总的来说，该阶段可能的演化增量有：预先安排的需求增量；因为问题变化或者环境变化产生的变更请求；修正已有的缺陷；随着用户与开发者之间越来越相互熟悉对方领域而新增加的需求。<br>演化阶段的软件产品要具备两个特征：(1) 软件产品具有较好的可演化性。一个软件产品在演化过程中复杂性会逐渐增高，可演化性会逐渐降低直至无法继续演化。演化阶段的软件产品虽然其可演化性低于初始开发阶段的软件产品，但是还没有到达无法演化的地步，还具有较好的可演化性。(2) 软件产品能够帮助用户实现较好的业务价值。只有这样，用户才会继续需要该产品，并持续提供资金支持。</p>
+<p>如果在演化过程中，一个软件产品开始不满足第（2）条特征，那么该产品就会提前进入停止阶段。如果软件产品满足第（2）条的同时不满足第（1）条特征，那么该产品就会进入服务阶段。如果开发团队因为竞争产品的出现或者其他市场考虑，也可以让同时满足上面两条特征的软件产品提前进入服务阶段。</p>
+<h4 id="（3）服务"><a href="#（3）服务" class="headerlink" title="（3）服务"></a>（3）服务</h4><p>服务阶段的软件产品不再持续的增加自己的价值，而只是周期性的修正已有的缺陷。</p>
+<p>服务阶段的产品还仍然被用户使用，因为它仍然能够给用户提供一定的业务价值，所以开发团队仍然需要修正已有缺陷或者进行一些低程度的需求增量，保证用户的正常使用。</p>
+<h4 id="（4）逐步淘汰"><a href="#（4）逐步淘汰" class="headerlink" title="（4）逐步淘汰"></a>（4）逐步淘汰</h4><p>在逐步淘汰阶段，开发者已经不再提供软件产品的任何服务，也即不再继续维护该软件。虽然在开发者看来软件的生命周期已经结束，但是用户可能会继续使用处于该阶段的软件产品，因为它们仍然能够帮助用户实现一定的业务价值。只是用户在使用软件时必须要容忍软件产品中的各种不便，包括仍然存在的缺陷和对新环境的不适应。对于该阶段的产品，开发者需要考虑该产品是否可以作为有用的遗留资源用于新软件的开发，用户需要考虑如何更换新的软件产品并转移已有的业务数据。</p>
+<h4 id="（5）停止"><a href="#（5）停止" class="headerlink" title="（5）停止"></a>（5）停止</h4><p>一个软件正式退出使用状态之后就进行停止状态。开发者不再进行维护，用户也不再使用。</p>
+<h3 id="4-用户文档、系统文档"><a href="#4-用户文档、系统文档" class="headerlink" title="4.用户文档、系统文档"></a>4.用户文档、系统文档</h3><p>（1）用户文档：这里的文档支持是指为用户编写参考指南或者操作教程，常见的如用户使用手册、联机帮助文档等，统称为用户文档。</p>
+<p>文档内容的组织应当支持其使用模式，常见的是指导模式和参考模式两种。指导模式根据用户的任务组织程序规程，相关的软件任务组织在相同的章节或主题。指导模式要先描述简单的、共性的任务，然后再以其为基础组织更加复杂的任务描述。</p>
+<p>参考模式按照方便随机访问独立信息单元的方式组织内容。例如，按字母顺序排列软件的命令或错误消息列表。如果文档需要同时包含两种模式，就需要将其清楚地区分成不同的章节或主题，或者在同一个章节或主题内区分为不同的格式。</p>
+<p>（2）系统文档：更注重系统维护方面的内容，例如系统性能调整、访问权限控制、常见故障解决等等。因此，系统管理员文档需要详细介绍软硬件的配置方式、网络连接方式、安全验证与访问授权方法、备份与容灾方法、部件替换方法等等。</p>
+<h3 id="5-逆向工程、再工程"><a href="#5-逆向工程、再工程" class="headerlink" title="5.逆向工程、再工程"></a>5.逆向工程、再工程</h3><p>（1）逆向工程：分析目标系统，标识系统的部件及其交互关系，并且使用其它形式或者更高层的抽象创建系统表现的过程。逆向工程的基本原理是抽取软件系统的需求与设计而隐藏实现细节，然后在需求与设计的层次上描述软件系统，以建立对系统更加准确和清晰的理解。</p>
+<p>（2）再工程：检查和改造一个目标系统，用新的模式式及其实现复原该目标系统。目的是对遗留软件系统进行分析和重新开发，以便进一步利用新技术来改善系统或促进现存系统的再利用。<br>主要包括：改进人们对软件的理解；改进软件自身，通常是提高其可维护性、可复用性和可演化性。</p>
+<p>常见具体活动有：重新文档化；重组系统的结构；将系统转换为更新的编程语言；修改数据的结构组织。</p>
+<h2 id="第22、23章-软件开发过程模型"><a href="#第22、23章-软件开发过程模型" class="headerlink" title="第22、23章 软件开发过程模型"></a>第22、23章 软件开发过程模型</h2><h3 id="1-软件生命周期模型"><a href="#1-软件生命周期模型" class="headerlink" title="1.软件生命周期模型"></a>1.软件生命周期模型</h3><p>需求工程—软件设计—软件实现—软件测试—软件交付—软件维护</p>
+<h3 id="2-解释与比较不同的软件过程模型"><a href="#2-解释与比较不同的软件过程模型" class="headerlink" title="2.解释与比较不同的软件过程模型"></a>2.解释与比较不同的软件过程模型</h3><p>【题型】对给定场景，判断适用的开发过程模型（要求、特征描述、优点、缺点）</p>
+<h4 id="（1）构建-修复模型"><a href="#（1）构建-修复模型" class="headerlink" title="（1）构建-修复模型"></a>（1）构建-修复模型</h4><p>特征：a.没有对开发过程进行规范和组织，因此一旦开发过程超出个人控制能力，就会导致开发过程无法有效进行而失败。</p>
+<p>b.对需求的真实性没有进行分析</p>
+<p>c.没有考虑软件结构的质量，导致结构在修改中越来越糟，直至无法修改</p>
+<p>d.没有考虑测试和程序的可维护性，也没有任何文档，导致难以维护</p>
+<p>适用场景：软件规模很小，只需要几百行程序，其开发复杂度是个人能力能够胜任的；软件对质量的要求不高，即使出错也无所谓；只关注开发活动，对后期维护的要求不高，甚至不需要进行维护。</p>
+<h4 id="（2）瀑布模型（文档驱动）"><a href="#（2）瀑布模型（文档驱动）" class="headerlink" title="（2）瀑布模型（文档驱动）"></a>（2）瀑布模型（文档驱动）</h4><p>特征：a.对于软件开发活动有明确阶段划分</p>
+<p>b.每个阶段的结果都必须验证，使得该模型是“文档驱动”</p>
+<p>优点：清晰的阶段划分有利于开发者以关注点分离的方式更好的进行复杂软件项目的开发。</p>
+<p>缺点：a.对文档期望过高；</p>
+<p>b.对开发活动的线性顺序假设（线性顺序与迭代相反）；</p>
+<p>c.客户、用户参与度不够（需求被限制在一个时间段）</p>
+<p>d.里程碑粒度过粗（软件复杂使得每个阶段时间长，无法尽早发现缺陷）</p>
+<p>适用：需求非常成熟、稳定，没有不确定的内容，也不会发生变化；所需的技术成熟、可靠，没有不确定的技术难点，也没有开发人员不熟悉的技术问题；复杂度适中，不至于产生太大的文档负担和过粗的里程碑。</p>
+<h4 id="（3）增量迭代模型（需求驱动）与演化模型互为补充"><a href="#（3）增量迭代模型（需求驱动）与演化模型互为补充" class="headerlink" title="（3）增量迭代模型（需求驱动）与演化模型互为补充"></a>（3）增量迭代模型（需求驱动）与演化模型互为补充</h4><p>特征：项目开始时，通过系统需求开发和核心体系结构设计活动完成项目的前景范围的界定，然后将后续开发活动组织为多个迭代、并行的瀑布式开发活动。第一个迭代完成的往往是核心工作，满足基本需求，后续迭代完成附带特性。</p>
+<p>优点：a.更符合软件开发实践</p>
+<p>b.并行开发可以缩短产品开发时间</p>
+<p>c.渐进交付可以加强用户反馈，降低开发风险。</p>
+<p>缺点：a.要求高：软件需要有开放式的体系结构</p>
+<p>b.不确定性太多，导致难以在项目开始就确定前景和范围</p>
+<p>适用：比较成熟和稳定的领域</p>
+<h4 id="（4）演化模型（需求驱动）"><a href="#（4）演化模型（需求驱动）" class="headerlink" title="（4）演化模型（需求驱动）"></a>（4）演化模型（需求驱动）</h4><p>特点：更好地应对需求变更，更适用于需求变更比较频繁或不确定性较多的领域。将软件开发组织为多个迭代、并行的瀑布式开发活动。是迭代＋并行＋渐进</p>
+<p>优点：a.适用于需求变更频繁或者不确定性多的系统的开发</p>
+<p>b.并行开发可以缩短开发时间</p>
+<p>c.加强用户反馈，降低开发风险</p>
+<p>缺点：a.无法在项目早起确定项目范围</p>
+<p>b.后续迭代活动以前导迭代为基础，容易使后续迭代忽略分析与设计。退化为构建－修复方式。<br>适用：不稳定领域的大规模软件系统</p>
+<h4 id="（5）原型模型（需求驱动）"><a href="#（5）原型模型（需求驱动）" class="headerlink" title="（5）原型模型（需求驱动）"></a>（5）原型模型（需求驱动）</h4><p>特点：大量使用抛弃式原型（抛弃式原型：通过模拟“未来”的产品，将“未来”的知识置于“现在”进行推敲，解决不确定性）。</p>
+<p>优点：a.加强与客户、用户的交流，更好的产品满意度</p>
+<p>b.适用于不确定性大的新颖领域</p>
+<p>缺点：a.成本较高，有耗尽时间和费用的风险</p>
+<p>b.有人不舍得抛弃“抛弃式原型”，使得较差代码进入产品，降低质量</p>
+<p>适用：有着大量不确定性的新颖领域</p>
+<h4 id="（6）螺旋模型（风险驱动）"><a href="#（6）螺旋模型（风险驱动）" class="headerlink" title="（6）螺旋模型（风险驱动）"></a>（6）螺旋模型（风险驱动）</h4><p>特点：基本思想是尽早解决比较高的风险，如果有些问题实在无法解决，那么早发现比项目结束时再发现要好，至少损失要小得多。风险是指因为不确定性（对未来知识了解有限）而可能给项目带来损失的情况，原型能够澄清不确定性，所以原型能够解决风险。</p>
+<p>迭代与瀑布的结合：开发阶段是瀑布式的，风险分析是迭代的</p>
+<p>优点：降低风险，减少因风险造成的损失</p>
+<p>缺点：a.使用原型方法，为自身带来风险</p>
+<p>b.模型过于复杂，不利于管理者依据其组织软件开发活动。</p>
+<p>适用性：高风险的大规模软件系统开发</p>
+<h3 id="3-软件工程知识体系的知识域"><a href="#3-软件工程知识体系的知识域" class="headerlink" title="3.软件工程知识体系的知识域"></a>3.软件工程知识体系的知识域</h3><p>需求、设计、构造、测试、维护、配置管理、工程管理、工程过程、工程工具和方法、质量</p>
+<h2 id="跳转链接"><a href="#跳转链接" class="headerlink" title="跳转链接"></a>跳转链接</h2><p>👉<a target="_blank" rel="noopener" href="https://samperson1997.github.io/2017/12/21/SECII-2/">软件工程与计算II重点整理(第1-5章)</a></p>
+<p>👉<a target="_blank" rel="noopener" href="https://samperson1997.github.io/2017/12/21/SECII-3/">软件工程与计算II重点整理(第6-7章)</a></p>
+<p>👉<a target="_blank" rel="noopener" href="https://samperson1997.github.io/2017/12/21/SECII-4/">软件工程与计算II重点整理(第8-11章)</a></p>
+<p>👉<a target="_blank" rel="noopener" href="https://samperson1997.github.io/2017/12/21/SECII-5/">软件工程与计算II重点整理(第12-15章)</a></p>
+<p>👉<a target="_blank" rel="noopener" href="https://samperson1997.github.io/2017/12/21/SECII-6/">软件工程与计算II重点整理(第16-19章)</a></p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p>本文转自学长博客，侵删</p>
+<p><a target="_blank" rel="noopener" href="https://samperson1997.github.io/2017/12/21/SECII-6/">https://samperson1997.github.io/2017/12/21/SECII-6/</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">icimence</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://icimence.cn/2020/07/25/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%8E%E8%AE%A1%E7%AE%97II%E9%87%8D%E7%82%B9%E6%95%B4%E7%90%86-%E7%AC%AC20-23%E7%AB%A0/">https://icimence.cn/2020/07/25/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%8E%E8%AE%A1%E7%AE%97II%E9%87%8D%E7%82%B9%E6%95%B4%E7%90%86-%E7%AC%AC20-23%E7%AB%A0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://icimence.cn" target="_blank">icimence's Tech Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%8E%E8%AE%A1%E7%AE%97%E2%85%A1/">软件工程与计算Ⅱ</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/seec.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/07/25/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%8E%E8%AE%A1%E7%AE%97II%E9%87%8D%E7%82%B9%E6%95%B4%E7%90%86-%E7%AC%AC16-19%E7%AB%A0/"><img class="prev-cover" src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/seec.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">软件工程与计算II重点整理(第16-19章)</div></div></a></div><div class="next-post pull-right"><a href="/2020/07/31/%E8%BF%91%E7%8E%B0%E4%BB%A3%E5%8F%B2%E7%BA%B2%E8%A6%81%E8%80%83%E7%82%B9%E5%A4%8D%E4%B9%A0/"><img class="next-cover" src="https://gitee.com/icimence/CDN/raw/master/cover/macos.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">近现代史纲要考点复习</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2020/07/25/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%8E%E8%AE%A1%E7%AE%97II%E9%87%8D%E7%82%B9%E6%95%B4%E7%90%86-%E7%AC%AC1-5%E7%AB%A0/" title="软件工程与计算II重点整理(第1-5章)"><img class="cover" src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/seec.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-25</div><div class="title">软件工程与计算II重点整理(第1-5章)</div></div></a></div><div><a href="/2020/07/25/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%8E%E8%AE%A1%E7%AE%97II%E9%87%8D%E7%82%B9%E6%95%B4%E7%90%86-%E7%AC%AC12-15%E7%AB%A0/" title="软件工程与计算II重点整理(第12-15章)"><img class="cover" src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/seec.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-25</div><div class="title">软件工程与计算II重点整理(第12-15章)</div></div></a></div><div><a href="/2020/07/25/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%8E%E8%AE%A1%E7%AE%97II%E9%87%8D%E7%82%B9%E6%95%B4%E7%90%86-%E7%AC%AC16-19%E7%AB%A0/" title="软件工程与计算II重点整理(第16-19章)"><img class="cover" src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/seec.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-25</div><div class="title">软件工程与计算II重点整理(第16-19章)</div></div></a></div><div><a href="/2020/07/25/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%8E%E8%AE%A1%E7%AE%97II%E9%87%8D%E7%82%B9%E6%95%B4%E7%90%86-%E7%AC%AC6-7%E7%AB%A0/" title="软件工程与计算II重点整理(第6-7章)"><img class="cover" src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/seec.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-25</div><div class="title">软件工程与计算II重点整理(第6-7章)</div></div></a></div><div><a href="/2020/07/25/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%8E%E8%AE%A1%E7%AE%97II%E9%87%8D%E7%82%B9%E6%95%B4%E7%90%86-%E7%AC%AC8-11%E7%AB%A0/" title="软件工程与计算II重点整理(第8-11章)"><img class="cover" src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/seec.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-25</div><div class="title">软件工程与计算II重点整理(第8-11章)</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://gitee.com/icimence/CDN/raw/master/cover/shield.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">icimence</div><div class="author-info__description">一个菜鸡的技术博客</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">83</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">41</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/icimence"><i class="fab fa-github"></i><span>个人GitHub主页</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/icimence" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:icimence@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://icimence.cn/atom.xml" target="_blank" title="RSS订阅"><i class="fas fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">这是我的技术博客<br />请多多指教，若有任何问题希望您通过邮箱或者是gitalk评论插件给我留言，谢谢！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC20%E3%80%8121%E7%AB%A0-%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98%E3%80%81%E8%BD%AF%E4%BB%B6%E7%BB%B4%E6%8A%A4%E4%B8%8E%E6%BC%94%E5%8C%96"><span class="toc-number">1.</span> <span class="toc-text">第20、21章 软件交付、软件维护与演化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%BD%AF%E4%BB%B6%E7%BB%B4%E6%8A%A4%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7"><span class="toc-number">1.1.</span> <span class="toc-text">1.软件维护的重要性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%BC%80%E5%8F%91%E5%8F%AF%E7%BB%B4%E6%8A%A4%E8%BD%AF%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">2.开发可维护软件的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%BC%94%E5%8C%96%E5%BC%8F%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.3.</span> <span class="toc-text">3.演化式生命周期模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E5%88%9D%E6%AD%A5%E5%BC%80%E5%8F%91"><span class="toc-number">1.3.1.</span> <span class="toc-text">（1）初步开发</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E6%BC%94%E5%8C%96"><span class="toc-number">1.3.2.</span> <span class="toc-text">（2）演化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%883%EF%BC%89%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.3.3.</span> <span class="toc-text">（3）服务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%884%EF%BC%89%E9%80%90%E6%AD%A5%E6%B7%98%E6%B1%B0"><span class="toc-number">1.3.4.</span> <span class="toc-text">（4）逐步淘汰</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%885%EF%BC%89%E5%81%9C%E6%AD%A2"><span class="toc-number">1.3.5.</span> <span class="toc-text">（5）停止</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E7%94%A8%E6%88%B7%E6%96%87%E6%A1%A3%E3%80%81%E7%B3%BB%E7%BB%9F%E6%96%87%E6%A1%A3"><span class="toc-number">1.4.</span> <span class="toc-text">4.用户文档、系统文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B%E3%80%81%E5%86%8D%E5%B7%A5%E7%A8%8B"><span class="toc-number">1.5.</span> <span class="toc-text">5.逆向工程、再工程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC22%E3%80%8123%E7%AB%A0-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">第22、23章 软件开发过程模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%BD%AF%E4%BB%B6%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.1.</span> <span class="toc-text">1.软件生命周期模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%A7%A3%E9%87%8A%E4%B8%8E%E6%AF%94%E8%BE%83%E4%B8%8D%E5%90%8C%E7%9A%84%E8%BD%AF%E4%BB%B6%E8%BF%87%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.2.</span> <span class="toc-text">2.解释与比较不同的软件过程模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E6%9E%84%E5%BB%BA-%E4%BF%AE%E5%A4%8D%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.2.1.</span> <span class="toc-text">（1）构建-修复模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E7%80%91%E5%B8%83%E6%A8%A1%E5%9E%8B%EF%BC%88%E6%96%87%E6%A1%A3%E9%A9%B1%E5%8A%A8%EF%BC%89"><span class="toc-number">2.2.2.</span> <span class="toc-text">（2）瀑布模型（文档驱动）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%883%EF%BC%89%E5%A2%9E%E9%87%8F%E8%BF%AD%E4%BB%A3%E6%A8%A1%E5%9E%8B%EF%BC%88%E9%9C%80%E6%B1%82%E9%A9%B1%E5%8A%A8%EF%BC%89%E4%B8%8E%E6%BC%94%E5%8C%96%E6%A8%A1%E5%9E%8B%E4%BA%92%E4%B8%BA%E8%A1%A5%E5%85%85"><span class="toc-number">2.2.3.</span> <span class="toc-text">（3）增量迭代模型（需求驱动）与演化模型互为补充</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%884%EF%BC%89%E6%BC%94%E5%8C%96%E6%A8%A1%E5%9E%8B%EF%BC%88%E9%9C%80%E6%B1%82%E9%A9%B1%E5%8A%A8%EF%BC%89"><span class="toc-number">2.2.4.</span> <span class="toc-text">（4）演化模型（需求驱动）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%885%EF%BC%89%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%9E%8B%EF%BC%88%E9%9C%80%E6%B1%82%E9%A9%B1%E5%8A%A8%EF%BC%89"><span class="toc-number">2.2.5.</span> <span class="toc-text">（5）原型模型（需求驱动）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%886%EF%BC%89%E8%9E%BA%E6%97%8B%E6%A8%A1%E5%9E%8B%EF%BC%88%E9%A3%8E%E9%99%A9%E9%A9%B1%E5%8A%A8%EF%BC%89"><span class="toc-number">2.2.6.</span> <span class="toc-text">（6）螺旋模型（风险驱动）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E7%9A%84%E7%9F%A5%E8%AF%86%E5%9F%9F"><span class="toc-number">2.3.</span> <span class="toc-text">3.软件工程知识体系的知识域</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%B3%E8%BD%AC%E9%93%BE%E6%8E%A5"><span class="toc-number">3.</span> <span class="toc-text">跳转链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="toc-number">4.</span> <span class="toc-text">参考链接</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/03/20/%E6%80%8E%E4%B9%88%E5%9C%A8hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E4%BD%BF%E7%94%A8latex%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/" title="怎么在hexo博客中使用latex格式的数学公式"><img src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/hexo.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="怎么在hexo博客中使用latex格式的数学公式"/></a><div class="content"><a class="title" href="/2020/03/20/%E6%80%8E%E4%B9%88%E5%9C%A8hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E4%BD%BF%E7%94%A8latex%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/" title="怎么在hexo博客中使用latex格式的数学公式">怎么在hexo博客中使用latex格式的数学公式</a><time datetime="2022-01-09T15:04:09.159Z" title="更新于 2022-01-09 23:04:09">2022-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/04/10/%E5%9C%A8%E8%87%AA%E5%B7%B1%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%83%A8%E7%BD%B2hexo%E5%8D%9A%E5%AE%A2/" title="在自己的服务器上部署hexo博客"><img src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/hexo.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="在自己的服务器上部署hexo博客"/></a><div class="content"><a class="title" href="/2020/04/10/%E5%9C%A8%E8%87%AA%E5%B7%B1%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%83%A8%E7%BD%B2hexo%E5%8D%9A%E5%AE%A2/" title="在自己的服务器上部署hexo博客">在自己的服务器上部署hexo博客</a><time datetime="2022-01-09T07:35:32.204Z" title="更新于 2022-01-09 15:35:32">2022-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/05/15/Packet%20Tracer%E8%BF%9B%E8%A1%8C%E6%A8%A1%E6%8B%9FRIP%E8%B7%AF%E7%94%B1%E5%9B%9E%E8%B7%AF/" title="用Packet Tracer进行模拟RIP路由回路"><img src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/packet_tracer.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="用Packet Tracer进行模拟RIP路由回路"/></a><div class="content"><a class="title" href="/2020/05/15/Packet%20Tracer%E8%BF%9B%E8%A1%8C%E6%A8%A1%E6%8B%9FRIP%E8%B7%AF%E7%94%B1%E5%9B%9E%E8%B7%AF/" title="用Packet Tracer进行模拟RIP路由回路">用Packet Tracer进行模拟RIP路由回路</a><time datetime="2021-12-18T15:21:07.903Z" title="更新于 2021-12-18 23:21:07">2021-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/04/19/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/" title="概率论常用公式（持续更新）"><img src="https://gitee.com/icimence/CDN/raw/master/cover/macos.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="概率论常用公式（持续更新）"/></a><div class="content"><a class="title" href="/2020/04/19/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/" title="概率论常用公式（持续更新）">概率论常用公式（持续更新）</a><time datetime="2021-12-03T14:50:41.385Z" title="更新于 2021-12-03 22:50:41">2021-12-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/04/26/%E9%9D%A2%E5%90%91%E6%9C%8D%E5%8A%A1%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/" title="面向服务复习提纲"><img src="https://gitee.com/icimence/CDN/raw/master/cover/macos.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="面向服务复习提纲"/></a><div class="content"><a class="title" href="/2021/04/26/%E9%9D%A2%E5%90%91%E6%9C%8D%E5%8A%A1%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/" title="面向服务复习提纲">面向服务复习提纲</a><time datetime="2021-04-27T12:29:22.575Z" title="更新于 2021-04-27 20:29:22">2021-04-27</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://cdn.jsdelivr.net/gh/icimence/CDN/cover/seec.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By icimence</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Welcome to icimence's blog <br /> <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/"><img class="icp-icon" src="https://gitee.com/icimence/CDN/raw/master/icp.png"><span>浙ICP备19026454号-1</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'default',
+      })
+      false && mermaid.init()
+    })
+  }
+}</script><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: 'ce919651fa86e8e33e76',
+      clientSecret: 'bed4296deb273c7d9a31f4227b76f9593dedf7a8',
+      repo: 'icimence.github.io',
+      owner: 'icimence',
+      admin: ['icimence'],
+      id: '24a5e4347e7ee1faf54332a0325b6fc6',
+      language: 'zh-CN',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !false) {
+  if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

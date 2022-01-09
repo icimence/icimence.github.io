@@ -1,0 +1,781 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>云计算复习提纲 | icimence's Tech Blog</title><meta name="keywords" content="CloudComputing"><meta name="author" content="icimence"><meta name="copyright" content="icimence"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="提纲说明本提纲理论上仅适用于18级软院，请校对当年李传艺老师上课强调的考点和非考点之后进行阅读。 云计算起源与概述追求算力的几种方法 把一台计算机的计算性能提升的足够强大   集中式计算（将所有计算资源集中在一个物理系统之内） 并行计算（能有效提高计算效率，所有处理器紧耦合于中心共享）    人多力量大，机多计算强   分布式计算（由众多自治计算机组成，各自拥有私有内存，通过计算机网络通信）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="云计算复习提纲">
+<meta property="og:url" content="https://icimence.cn/2020/10/20/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/index.html">
+<meta property="og:site_name" content="icimence&#39;s Tech Blog">
+<meta property="og:description" content="提纲说明本提纲理论上仅适用于18级软院，请校对当年李传艺老师上课强调的考点和非考点之后进行阅读。 云计算起源与概述追求算力的几种方法 把一台计算机的计算性能提升的足够强大   集中式计算（将所有计算资源集中在一个物理系统之内） 并行计算（能有效提高计算效率，所有处理器紧耦合于中心共享）    人多力量大，机多计算强   分布式计算（由众多自治计算机组成，各自拥有私有内存，通过计算机网络通信）">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/spark.png">
+<meta property="article:published_time" content="2020-10-20T14:50:37.000Z">
+<meta property="article:modified_time" content="2020-11-02T13:03:29.387Z">
+<meta property="article:author" content="icimence">
+<meta property="article:tag" content="CloudComputing">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/spark.png"><link rel="shortcut icon" href="https://gitee.com/icimence/CDN/raw/master/cover/shield.png"><link rel="canonical" href="https://icimence.cn/2020/10/20/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '云计算复习提纲',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2020-11-02 21:03:29'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.0.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://gitee.com/icimence/CDN/raw/master/cover/shield.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">83</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">41</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-rocket"></i><span> 导航</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-history"></i><span> 时间线</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fas fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-address-book"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user-circle"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="mailto:icimence@outlook.com"><i class="fa-fw fas fa-paper-plane"></i><span> 戳我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/icimence/CDN/cover/spark.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">icimence's Tech Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-rocket"></i><span> 导航</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-history"></i><span> 时间线</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fas fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-address-book"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user-circle"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="mailto:icimence@outlook.com"><i class="fa-fw fas fa-paper-plane"></i><span> 戳我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">云计算复习提纲</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-10-20T14:50:37.000Z" title="发表于 2020-10-20 22:50:37">2020-10-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-02T13:03:29.387Z" title="更新于 2020-11-02 21:03:29">2020-11-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">7.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>23分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="云计算复习提纲"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2020/10/20/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/#post-comment"><span class="gitalk-comment-count"></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="提纲说明"><a href="#提纲说明" class="headerlink" title="提纲说明"></a>提纲说明</h2><p>本提纲理论上仅适用于18级软院，请校对当年李传艺老师上课强调的考点和非考点之后进行阅读。</p>
+<h2 id="云计算起源与概述"><a href="#云计算起源与概述" class="headerlink" title="云计算起源与概述"></a>云计算起源与概述</h2><h3 id="追求算力的几种方法"><a href="#追求算力的几种方法" class="headerlink" title="追求算力的几种方法"></a>追求算力的几种方法</h3><ol>
+<li><p>把一台计算机的计算性能提升的足够强大</p>
+<blockquote>
+<ol>
+<li>集中式计算（将所有计算资源集中在一个物理系统之内）</li>
+<li>并行计算（能有效提高计算效率，所有处理器紧耦合于中心共享）</li>
+</ol>
+</blockquote>
+</li>
+<li><p>人多力量大，机多计算强</p>
+<blockquote>
+<ol>
+<li>分布式计算（由众多自治计算机组成，各自拥有私有内存，通过计算机网络通信）</li>
+</ol>
+</blockquote>
+</li>
+</ol>
+<h3 id="传统分布式计算系统"><a href="#传统分布式计算系统" class="headerlink" title="传统分布式计算系统"></a>传统分布式计算系统</h3><ol>
+<li><p>计算机集群</p>
+<blockquote>
+<p>将多个可信、静态的独立节点连接起来协作完成计算</p>
+</blockquote>
+<p>计算机集群是计算抽象。</p>
+</li>
+<li><p>P2P网络</p>
+<blockquote>
+<p>每个节点既是客户端也是服务器，提供部分系统资源</p>
+</blockquote>
+<p>P2P系统是存储抽象，各个机器可以自由地加入或者是退出。</p>
+</li>
+<li><p>计算网格</p>
+<blockquote>
+<p>将多个异构计算机（采用了不同的操作系统，但是能够进行有效的通信）动态、紧耦合地整合在一起完成计算任务</p>
+</blockquote>
+<p>计算网格已经开始接近云计算</p>
+</li>
+</ol>
+<h3 id="云计算"><a href="#云计算" class="headerlink" title="云计算"></a>云计算</h3><p>云计算是2006.3提出的雏形（compute cloud）到之后在2006.8.9正式确定（Cloud Computing）</p>
+<h4 id="基本想法"><a href="#基本想法" class="headerlink" title="基本想法"></a>基本想法</h4><p>云计算是一种完美的分布式计算结局方案——是对网格的优化。</p>
+<h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><ul>
+<li>云计算式一种基于互联网的计算方式，通过这种方式，共享的软硬件资源和信息可以按需求提供给计算机各种终端和其他设备——维基百科</li>
+<li>云计算是一种模型，可以实现随时随地、边界的、按需的从可配置计算资源共享池中获取所需要的资源（例如，网络、服务器、存储、应用程序及服务），资源可以快速攻击和释放，是管理的工作量和服务提供者的接入降低至最少。——NIST（美国国家标准与技术研究院）</li>
+<li>云计算是一种计算方式，能通过Internet技术将可扩展的和弹性的IT能力作为服务交付给外部用户。——Gartner</li>
+<li>（长）云计算是一种商业计算模型，他将计算任务分布在大量计算构成的资源池上，使各种应用系统能够根据需要获取计算力、存储空间和信息服务——刘鹏</li>
+<li>（短）云计算是通过网络按需提供可动态伸缩的廉价计算服务——刘鹏</li>
+</ul>
+<h3 id="云计算VS网格计算"><a href="#云计算VS网格计算" class="headerlink" title="云计算VS网格计算"></a>云计算VS网格计算</h3><p>都能提升计算能力完成数据处理，构建虚拟资源池且动态可伸缩</p>
+<h4 id="网格计算"><a href="#网格计算" class="headerlink" title="网格计算"></a>网格计算</h4><ul>
+<li>强调聚合分布的资源</li>
+<li>强调虚拟组织，立足特定任务</li>
+<li>利用中间件来屏蔽异构系统</li>
+<li>面向科研，商业模式不清晰</li>
+</ul>
+<h4 id="云计算-1"><a href="#云计算-1" class="headerlink" title="云计算"></a>云计算</h4><ul>
+<li>强调使用专有的资源</li>
+<li>不强调虚拟组织，重视通用性</li>
+<li>不强调异构型</li>
+<li>针对企业应用，商业模式清晰</li>
+</ul>
+<h3 id="大数据时代"><a href="#大数据时代" class="headerlink" title="大数据时代"></a>大数据时代</h3><p>云计算和人工智能是处理大数据的能力与方法，物联网和互联网+是大数据的来源于去向</p>
+<h4 id="大数据5V"><a href="#大数据5V" class="headerlink" title="大数据5V"></a>大数据5V</h4><ol>
+<li>Volume</li>
+<li>Variety</li>
+<li>Velocity</li>
+<li>Value</li>
+<li>Veracity</li>
+</ol>
+<h4 id="云计算的特点"><a href="#云计算的特点" class="headerlink" title="云计算的特点"></a>云计算的特点</h4><ul>
+<li>超大规模</li>
+<li>虚拟化</li>
+<li>按需服务</li>
+<li>通用</li>
+<li>高可伸缩性</li>
+<li>极其廉价</li>
+<li>高可靠</li>
+</ul>
+<h3 id="云服务模型"><a href="#云服务模型" class="headerlink" title="云服务模型"></a>云服务模型</h3><p><img src="https://cdn.jsdelivr.net/gh/icimence/CDN/postimg/cloudcomputing.png" alt="云服务模型"></p>
+<h4 id="IaaS"><a href="#IaaS" class="headerlink" title="IaaS"></a>IaaS</h4><p>通过虚拟机方式对外提供计算和存储能力。</p>
+<p>机器享有公网IP，多个虚拟机之间通过网络进行通信。</p>
+<p>基本上可以说是租用独立的云计算机，由用户解决协同问题。用户交互接口向应用以web Service的方式提供访问接口</p>
+<p>优势：</p>
+<blockquote>
+<ul>
+<li>允许用户动态申请和释放资源</li>
+<li>按使用量计费</li>
+<li>更高的资源使用效率（节能）</li>
+</ul>
+</blockquote>
+<h4 id="PaaS"><a href="#PaaS" class="headerlink" title="PaaS"></a>PaaS</h4><p>只是提供用户一个应用程序的运行环境，但是用户不需要考虑结点间的配合问题，但是这要求用户按照指定的编程环境和编程模型构建应用。</p>
+<h4 id="SaaS"><a href="#SaaS" class="headerlink" title="SaaS"></a>SaaS</h4><p>针对性非常强，只提供某些专门用途的服务</p>
+<h3 id="云计算的实现机制"><a href="#云计算的实现机制" class="headerlink" title="云计算的实现机制"></a>云计算的实现机制</h3><p>云计算体系结构分为：</p>
+<ol>
+<li>SOA构建层（封装云计算能力成标准的web service服务，并纳入到SOA体系）</li>
+<li>管理中间件层（云计算的资源管理，并对众多应用任务进行调度）</li>
+<li>资源池层（将大量相同类型的资源构成同构或者接近同构的资源池）</li>
+<li>物理资源层（硬件以及软件的支持）</li>
+</ol>
+<h4 id="SOA"><a href="#SOA" class="headerlink" title="SOA"></a>SOA</h4><p>面向服务的体系结构（Service-oriented Architecture）</p>
+<p>将服务作为分布式对象</p>
+<h4 id="管理中间件层"><a href="#管理中间件层" class="headerlink" title="管理中间件层"></a>管理中间件层</h4><ul>
+<li>资源管理</li>
+<li>用户管理</li>
+<li>任务管理</li>
+<li>安全管理</li>
+</ul>
+<h3 id="云的部署模型"><a href="#云的部署模型" class="headerlink" title="云的部署模型"></a>云的部署模型</h3><h4 id="公有云"><a href="#公有云" class="headerlink" title="公有云"></a>公有云</h4><p>可以被所有用户访问的云环境</p>
+<h4 id="社区云"><a href="#社区云" class="headerlink" title="社区云"></a>社区云</h4><p>只能由社区用户访问</p>
+<h4 id="私有云"><a href="#私有云" class="headerlink" title="私有云"></a>私有云</h4><p>由一家组织单独拥有</p>
+<h4 id="混合云"><a href="#混合云" class="headerlink" title="混合云"></a>混合云</h4><p>由两种或者更多的模型构成的云环境</p>
+<h3 id="云计算的优势"><a href="#云计算的优势" class="headerlink" title="云计算的优势"></a>云计算的优势</h3><ul>
+<li>经济性</li>
+<li>可扩展和可伸缩性</li>
+<li>虚拟化</li>
+<li>高可靠</li>
+<li>管理简单</li>
+<li>安全</li>
+</ul>
+<h3 id="云计算的技术难点"><a href="#云计算的技术难点" class="headerlink" title="云计算的技术难点"></a>云计算的技术难点</h3><ul>
+<li>数据中心安全控制</li>
+<li>构建高度同构化的虚拟资源</li>
+<li>高可用性的实现</li>
+<li>容错的实现</li>
+<li>节能</li>
+<li>云安全与隐私安全</li>
+</ul>
+<h3 id="云计算的风险"><a href="#云计算的风险" class="headerlink" title="云计算的风险"></a>云计算的风险</h3><ul>
+<li>安全漏洞</li>
+<li>降低了运营管理控制</li>
+<li>可移植性有限</li>
+<li>法律法规问题</li>
+</ul>
+<h2 id="虚拟化技术"><a href="#虚拟化技术" class="headerlink" title="虚拟化技术"></a>虚拟化技术</h2><p>虚拟化技术的核心思想是利用软件或固件管理程序构成虚拟化层，把物理资源映射为虚拟资源 。在虚拟资源上可以安装和部署多个虚拟机 ，实现多用户共享物理资源 ，技术首先由IBM提出</p>
+<h3 id="虚拟化实现"><a href="#虚拟化实现" class="headerlink" title="虚拟化实现"></a>虚拟化实现</h3><p>添加一个成为虚拟化层的软件，管理客户操作系统。</p>
+<p>虚拟化层软件用于虚拟化基础设施</p>
+<h3 id="虚拟化层次"><a href="#虚拟化层次" class="headerlink" title="虚拟化层次"></a>虚拟化层次</h3><p>虚拟硬件环境、处理器、内存和I/O设备</p>
+<h3 id="不同层次的虚拟化"><a href="#不同层次的虚拟化" class="headerlink" title="不同层次的虚拟化"></a>不同层次的虚拟化</h3><p><img src="https://cdn.jsdelivr.net/gh/icimence/CDN/postimg/virtual.png" alt="不同的虚拟化"></p>
+<h4 id="硬件级虚拟化"><a href="#硬件级虚拟化" class="headerlink" title="硬件级虚拟化"></a>硬件级虚拟化</h4><ol>
+<li>为程序提供与原始硬件机器基本一致的环境</li>
+<li>运行在该虚拟硬件环境中的程序性能损失应该较低</li>
+<li>系统资源应该处于VMM的完全控制中</li>
+</ol>
+<p>可以分为全虚拟化与半虚拟化</p>
+<p>初始化一个硬件级虚拟机非常慢</p>
+<h4 id="操作系统级虚拟化"><a href="#操作系统级虚拟化" class="headerlink" title="操作系统级虚拟化"></a>操作系统级虚拟化</h4><p>看作是寄居虚拟化的一种在操作系统中插入一个虚拟化层</p>
+<p>优点：</p>
+<blockquote>
+<ol>
+<li>最小的启动或停止开销，资源需求低，可扩展性强</li>
+<li>需要时，可同步虚拟机与宿主操作系统环境状态的变化</li>
+<li>在同一个主操作系统上运行的多个操作系统级虚拟机共享同一个操作系统内核</li>
+<li>在虚拟化层中允许虚拟机中进程访问尽可能多的主机资源</li>
+</ol>
+</blockquote>
+<p>缺点：</p>
+<blockquote>
+<ol>
+<li>同一个容器中的操作系统级虚拟机必须使用相同的客户操作系统</li>
+<li>资源隔离较差</li>
+</ol>
+</blockquote>
+<h4 id="虚拟机-VS-Docker容器"><a href="#虚拟机-VS-Docker容器" class="headerlink" title="虚拟机 VS Docker容器"></a>虚拟机 VS Docker容器</h4><ul>
+<li>客户操作系统 vs. 独立/共享二进制文件和库</li>
+<li>20s启动 vs. 500ms启动</li>
+<li>较高应用灵活性 vs. 低成本高性能</li>
+<li>适合没有编排的多个应用使用 vs. 适用于编排条件下多个副本相同的应用扩展</li>
+</ul>
+<h4 id="发展趋势"><a href="#发展趋势" class="headerlink" title="发展趋势"></a>发展趋势</h4><p>多种虚拟化共同发展，容器成为云计算的主流</p>
+<h2 id="数据中心虚拟化"><a href="#数据中心虚拟化" class="headerlink" title="数据中心虚拟化"></a>数据中心虚拟化</h2><p>现阶段的数据中心规模不断增大、成本逐渐上升、管理日趋复杂所以使用虚拟化实现资源的动态分配和调度。</p>
+<h3 id="虚拟化类型"><a href="#虚拟化类型" class="headerlink" title="虚拟化类型"></a>虚拟化类型</h3><p>主要分为三种类型：服务器虚拟化、存储虚拟化、网络虚拟化</p>
+<h4 id="服务器虚拟化"><a href="#服务器虚拟化" class="headerlink" title="服务器虚拟化"></a>服务器虚拟化</h4><p>这种虚拟化就是硬件级的虚拟化，包括了CPU虚拟化、内存虚拟化、IO设备虚拟化</p>
+<h4 id="存储虚拟化"><a href="#存储虚拟化" class="headerlink" title="存储虚拟化"></a>存储虚拟化</h4><p>概念：存储虚拟化将系统中分散的存储资源整合起来。</p>
+<p>技术：在虚拟层通过使用数据镜像、数据校验和多路径等技术，利用负载均衡、数据迁移、数据块重组等技术整合和重组底层物理资源。</p>
+<p>分为基于主机的存储虚拟化、基于存储设备的存储虚拟化、基于网络的存储虚拟化</p>
+<h4 id="网络虚拟化（不考）"><a href="#网络虚拟化（不考）" class="headerlink" title="网络虚拟化（不考）"></a>网络虚拟化（不考）</h4><p>传统数据中心的网络传输效率较低，因为使用的数据接口的格式不统一</p>
+<p>云计算使用之后使用了统一的交换网络</p>
+<p>引入虚拟化之后数据中心的网络虚拟化分为核心层、接入层和虚拟机网络虚拟化三个层面</p>
+<p><img src="https://cdn.jsdelivr.net/gh/icimence/CDN/postimg/virtual3.png" alt="网络虚拟化层级"></p>
+<h4 id="桌面虚拟化（不考）"><a href="#桌面虚拟化（不考）" class="headerlink" title="桌面虚拟化（不考）"></a>桌面虚拟化（不考）</h4><h5 id="第一代桌面虚拟技术"><a href="#第一代桌面虚拟技术" class="headerlink" title="第一代桌面虚拟技术"></a>第一代桌面虚拟技术</h5><p>实现了在同一个独立的计算机硬件平台上，同时安装多个操作系统，并同时运行这些操作系统</p>
+<h5 id="第二代桌面虚拟化技术"><a href="#第二代桌面虚拟化技术" class="headerlink" title="第二代桌面虚拟化技术"></a>第二代桌面虚拟化技术</h5><p>进一步将桌面系统的运行环境与安装环境、应用与桌面配置文件进行了拆分，从而大大降低了管理复杂度与成本，提高了管理效率。</p>
+<h3 id="虚拟机迁移"><a href="#虚拟机迁移" class="headerlink" title="虚拟机迁移"></a>虚拟机迁移</h3><p>从源到目的地的方式分为：</p>
+<ul>
+<li>物理机到虚拟机 P2V</li>
+<li>虚拟机到虚拟机 V2V<strong>（云计算中关注的重点：实时迁移）</strong></li>
+<li>虚拟机到物理机 V2P</li>
+</ul>
+<p>动态实时迁移：保持虚拟机运行的同时，将其从一个计算机迁移到另一个计算机，并在目的地计算机恢复运行。</p>
+<h4 id="内存迁移"><a href="#内存迁移" class="headerlink" title="内存迁移"></a>内存迁移</h4><p>这是最困难的地方</p>
+<p>分为三个阶段，Push阶段，Stop-and-Copy阶段、Pull阶段，有三种迁移方法：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/icimence/CDN/postimg/virtual2.png" alt="不同的内存迁移方法"></p>
+<h4 id="网络资源迁移"><a href="#网络资源迁移" class="headerlink" title="网络资源迁移"></a>网络资源迁移</h4><p>协议状态等迁移</p>
+<h4 id="存储设备迁移"><a href="#存储设备迁移" class="headerlink" title="存储设备迁移"></a>存储设备迁移</h4><p>目前使用NAS作为存储设备进行数据共享，所以不太需要存储设备的迁移。</p>
+<h3 id="虚拟机隔离技术"><a href="#虚拟机隔离技术" class="headerlink" title="虚拟机隔离技术"></a>虚拟机隔离技术</h3><p>虚拟机之间在没有授权许可的情况下，互相之间不可通信、不可联系的一种技术。</p>
+<p>现有的虚拟机隔离机制有：</p>
+<ul>
+<li>网络隔离</li>
+<li>构建虚拟安全文件防护网</li>
+<li>基于访问控制的逻辑隔离机制</li>
+<li>硬件提供的内存保护机制</li>
+<li>进程地址空间的保护机制，IP地址隔离</li>
+</ul>
+<h4 id="网络隔离"><a href="#网络隔离" class="headerlink" title="网络隔离"></a>网络隔离</h4><p>防止外部的网络攻击到达。系统控制通信数据</p>
+<h2 id="云数据中心"><a href="#云数据中心" class="headerlink" title="云数据中心"></a>云数据中心</h2><h3 id="云数据中心的特征"><a href="#云数据中心的特征" class="headerlink" title="云数据中心的特征"></a>云数据中心的特征</h3><ul>
+<li>高设备利用率（通过虚拟化技术对硬件进行整合）</li>
+<li>绿色节能（服务器较为节能，供电技术，软件算法）</li>
+<li>高可用性（各个部分冗余，灾容设计）</li>
+<li>自动化管理（无人值守，远程管理）</li>
+</ul>
+<h3 id="云数据中心网络部署"><a href="#云数据中心网络部署" class="headerlink" title="云数据中心网络部署"></a>云数据中心网络部署</h3><ul>
+<li>构建方便简单</li>
+<li>不便于拓展升级</li>
+<li>任意一个核心交换机故障导致上千台服务器故障</li>
+<li>低成本、高可扩展性、低配置开销、节能</li>
+<li>有多种可使用的网络结构</li>
+</ul>
+<h4 id="改进树（FatTree，VL2）"><a href="#改进树（FatTree，VL2）" class="headerlink" title="改进树（FatTree，VL2）"></a>改进树（FatTree，VL2）</h4><p>FatTree使用两级路由表，允许两级前缀查询，消除了树形结构对上层链路的吞吐量的要求限制，内部通信能够提供多条并行链路。</p>
+<p>VL2是一套可扩展且灵活的网络架构，微软数据中心采用。扁平寻址，负载均衡，使用CLOS拓扑结构建立扁平的第二层网络。</p>
+<p>优势： VL2 是目前最易用于对现有数据中心网络改造的结构。<br>缺点： VL2 依赖于中心化的基础设施来实现 2 层语义和资源整合，面临单点失效和扩展性问题。</p>
+<h4 id="递归层次结构"><a href="#递归层次结构" class="headerlink" title="递归层次结构"></a>递归层次结构</h4><p>解决可扩展性的较好选择，每个高层的网络拓扑由多个低层的递归单元按照递归规律互相连接构成，同时也是更高层次网络的一个递归单元。</p>
+<p>服务器使用两个网卡端口：主用端口连接低层网络，备用端口连接高层网络。</p>
+<h4 id="光交换网络"><a href="#光交换网络" class="headerlink" title="光交换网络"></a>光交换网络</h4><p>在业务增长的时候数据中心内部和服务器间的数据流量增加，传统网络设备无法处理，使用光纤设备。</p>
+<p>OSA基于光交换的数据中心网络体系结构</p>
+<blockquote>
+<ul>
+<li>光交换矩阵（OSM）</li>
+<li>波长选择交换机（WSS）</li>
+</ul>
+</blockquote>
+<h4 id="无线数据中心网络"><a href="#无线数据中心网络" class="headerlink" title="无线数据中心网络"></a>无线数据中心网络</h4><p>静态链路和有线接口在突发流量和高负载情况下会降低整个数据中心的网络性能，所以使用无线网络的广播机制克服这个问题。</p>
+<h4 id="软件定义网络（SDN）"><a href="#软件定义网络（SDN）" class="headerlink" title="软件定义网络（SDN）"></a>软件定义网络（SDN）</h4><p>将网络的控制平面和数据转发平面分离</p>
+<p>通过软件更新实现网络升级，无需针对硬件进行配置。</p>
+<p>openflow是第一个针对SDN实现的标准接口，以良好的灵活性、规范性被堪称SDN通信协议的标准。</p>
+<h3 id="绿色节能技术"><a href="#绿色节能技术" class="headerlink" title="绿色节能技术"></a>绿色节能技术</h3><p>数据中心的耗能越来越大。</p>
+<p>节能的方面：</p>
+<ul>
+<li>配电系统（高压直流配电、市区直供配电）</li>
+<li>空调系统（高温回风空调，低能耗加湿，自然冷空调系统）</li>
+<li>集装箱数据中心（使用固定模块的数据中心设备）</li>
+<li>管理系统</li>
+<li>新能源（利用新能源供电）</li>
+</ul>
+<h3 id="自动化管理"><a href="#自动化管理" class="headerlink" title="自动化管理"></a>自动化管理</h3><p>使得在规模较大的情况下，实现较少人员对数据中心的高度智能和管理</p>
+<p>资源的自动化调度和对业务的灵活响应</p>
+<p>自动化管理的五个特征：</p>
+<ul>
+<li>全面的可视性</li>
+<li>自动的控制执行</li>
+<li>多层次的无缝集成</li>
+<li>综合与实时报告</li>
+<li>全生命周期支持</li>
+</ul>
+<p>自动化的实现的三个阶段：</p>
+<ul>
+<li>IT服务操作</li>
+<li>IT服务管理</li>
+<li>数据中心自动化</li>
+</ul>
+<h3 id="容灾备份"><a href="#容灾备份" class="headerlink" title="容灾备份"></a>容灾备份</h3><p>容灾备份是通过在异地建立和维护一个备份存储系统，利用地理上的分离来保证系统和数据对灾难性事件的抵御能力。</p>
+<p>抵抗程度分级：</p>
+<ul>
+<li>数据级容灾：只保证数据的完整性可靠性和安全性，提供的服务会中断</li>
+<li>应用级容灾：能保证不间断提供服务</li>
+</ul>
+<p>容灾的核心是复制数据，使用的技术有快照技术，远程镜像技术，数据库复制技术和基于IP的SAN的远程数据容灾备份技术等。</p>
+<h2 id="Hadoop2-0（可能不考）"><a href="#Hadoop2-0（可能不考）" class="headerlink" title="Hadoop2.0（可能不考）"></a>Hadoop2.0（可能不考）</h2><h3 id="分布式存储"><a href="#分布式存储" class="headerlink" title="分布式存储"></a>分布式存储</h3><p>分布式文件系统（Distributed File System，DFS）</p>
+<p>将多台机器硬盘以某种方式连接到一起，采用客户-服务器模式构建分布式存储集群，让master管理slave，在这种DFS中对内呈现出客户-服务器模式，对外呈现出统一存储空间，同一文件接口。</p>
+<h3 id="分布式计算"><a href="#分布式计算" class="headerlink" title="分布式计算"></a>分布式计算</h3><p>Google提出移动计算比移动数据更划算</p>
+<p>采用客户-服务器模式构建分布式计算集群</p>
+<p>在只使用分布式存储的情况下会出现每个计算机进行本地数据的计算，然后进行合并，但是如果使用了Hadoop的MapReduce框架，情况如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/icimence/CDN/postimg/mapreduce.png" alt="Hadoop使用的框架"></p>
+<h3 id="可靠性问题：冗余存储"><a href="#可靠性问题：冗余存储" class="headerlink" title="可靠性问题：冗余存储"></a>可靠性问题：冗余存储</h3><p>不是通过单纯的增加额外的设备备份来达到目的，通过每台机器上的数据都能在集群中的另一台机器上找到，计算也是一样的，Master会知道每一份数据的存储位置，要求所有的存有带计算数据的机器都进行计算，去最快的运算结果。</p>
+<p>冗余存储不仅提高了分布式存储的可靠性，也提高了分布式计算的可靠性</p>
+<h3 id="Hadoop简介"><a href="#Hadoop简介" class="headerlink" title="Hadoop简介"></a>Hadoop简介</h3><p>2006年完成大部分开发，成为Hadoop。Hadoop1.0和Hadoop2.0 的架构差异较大</p>
+<ul>
+<li><p>Hadoop1.0</p>
+<blockquote>
+<ul>
+<li>Hadoop Common：支持其他两个模块的公用组件</li>
+<li>Hadoop DFS：分布式文件系统</li>
+<li>Hadoop MapReduce：分布式计算框架</li>
+</ul>
+</blockquote>
+</li>
+<li><p>Hadoop2.0（新增）</p>
+<blockquote>
+<ul>
+<li>分布式存储HDFS</li>
+<li>分布式操作系统Yarn</li>
+<li>通过调用程序库，可使用简单的编程模型处理分布在不同机器上的大规模数据</li>
+<li>采用客户-服务器模式，很容易从一台机器扩展至成千上万台机器，每台机器均能提供本地存储和本地计算</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h4 id="主要应用领域"><a href="#主要应用领域" class="headerlink" title="主要应用领域"></a>主要应用领域</h4><ul>
+<li>构建大型分布式集群（存储加计算）</li>
+<li>数据仓库（存储）</li>
+<li>数据挖掘（计算）</li>
+</ul>
+<h3 id="Hadoop2-0体系架构"><a href="#Hadoop2-0体系架构" class="headerlink" title="Hadoop2.0体系架构"></a>Hadoop2.0体系架构</h3><ul>
+<li>公共组件Common</li>
+<li>分布式文件系统HDFS</li>
+<li>分布式操作系统Yarn（分布式资源管理系统）</li>
+<li>MapReduce引擎</li>
+</ul>
+<h4 id="Common"><a href="#Common" class="headerlink" title="Common"></a>Common</h4><ul>
+<li>定位：其他模块的公共组件，定义程序员取得集群服务的编程接口，为其它模块提供公用API</li>
+<li>作用：降低Hadoop设计的复杂性，减少其他模块间的耦合性，增强Hadoop健壮性。</li>
+<li>功能：<ul>
+<li>提供公用API和程序员编程接口</li>
+<li>本地Hadoop库</li>
+<li>超级用户</li>
+<li>服务器级别认证</li>
+<li>HTTP认证</li>
+</ul>
+</li>
+</ul>
+<h4 id="HDFS"><a href="#HDFS" class="headerlink" title="HDFS"></a>HDFS</h4><ul>
+<li>定位：高容错、高扩展、高可靠，并提供服务访问接口。</li>
+<li>内部特性：<ul>
+<li>荣誉备份、副本存放、副本选择、心跳检测</li>
+<li>数据完整性检测、云数据磁盘失效</li>
+<li>简单一致性模型、流式数据访问、客户端缓存</li>
+<li>流水线复制、架构特征、超大规模数据集</li>
+</ul>
+</li>
+</ul>
+<h4 id="Yarn"><a href="#Yarn" class="headerlink" title="Yarn"></a>Yarn</h4><ul>
+<li>定位：管理计算机资源，提供用户和程序访问系统资源API</li>
+</ul>
+<h2 id="Spark原理（可能不考）"><a href="#Spark原理（可能不考）" class="headerlink" title="Spark原理（可能不考）"></a>Spark原理（可能不考）</h2><h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>Hadoop所使用的mapreduce效率还是较低，且如果需要输出作为输入，需要较长时间。并且在mapreduce过程中过于频繁的硬盘读写也是一个速度瓶颈。所以Spark就产生了，基于RDDD进行计算，独立性更强，速度更快，支持多种语言</p>
+<h3 id="高层库"><a href="#高层库" class="headerlink" title="高层库"></a>高层库</h3><h4 id="Spark-SQL"><a href="#Spark-SQL" class="headerlink" title="Spark SQL"></a>Spark SQL</h4><p>分布式SQL引擎，在Spark程序中使用API进行调用</p>
+<h4 id="Spark-Streaming"><a href="#Spark-Streaming" class="headerlink" title="Spark Streaming"></a>Spark Streaming</h4><p>实时分析大量数据，处理周期短。</p>
+<h4 id="Spark-Graphx"><a href="#Spark-Graphx" class="headerlink" title="Spark Graphx"></a>Spark Graphx</h4><p>以图为基础数据结构的算法实现和相关应用</p>
+<h4 id="Spark-MLlib"><a href="#Spark-MLlib" class="headerlink" title="Spark MLlib"></a>Spark MLlib</h4><p>解决机器学习的问题（分类、回归、类聚、协同过滤）</p>
+<h2 id="Spark实践（可能不考）"><a href="#Spark实践（可能不考）" class="headerlink" title="Spark实践（可能不考）"></a>Spark实践（可能不考）</h2><p>全部都是各种源代码，人都裂开了。`</p>
+<h2 id="OpenStack（重点）"><a href="#OpenStack（重点）" class="headerlink" title="OpenStack（重点）"></a>OpenStack（重点）</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>OpenStack是一个管理计算、存储和网络资源的数据中心云计算开放平台，通过一个仪表盘，为管理员提供了所有的管理控制，同时通过web界面为其用户提供资源。</p>
+<h4 id="架构（前三个为核心部件）"><a href="#架构（前三个为核心部件）" class="headerlink" title="架构（前三个为核心部件）"></a>架构（前三个为核心部件）</h4><ul>
+<li>Nova（计算）</li>
+<li>Glance（镜像服务）</li>
+<li>Swift（对象存储）</li>
+<li>Keystone（身份服务）</li>
+<li>Neutron（网络&amp;地址管理）</li>
+<li>Cinder（块存储）</li>
+<li>Horizon（UI界面）</li>
+<li>Manila（文件共享存储服务）</li>
+</ul>
+<h4 id="虚拟机创建过程"><a href="#虚拟机创建过程" class="headerlink" title="虚拟机创建过程"></a>虚拟机创建过程</h4><ul>
+<li>资源准备<ul>
+<li>通过 Keystone 进行用户身份认证，通过认证后，用户即可与 Openstack API 节点通信，触发创建请求</li>
+<li>通过调度器获得启动虚拟机的最佳位置：通过工作守护进程获得物理节点上的资源状态； Nova scheduler</li>
+</ul>
+</li>
+<li>创建流程<ul>
+<li>调用身份认证进行身份验证</li>
+<li>生成用于后续调用的令牌</li>
+<li>访问镜像服务以获取镜像列表，并获取目标基础镜像</li>
+<li>处理计算服务 API 请求</li>
+<li>处理计算服务对安全组和密钥调用的请求</li>
+<li>调用网络服务 API 确定可用网络</li>
+<li>通过计算节点调度程序选择 Hypervisor 节点</li>
+<li>调用块存储服务 API 为实例分配卷</li>
+<li>通过计算服务 API 调用再 Hypervisor 节点启动实例</li>
+<li>调用网络服务 API 为实例分配网络资源</li>
+</ul>
+</li>
+</ul>
+<h4 id="架构设计"><a href="#架构设计" class="headerlink" title="架构设计"></a>架构设计</h4><p>用户使用Web中提供的API对内部的API进行调用。</p>
+<p>核心服务之间的依赖关系<br>运行 Openstack 服务的节点</p>
+<ul>
+<li>云控制器：控制所有服务的节点</li>
+<li>网络节点：运行网络服务的节点</li>
+<li>计算节点：运行虚拟机的节点（也可以运行网络服务）</li>
+</ul>
+<h3 id="部署（重点）"><a href="#部署（重点）" class="headerlink" title="部署（重点）"></a>部署（重点）</h3><h4 id="DevOps"><a href="#DevOps" class="headerlink" title="DevOps"></a>DevOps</h4><p>是一种软件研发管理的思想、方法论，他追求的是一种没有隔阂的理想研发写作的状态。</p>
+<h4 id="DevOps-OpenStack"><a href="#DevOps-OpenStack" class="headerlink" title="DevOps+OpenStack"></a>DevOps+OpenStack</h4><h5 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h5><p>openstack软件和部署云基础架构的持续增长的复杂性必须被简化。</p>
+<h5 id="方式"><a href="#方式" class="headerlink" title="方式"></a>方式</h5><p>基础架构中的所有内容都必须被自动化</p>
+<p>将openstack分解为多个部分</p>
+<h5 id="要点"><a href="#要点" class="headerlink" title="要点"></a>要点</h5><p>简化和模块化OpenStack需要根据需求进行定制</p>
+<h4 id="Ansible"><a href="#Ansible" class="headerlink" title="Ansible"></a>Ansible</h4><p>基础架构自动化引擎：安装Ansible自身部署系统和管理的目标系统。</p>
+<p>下面看的有点一知半解</p>
+<h3 id="云控制器"><a href="#云控制器" class="headerlink" title="云控制器"></a>云控制器</h3><p>集群就能提高可用性，只要有多的机器即可。</p>
+<ul>
+<li><p>非对称集群（只有在主服务器故障时备用服务器才会接管系统）</p>
+</li>
+<li><p>对称集群（正常情况下所有节点工作，作为负载均衡）</p>
+</li>
+</ul>
+<p>很多OpenStack的功能体现在基础架构服务中。</p>
+<ul>
+<li><p>基础架构服务</p>
+<ul>
+<li><p>不属于 OpenStack 对外提供的公共服务，但被多个 Openstack 组件使用</p>
+</li>
+<li><p>消息队列：必须是集群式 的； RabbitMQ ZeroMQ Qpid</p>
+</li>
+<li><p>整合数据库： OpenStack 的环境数据，使用数据等； MySQL 和 MongoDB</p>
+</li>
+</ul>
+</li>
+<li><p>OpenStack 服务</p>
+<ul>
+<li>身份、镜像、计算、网络、存储等</li>
+</ul>
+</li>
+</ul>
+<h4 id="Keystone"><a href="#Keystone" class="headerlink" title="Keystone"></a>Keystone</h4><p>身份认证和服务目录（其他所有服务项Keystron注册API端点）</p>
+<p>由多个Provider组成，都有自己的职责。</p>
+<blockquote>
+<ul>
+<li>身份提供者 Identity Provider ：服务用户、管理员用户、终端用户</li>
+<li>资源提供者 resource Provider project 、 domain</li>
+<li>认证提供者 Authorization Provider ：用户和用户组和他们角色之间的关系</li>
+<li>令牌提供者 Token Provider ：访问 openstack 服务需要一个有效的令牌，通过身份提供者的认证后获得令牌</li>
+<li>目录提供者 Catalog Provider ：维护服务和 API 端点的目录</li>
+<li>策略提供者 Policy Provider ：策略由多条规则组成，每条规则定义了哪些用户和角色被允许访问哪些资源</li>
+</ul>
+</blockquote>
+<h4 id="Nova管理组件及API"><a href="#Nova管理组件及API" class="headerlink" title="Nova管理组件及API"></a>Nova管理组件及API</h4><p>Nova是计算组织控制器，处理Openstack云中实例生命周期的所有活动。</p>
+<h4 id="其他服务"><a href="#其他服务" class="headerlink" title="其他服务"></a>其他服务</h4><ul>
+<li>Glance负责镜像管理</li>
+<li>仪表盘服务</li>
+<li>计量服务</li>
+</ul>
+<h3 id="计算节点"><a href="#计算节点" class="headerlink" title="计算节点"></a>计算节点</h3><h4 id="Hypervisor"><a href="#Hypervisor" class="headerlink" title="Hypervisor"></a>Hypervisor</h4><p>是计算节点的核心，又称VMM</p>
+<p>计算节点运行nova-compute服务，负责启动和终止虚拟机。</p>
+<h4 id="Magnum"><a href="#Magnum" class="headerlink" title="Magnum"></a>Magnum</h4><ul>
+<li>Bay 是一组运行 COE 软件的节点，表示一个容器集群</li>
+<li>Pod 是 COE 最基本的部署调度单元，逻辑上对应一个服务实例，运行一组容器，必须有一个作为网络路由</li>
+</ul>
+<h4 id="Nova单元"><a href="#Nova单元" class="headerlink" title="Nova单元"></a>Nova单元</h4><p>所有计算节点都需要与消息总线和数据库服务器通信，随着计算节点增多，使得消息队列和数据库过载，因此产生 Nova 计算单元</p>
+<h2 id="云计算核心算法"><a href="#云计算核心算法" class="headerlink" title="云计算核心算法"></a>云计算核心算法</h2><p>云计算的基础是分布式集群技术，所以需要良好的资源和任务调度算法</p>
+<p>集群的基础算法有：</p>
+<ul>
+<li>Paxos算法<ul>
+<li>朴素Paxos</li>
+<li>Multi-Paxos</li>
+<li>Raft算法</li>
+</ul>
+</li>
+<li>DHT算法</li>
+<li>Gossip协议</li>
+</ul>
+<h3 id="Paxos算法"><a href="#Paxos算法" class="headerlink" title="Paxos算法"></a>Paxos算法</h3><p>基于消息传递且具有高度容错特性的一致性算法，是目前公认的解决分布式一致性问题最有效的算法之一。</p>
+<p>分布式一致性问题就是在分布式环境下多个节点或进程对某个值进行决议，在没有延时，丢包的理想网络环境中很容易做到，但是在实际操作中会出现问题。</p>
+<h4 id="共识算法"><a href="#共识算法" class="headerlink" title="共识算法"></a>共识算法</h4><p>Consensus Algorithm，即使是在部分节点故障，网络延时、网络分割的情况下，多个节点均能对某个事情达成一致的看法。</p>
+<h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>主要是算法比较难理解</p>
+<p>可以由一个或多个提议进程发起提案，所有进程对这个提案达成一致之后完成。</p>
+<p>不存在恶意破坏整体一致性的节点，每一个节点都可信任。</p>
+<h4 id="具体过程"><a href="#具体过程" class="headerlink" title="具体过程"></a>具体过程</h4><ul>
+<li><p>提议者向所有的决策者发送提案ID和Value等待回复。</p>
+<blockquote>
+<p>初始化的提案请求是prepare请求，只有提案ID，之后的是accept请求 ，是接受了决策者返回之后发出的，这时候有ID和Value</p>
+</blockquote>
+</li>
+<li><p>决策者如果已经收到其他提议者的Value就返回这个值，如果没有收到就返回空</p>
+</li>
+<li><p>决策者回应的时候就许下承诺（不接受更老的相同ID提案请求，不接受更老的accept请求）</p>
+</li>
+<li><p>提议者收到大多数的决策者的回复之后对ID和Value再次进行发送广播（Value值如果收到了就直接对最新的Value进行广播，如果没收到就随机）</p>
+</li>
+<li><p>决策者收到这个广播之后进行accept处理之后再次回应</p>
+</li>
+<li><p>提议者收到多数回应之后表示提案成功，将决议发给所有的Learner</p>
+</li>
+</ul>
+<h4 id="活锁"><a href="#活锁" class="headerlink" title="活锁"></a>活锁</h4><p>由于可能由两个提议者一直循环提出编号递增的提案，死循环，没有value，可以选定一个主Proposer，只有这个都可以提出提案。</p>
+<h4 id="典型场景1（数据副本一致性）"><a href="#典型场景1（数据副本一致性）" class="headerlink" title="典型场景1（数据副本一致性）"></a>典型场景1（数据副本一致性）</h4><ul>
+<li><p>主从同步方式</p>
+<blockquote>
+<p>主数据收到请求之后要求所有副本执行相同操作之后返回，所有副本执行成功之后主数据才会进行自我操作然后返回。不能保证<strong>可用性</strong></p>
+</blockquote>
+</li>
+<li><p>主从异步复制</p>
+<blockquote>
+<p>主数据直接对自己进行操作并返回之后要求所有的副本进行相同操作，不能保证<strong>一致性</strong>。</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="典型场景2（多副本状态机）"><a href="#典型场景2（多副本状态机）" class="headerlink" title="典型场景2（多副本状态机）"></a>典型场景2（多副本状态机）</h4><p>多台机器拥有完全相同的状态，运行完全相同的确定性状态机。使用这个来解决单节点故障的解决方案。</p>
+<h3 id="Multi-Paxos"><a href="#Multi-Paxos" class="headerlink" title="Multi-Paxos"></a>Multi-Paxos</h3><p>如果只有一个人发起请求，就可以省去prepare请求，直接使用随机值作为value。</p>
+<p>在知乎上找到了一篇比较详细的说明文章，可以参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/42912831">https://zhuanlan.zhihu.com/p/42912831</a></p>
+<p>后面还有算法的详细解析：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/45742830">https://zhuanlan.zhihu.com/p/45742830</a></p>
+<p>说实话本人还是看不懂，欢迎评论解答</p>
+<h3 id="Raft算法"><a href="#Raft算法" class="headerlink" title="Raft算法"></a>Raft算法</h3><p>Raft算法可以看<a target="_blank" rel="noopener" href="https://raft.github.io">官方GitHub主页</a>，有对应的文档。</p>
+<p>官方也提供了<a target="_blank" rel="noopener" href="http://thesecretlivesofdata.com/raft">动画演示网页</a>。通过观看来了解算法</p>
+<h3 id="DHT算法"><a href="#DHT算法" class="headerlink" title="DHT算法"></a>DHT算法</h3><p>Distributed Hash Table，分布式哈希表</p>
+<p>云计算模式——按照功能划分服务器类型</p>
+<p>物联网模式——客户端服务器的重要集中式架构</p>
+<p>对等计算模型——所有节点地位相同，共同作为服务器</p>
+<p>因为单点服务器更容易故障。</p>
+<p>DHT算法可以实现在P2P网络中节点连接和通信的一种方式，实现了各个节点之间的地位对等。</p>
+<h4 id="P2P网络拓扑结构"><a href="#P2P网络拓扑结构" class="headerlink" title="P2P网络拓扑结构"></a>P2P网络拓扑结构</h4><ul>
+<li><p>集中式拓扑结构</p>
+<blockquote>
+<p>由中央服务器进行统一目录管理，但是当节点规模过大时会有瓶颈</p>
+</blockquote>
+</li>
+<li><p>分布式非结构化拓扑模式</p>
+<blockquote>
+<p>没有中央服务器，每个节点存储自己的信息，但是超出一定范围之后互相之间并不知情，导致搜索具有盲目性</p>
+</blockquote>
+</li>
+<li><p>分布式结构化拓扑</p>
+<blockquote>
+<p>和上一个基本相同但是在网络搜索信息时，互相知道信息可能存储在哪些节点，搜索效率较高。</p>
+</blockquote>
+</li>
+</ul>
+<p>DHT算法就是依据分布式结构化拓扑模式</p>
+<h4 id="算法原理简介"><a href="#算法原理简介" class="headerlink" title="算法原理简介"></a>算法原理简介</h4><p>主要服务数据存储，核心是资源定位。</p>
+<p>采用分布式+hash+数据表</p>
+<blockquote>
+<p>数据存储在多个节点上，节点是对等的，是数据表的一部分，使用一致性Hash函数继续那个代表数据的key和value映射到具体的节点上。</p>
+<p><strong>核心</strong>：将节点和key散列到同样的空间中，节点散列后得到ID，均匀分布在散列空间中，实现负载均衡。</p>
+</blockquote>
+<h4 id="一致性Hash"><a href="#一致性Hash" class="headerlink" title="一致性Hash"></a>一致性Hash</h4><p>普通的Hash算法会导致当由服务器失效或者新的服务器添加的时候原有Hash表完全变动，需要全部重新结算，所以使用一致性Hash</p>
+<p>一致性Hash把Cache和资源视为同等概念，都进行Hash，所以Hash结果和Cache数量无关。</p>
+<p>这种算法能保证：</p>
+<ul>
+<li>单调性（在新的Cache加入系统时不会干扰原有系统）</li>
+<li>平衡性（Hash的结果能够尽可能分不到所有的Cache中去，实现负载均衡。）</li>
+</ul>
+<h4 id="算法优点"><a href="#算法优点" class="headerlink" title="算法优点"></a>算法优点</h4><ul>
+<li><p>只需要给定资源的Key就能够在网络中查找资源具体数据，而不需要指定资源IP等网络信息</p>
+</li>
+<li><p>能够很好的共享下层设施，形成一个统一的基于内容的命名层，增加了寻找对象的灵活性</p>
+</li>
+<li><p>网络时自组织和自治的，降低了执行、维护和管理的代价</p>
+</li>
+</ul>
+<p>只要节点愿意提供网络带宽和PC资源就能直接使用。</p>
+<p>DHT算法的具体实现有Chord、Pastry，Kademlia</p>
+<h4 id="Chord（不考）"><a href="#Chord（不考）" class="headerlink" title="Chord（不考）"></a>Chord（不考）</h4><p>对Node和Key使用相同的Hash函数映射到同一个标识符空间，保证一致性哈希。</p>
+<p>散列空间中的标识符看作首位相连的环，标识符可能是节点也可能是资源</p>
+<p>Node使用IP作为Hash输入，数据资源可以使用名称</p>
+<p>简单的情况下寻找资源就直接在圆环上依次寻找，可伸缩方法节点中有路由表，通过路由表查询能够到找到比较接近的节点位置，直接进行跳转。如果在路由表的最后一项都比资源小，直接跳转到路由表最远端节点。</p>
+<h5 id="节点加入"><a href="#节点加入" class="headerlink" title="节点加入"></a>节点加入</h5><p>一个节点通知后面一个节点他自己的存在，然后通知后一个节点他的接入，后一个节点将加入的节点设置为自己的前序节点。之后圆环进入稳定阶段，每个节点规律性检查自己的后续节点的前序节点是不是自己。</p>
+<h5 id="节点退出"><a href="#节点退出" class="headerlink" title="节点退出"></a>节点退出</h5><p>需要修改相邻节点的前序节点和后续节点，并修改路由列表</p>
+<h4 id="Pastry（不考）"><a href="#Pastry（不考）" class="headerlink" title="Pastry（不考）"></a>Pastry（不考）</h4><p>核心思想就是让一个节点知道更多的关于其他节点的信息，也有一个路由表，每一个节点都会有叶子节点集和路由表。</p>
+<p>每个节点的标识符为n位，路由表有n行，第一行是n位与本节点都不相同的节点，第二行一位相同……</p>
+<blockquote>
+<p>标准表述：路由表的（i，j）的意义是这个节点的前i位与路由表所在节点相同，且（i+1）的位置的值为j</p>
+</blockquote>
+<p>在叶子节点集中是最贴近当前节点的前后几个节点，各占一半。</p>
+<p>具体可以看图</p>
+<p><img src="https://cdn.jsdelivr.net/gh/icimence/CDN/postimg/pastry.png" alt="pastry"></p>
+<p>应该不会考，李传艺自己都搞不清楚。</p>
+<h4 id="Gossip协议（不考）"><a href="#Gossip协议（不考）" class="headerlink" title="Gossip协议（不考）"></a>Gossip协议（不考）</h4></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">icimence</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://icimence.cn/2020/10/20/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/">https://icimence.cn/2020/10/20/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://icimence.cn" target="_blank">icimence's Tech Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/CloudComputing/">CloudComputing</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/spark.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/08/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A%E6%B1%87%E6%80%BB/"><img class="prev-cover" src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/computerNetwork.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">计算机网络名词解释汇总（持续更新中）</div></div></a></div><div class="next-post pull-right"><a href="/2020/10/25/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/"><img class="next-cover" src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/system.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">嵌入式复习提纲</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://gitee.com/icimence/CDN/raw/master/cover/shield.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">icimence</div><div class="author-info__description">一个菜鸡的技术博客</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">83</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">41</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/icimence"><i class="fab fa-github"></i><span>个人GitHub主页</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/icimence" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:icimence@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://icimence.cn/atom.xml" target="_blank" title="RSS订阅"><i class="fas fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">这是我的技术博客<br />请多多指教，若有任何问题希望您通过邮箱或者是gitalk评论插件给我留言，谢谢！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%90%E7%BA%B2%E8%AF%B4%E6%98%8E"><span class="toc-number">1.</span> <span class="toc-text">提纲说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%91%E8%AE%A1%E7%AE%97%E8%B5%B7%E6%BA%90%E4%B8%8E%E6%A6%82%E8%BF%B0"><span class="toc-number">2.</span> <span class="toc-text">云计算起源与概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%BD%E6%B1%82%E7%AE%97%E5%8A%9B%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95"><span class="toc-number">2.1.</span> <span class="toc-text">追求算力的几种方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E7%BB%9F%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97%E7%B3%BB%E7%BB%9F"><span class="toc-number">2.2.</span> <span class="toc-text">传统分布式计算系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%91%E8%AE%A1%E7%AE%97"><span class="toc-number">2.3.</span> <span class="toc-text">云计算</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%83%B3%E6%B3%95"><span class="toc-number">2.3.1.</span> <span class="toc-text">基本想法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">2.3.2.</span> <span class="toc-text">定义</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%91%E8%AE%A1%E7%AE%97VS%E7%BD%91%E6%A0%BC%E8%AE%A1%E7%AE%97"><span class="toc-number">2.4.</span> <span class="toc-text">云计算VS网格计算</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E6%A0%BC%E8%AE%A1%E7%AE%97"><span class="toc-number">2.4.1.</span> <span class="toc-text">网格计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%91%E8%AE%A1%E7%AE%97-1"><span class="toc-number">2.4.2.</span> <span class="toc-text">云计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%97%B6%E4%BB%A3"><span class="toc-number">2.5.</span> <span class="toc-text">大数据时代</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%A7%E6%95%B0%E6%8D%AE5V"><span class="toc-number">2.5.1.</span> <span class="toc-text">大数据5V</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%91%E8%AE%A1%E7%AE%97%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">2.5.2.</span> <span class="toc-text">云计算的特点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%91%E6%9C%8D%E5%8A%A1%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.6.</span> <span class="toc-text">云服务模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#IaaS"><span class="toc-number">2.6.1.</span> <span class="toc-text">IaaS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PaaS"><span class="toc-number">2.6.2.</span> <span class="toc-text">PaaS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SaaS"><span class="toc-number">2.6.3.</span> <span class="toc-text">SaaS</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%91%E8%AE%A1%E7%AE%97%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%9C%BA%E5%88%B6"><span class="toc-number">2.7.</span> <span class="toc-text">云计算的实现机制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SOA"><span class="toc-number">2.7.1.</span> <span class="toc-text">SOA</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%A1%E7%90%86%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%B1%82"><span class="toc-number">2.7.2.</span> <span class="toc-text">管理中间件层</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%91%E7%9A%84%E9%83%A8%E7%BD%B2%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.8.</span> <span class="toc-text">云的部署模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%AC%E6%9C%89%E4%BA%91"><span class="toc-number">2.8.1.</span> <span class="toc-text">公有云</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BE%E5%8C%BA%E4%BA%91"><span class="toc-number">2.8.2.</span> <span class="toc-text">社区云</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A7%81%E6%9C%89%E4%BA%91"><span class="toc-number">2.8.3.</span> <span class="toc-text">私有云</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%B7%E5%90%88%E4%BA%91"><span class="toc-number">2.8.4.</span> <span class="toc-text">混合云</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%91%E8%AE%A1%E7%AE%97%E7%9A%84%E4%BC%98%E5%8A%BF"><span class="toc-number">2.9.</span> <span class="toc-text">云计算的优势</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%91%E8%AE%A1%E7%AE%97%E7%9A%84%E6%8A%80%E6%9C%AF%E9%9A%BE%E7%82%B9"><span class="toc-number">2.10.</span> <span class="toc-text">云计算的技术难点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%91%E8%AE%A1%E7%AE%97%E7%9A%84%E9%A3%8E%E9%99%A9"><span class="toc-number">2.11.</span> <span class="toc-text">云计算的风险</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF"><span class="toc-number">3.</span> <span class="toc-text">虚拟化技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E5%8C%96%E5%AE%9E%E7%8E%B0"><span class="toc-number">3.1.</span> <span class="toc-text">虚拟化实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E5%8C%96%E5%B1%82%E6%AC%A1"><span class="toc-number">3.2.</span> <span class="toc-text">虚拟化层次</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E5%B1%82%E6%AC%A1%E7%9A%84%E8%99%9A%E6%8B%9F%E5%8C%96"><span class="toc-number">3.3.</span> <span class="toc-text">不同层次的虚拟化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A1%AC%E4%BB%B6%E7%BA%A7%E8%99%9A%E6%8B%9F%E5%8C%96"><span class="toc-number">3.3.1.</span> <span class="toc-text">硬件级虚拟化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%BA%A7%E8%99%9A%E6%8B%9F%E5%8C%96"><span class="toc-number">3.3.2.</span> <span class="toc-text">操作系统级虚拟化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA-VS-Docker%E5%AE%B9%E5%99%A8"><span class="toc-number">3.3.3.</span> <span class="toc-text">虚拟机 VS Docker容器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%91%E5%B1%95%E8%B6%8B%E5%8A%BF"><span class="toc-number">3.3.4.</span> <span class="toc-text">发展趋势</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E4%B8%AD%E5%BF%83%E8%99%9A%E6%8B%9F%E5%8C%96"><span class="toc-number">4.</span> <span class="toc-text">数据中心虚拟化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E5%8C%96%E7%B1%BB%E5%9E%8B"><span class="toc-number">4.1.</span> <span class="toc-text">虚拟化类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%99%9A%E6%8B%9F%E5%8C%96"><span class="toc-number">4.1.1.</span> <span class="toc-text">服务器虚拟化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E8%99%9A%E6%8B%9F%E5%8C%96"><span class="toc-number">4.1.2.</span> <span class="toc-text">存储虚拟化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E8%99%9A%E6%8B%9F%E5%8C%96%EF%BC%88%E4%B8%8D%E8%80%83%EF%BC%89"><span class="toc-number">4.1.3.</span> <span class="toc-text">网络虚拟化（不考）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A1%8C%E9%9D%A2%E8%99%9A%E6%8B%9F%E5%8C%96%EF%BC%88%E4%B8%8D%E8%80%83%EF%BC%89"><span class="toc-number">4.1.4.</span> <span class="toc-text">桌面虚拟化（不考）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E4%BB%A3%E6%A1%8C%E9%9D%A2%E8%99%9A%E6%8B%9F%E6%8A%80%E6%9C%AF"><span class="toc-number">4.1.4.1.</span> <span class="toc-text">第一代桌面虚拟技术</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E4%BB%A3%E6%A1%8C%E9%9D%A2%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF"><span class="toc-number">4.1.4.2.</span> <span class="toc-text">第二代桌面虚拟化技术</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%BF%81%E7%A7%BB"><span class="toc-number">4.2.</span> <span class="toc-text">虚拟机迁移</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E8%BF%81%E7%A7%BB"><span class="toc-number">4.2.1.</span> <span class="toc-text">内存迁移</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E8%B5%84%E6%BA%90%E8%BF%81%E7%A7%BB"><span class="toc-number">4.2.2.</span> <span class="toc-text">网络资源迁移</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E8%AE%BE%E5%A4%87%E8%BF%81%E7%A7%BB"><span class="toc-number">4.2.3.</span> <span class="toc-text">存储设备迁移</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%9A%94%E7%A6%BB%E6%8A%80%E6%9C%AF"><span class="toc-number">4.3.</span> <span class="toc-text">虚拟机隔离技术</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E9%9A%94%E7%A6%BB"><span class="toc-number">4.3.1.</span> <span class="toc-text">网络隔离</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%91%E6%95%B0%E6%8D%AE%E4%B8%AD%E5%BF%83"><span class="toc-number">5.</span> <span class="toc-text">云数据中心</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%91%E6%95%B0%E6%8D%AE%E4%B8%AD%E5%BF%83%E7%9A%84%E7%89%B9%E5%BE%81"><span class="toc-number">5.1.</span> <span class="toc-text">云数据中心的特征</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%91%E6%95%B0%E6%8D%AE%E4%B8%AD%E5%BF%83%E7%BD%91%E7%BB%9C%E9%83%A8%E7%BD%B2"><span class="toc-number">5.2.</span> <span class="toc-text">云数据中心网络部署</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%94%B9%E8%BF%9B%E6%A0%91%EF%BC%88FatTree%EF%BC%8CVL2%EF%BC%89"><span class="toc-number">5.2.1.</span> <span class="toc-text">改进树（FatTree，VL2）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84"><span class="toc-number">5.2.2.</span> <span class="toc-text">递归层次结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%89%E4%BA%A4%E6%8D%A2%E7%BD%91%E7%BB%9C"><span class="toc-number">5.2.3.</span> <span class="toc-text">光交换网络</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A0%E7%BA%BF%E6%95%B0%E6%8D%AE%E4%B8%AD%E5%BF%83%E7%BD%91%E7%BB%9C"><span class="toc-number">5.2.4.</span> <span class="toc-text">无线数据中心网络</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C%EF%BC%88SDN%EF%BC%89"><span class="toc-number">5.2.5.</span> <span class="toc-text">软件定义网络（SDN）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%BF%E8%89%B2%E8%8A%82%E8%83%BD%E6%8A%80%E6%9C%AF"><span class="toc-number">5.3.</span> <span class="toc-text">绿色节能技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E5%8C%96%E7%AE%A1%E7%90%86"><span class="toc-number">5.4.</span> <span class="toc-text">自动化管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%B9%E7%81%BE%E5%A4%87%E4%BB%BD"><span class="toc-number">5.5.</span> <span class="toc-text">容灾备份</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hadoop2-0%EF%BC%88%E5%8F%AF%E8%83%BD%E4%B8%8D%E8%80%83%EF%BC%89"><span class="toc-number">6.</span> <span class="toc-text">Hadoop2.0（可能不考）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8"><span class="toc-number">6.1.</span> <span class="toc-text">分布式存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97"><span class="toc-number">6.2.</span> <span class="toc-text">分布式计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E9%9D%A0%E6%80%A7%E9%97%AE%E9%A2%98%EF%BC%9A%E5%86%97%E4%BD%99%E5%AD%98%E5%82%A8"><span class="toc-number">6.3.</span> <span class="toc-text">可靠性问题：冗余存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hadoop%E7%AE%80%E4%BB%8B"><span class="toc-number">6.4.</span> <span class="toc-text">Hadoop简介</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E5%BA%94%E7%94%A8%E9%A2%86%E5%9F%9F"><span class="toc-number">6.4.1.</span> <span class="toc-text">主要应用领域</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hadoop2-0%E4%BD%93%E7%B3%BB%E6%9E%B6%E6%9E%84"><span class="toc-number">6.5.</span> <span class="toc-text">Hadoop2.0体系架构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Common"><span class="toc-number">6.5.1.</span> <span class="toc-text">Common</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HDFS"><span class="toc-number">6.5.2.</span> <span class="toc-text">HDFS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Yarn"><span class="toc-number">6.5.3.</span> <span class="toc-text">Yarn</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spark%E5%8E%9F%E7%90%86%EF%BC%88%E5%8F%AF%E8%83%BD%E4%B8%8D%E8%80%83%EF%BC%89"><span class="toc-number">7.</span> <span class="toc-text">Spark原理（可能不考）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E5%9B%A0"><span class="toc-number">7.1.</span> <span class="toc-text">原因</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E5%B1%82%E5%BA%93"><span class="toc-number">7.2.</span> <span class="toc-text">高层库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Spark-SQL"><span class="toc-number">7.2.1.</span> <span class="toc-text">Spark SQL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Spark-Streaming"><span class="toc-number">7.2.2.</span> <span class="toc-text">Spark Streaming</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Spark-Graphx"><span class="toc-number">7.2.3.</span> <span class="toc-text">Spark Graphx</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Spark-MLlib"><span class="toc-number">7.2.4.</span> <span class="toc-text">Spark MLlib</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spark%E5%AE%9E%E8%B7%B5%EF%BC%88%E5%8F%AF%E8%83%BD%E4%B8%8D%E8%80%83%EF%BC%89"><span class="toc-number">8.</span> <span class="toc-text">Spark实践（可能不考）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OpenStack%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="toc-number">9.</span> <span class="toc-text">OpenStack（重点）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">9.1.</span> <span class="toc-text">简介</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">9.1.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%B6%E6%9E%84%EF%BC%88%E5%89%8D%E4%B8%89%E4%B8%AA%E4%B8%BA%E6%A0%B8%E5%BF%83%E9%83%A8%E4%BB%B6%EF%BC%89"><span class="toc-number">9.1.2.</span> <span class="toc-text">架构（前三个为核心部件）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%88%9B%E5%BB%BA%E8%BF%87%E7%A8%8B"><span class="toc-number">9.1.3.</span> <span class="toc-text">虚拟机创建过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="toc-number">9.1.4.</span> <span class="toc-text">架构设计</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="toc-number">9.2.</span> <span class="toc-text">部署（重点）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#DevOps"><span class="toc-number">9.2.1.</span> <span class="toc-text">DevOps</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DevOps-OpenStack"><span class="toc-number">9.2.2.</span> <span class="toc-text">DevOps+OpenStack</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A6%81%E6%B1%82"><span class="toc-number">9.2.2.1.</span> <span class="toc-text">要求</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%B9%E5%BC%8F"><span class="toc-number">9.2.2.2.</span> <span class="toc-text">方式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A6%81%E7%82%B9"><span class="toc-number">9.2.2.3.</span> <span class="toc-text">要点</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Ansible"><span class="toc-number">9.2.3.</span> <span class="toc-text">Ansible</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%91%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="toc-number">9.3.</span> <span class="toc-text">云控制器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Keystone"><span class="toc-number">9.3.1.</span> <span class="toc-text">Keystone</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Nova%E7%AE%A1%E7%90%86%E7%BB%84%E4%BB%B6%E5%8F%8AAPI"><span class="toc-number">9.3.2.</span> <span class="toc-text">Nova管理组件及API</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E6%9C%8D%E5%8A%A1"><span class="toc-number">9.3.3.</span> <span class="toc-text">其他服务</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E8%8A%82%E7%82%B9"><span class="toc-number">9.4.</span> <span class="toc-text">计算节点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Hypervisor"><span class="toc-number">9.4.1.</span> <span class="toc-text">Hypervisor</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Magnum"><span class="toc-number">9.4.2.</span> <span class="toc-text">Magnum</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Nova%E5%8D%95%E5%85%83"><span class="toc-number">9.4.3.</span> <span class="toc-text">Nova单元</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%91%E8%AE%A1%E7%AE%97%E6%A0%B8%E5%BF%83%E7%AE%97%E6%B3%95"><span class="toc-number">10.</span> <span class="toc-text">云计算核心算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Paxos%E7%AE%97%E6%B3%95"><span class="toc-number">10.1.</span> <span class="toc-text">Paxos算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B1%E8%AF%86%E7%AE%97%E6%B3%95"><span class="toc-number">10.1.1.</span> <span class="toc-text">共识算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-number">10.1.2.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E8%BF%87%E7%A8%8B"><span class="toc-number">10.1.3.</span> <span class="toc-text">具体过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B4%BB%E9%94%81"><span class="toc-number">10.1.4.</span> <span class="toc-text">活锁</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B8%E5%9E%8B%E5%9C%BA%E6%99%AF1%EF%BC%88%E6%95%B0%E6%8D%AE%E5%89%AF%E6%9C%AC%E4%B8%80%E8%87%B4%E6%80%A7%EF%BC%89"><span class="toc-number">10.1.5.</span> <span class="toc-text">典型场景1（数据副本一致性）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B8%E5%9E%8B%E5%9C%BA%E6%99%AF2%EF%BC%88%E5%A4%9A%E5%89%AF%E6%9C%AC%E7%8A%B6%E6%80%81%E6%9C%BA%EF%BC%89"><span class="toc-number">10.1.6.</span> <span class="toc-text">典型场景2（多副本状态机）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Multi-Paxos"><span class="toc-number">10.2.</span> <span class="toc-text">Multi-Paxos</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Raft%E7%AE%97%E6%B3%95"><span class="toc-number">10.3.</span> <span class="toc-text">Raft算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DHT%E7%AE%97%E6%B3%95"><span class="toc-number">10.4.</span> <span class="toc-text">DHT算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#P2P%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84"><span class="toc-number">10.4.1.</span> <span class="toc-text">P2P网络拓扑结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86%E7%AE%80%E4%BB%8B"><span class="toc-number">10.4.2.</span> <span class="toc-text">算法原理简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E8%87%B4%E6%80%A7Hash"><span class="toc-number">10.4.3.</span> <span class="toc-text">一致性Hash</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E4%BC%98%E7%82%B9"><span class="toc-number">10.4.4.</span> <span class="toc-text">算法优点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Chord%EF%BC%88%E4%B8%8D%E8%80%83%EF%BC%89"><span class="toc-number">10.4.5.</span> <span class="toc-text">Chord（不考）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%8A%82%E7%82%B9%E5%8A%A0%E5%85%A5"><span class="toc-number">10.4.5.1.</span> <span class="toc-text">节点加入</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%8A%82%E7%82%B9%E9%80%80%E5%87%BA"><span class="toc-number">10.4.5.2.</span> <span class="toc-text">节点退出</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Pastry%EF%BC%88%E4%B8%8D%E8%80%83%EF%BC%89"><span class="toc-number">10.4.6.</span> <span class="toc-text">Pastry（不考）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Gossip%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%8D%E8%80%83%EF%BC%89"><span class="toc-number">10.4.7.</span> <span class="toc-text">Gossip协议（不考）</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/03/20/%E6%80%8E%E4%B9%88%E5%9C%A8hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E4%BD%BF%E7%94%A8latex%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/" title="怎么在hexo博客中使用latex格式的数学公式"><img src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/hexo.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="怎么在hexo博客中使用latex格式的数学公式"/></a><div class="content"><a class="title" href="/2020/03/20/%E6%80%8E%E4%B9%88%E5%9C%A8hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E4%BD%BF%E7%94%A8latex%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/" title="怎么在hexo博客中使用latex格式的数学公式">怎么在hexo博客中使用latex格式的数学公式</a><time datetime="2022-01-09T15:04:09.159Z" title="更新于 2022-01-09 23:04:09">2022-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/04/10/%E5%9C%A8%E8%87%AA%E5%B7%B1%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%83%A8%E7%BD%B2hexo%E5%8D%9A%E5%AE%A2/" title="在自己的服务器上部署hexo博客"><img src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/hexo.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="在自己的服务器上部署hexo博客"/></a><div class="content"><a class="title" href="/2020/04/10/%E5%9C%A8%E8%87%AA%E5%B7%B1%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%83%A8%E7%BD%B2hexo%E5%8D%9A%E5%AE%A2/" title="在自己的服务器上部署hexo博客">在自己的服务器上部署hexo博客</a><time datetime="2022-01-09T07:35:32.204Z" title="更新于 2022-01-09 15:35:32">2022-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/05/15/Packet%20Tracer%E8%BF%9B%E8%A1%8C%E6%A8%A1%E6%8B%9FRIP%E8%B7%AF%E7%94%B1%E5%9B%9E%E8%B7%AF/" title="用Packet Tracer进行模拟RIP路由回路"><img src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/packet_tracer.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="用Packet Tracer进行模拟RIP路由回路"/></a><div class="content"><a class="title" href="/2020/05/15/Packet%20Tracer%E8%BF%9B%E8%A1%8C%E6%A8%A1%E6%8B%9FRIP%E8%B7%AF%E7%94%B1%E5%9B%9E%E8%B7%AF/" title="用Packet Tracer进行模拟RIP路由回路">用Packet Tracer进行模拟RIP路由回路</a><time datetime="2021-12-18T15:21:07.903Z" title="更新于 2021-12-18 23:21:07">2021-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/04/19/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/" title="概率论常用公式（持续更新）"><img src="https://gitee.com/icimence/CDN/raw/master/cover/macos.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="概率论常用公式（持续更新）"/></a><div class="content"><a class="title" href="/2020/04/19/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/" title="概率论常用公式（持续更新）">概率论常用公式（持续更新）</a><time datetime="2021-12-03T14:50:41.385Z" title="更新于 2021-12-03 22:50:41">2021-12-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/04/26/%E9%9D%A2%E5%90%91%E6%9C%8D%E5%8A%A1%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/" title="面向服务复习提纲"><img src="https://gitee.com/icimence/CDN/raw/master/cover/macos.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="面向服务复习提纲"/></a><div class="content"><a class="title" href="/2021/04/26/%E9%9D%A2%E5%90%91%E6%9C%8D%E5%8A%A1%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/" title="面向服务复习提纲">面向服务复习提纲</a><time datetime="2021-04-27T12:29:22.575Z" title="更新于 2021-04-27 20:29:22">2021-04-27</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://cdn.jsdelivr.net/gh/icimence/CDN/cover/spark.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By icimence</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Welcome to icimence's blog <br /> <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/"><img class="icp-icon" src="https://gitee.com/icimence/CDN/raw/master/icp.png"><span>浙ICP备19026454号-1</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'default',
+      })
+      false && mermaid.init()
+    })
+  }
+}</script><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: 'ce919651fa86e8e33e76',
+      clientSecret: 'bed4296deb273c7d9a31f4227b76f9593dedf7a8',
+      repo: 'icimence.github.io',
+      owner: 'icimence',
+      admin: ['icimence'],
+      id: 'd21923184de6dac882ecfa5b82bbfe66',
+      language: 'zh-CN',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !false) {
+  if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

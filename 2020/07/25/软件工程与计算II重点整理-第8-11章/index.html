@@ -1,0 +1,386 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>软件工程与计算II重点整理(第8-11章) | icimence's Tech Blog</title><meta name="keywords" content="软件工程与计算Ⅱ"><meta name="author" content="icimence"><meta name="copyright" content="icimence"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="第八章 软件设计基础1.软件设计（名词解释）a)为使一软件系统满足规定的需求而定义系统或部件的体系结构、部件、接口和其他特征的过程； b)设计过程的结果。 2.软件设计的核心思想复杂度控制 分解、抽象、层次性 第九、十章 软件体系结构设计与构建1.体系结构概念部件+连接件+配置 部件：承载系统主要功能，包括处理与数据 连接件：定义部件间的交互，是连接的抽象表示 配置：定义了部件和连接件之间的关联方">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件工程与计算II重点整理(第8-11章)">
+<meta property="og:url" content="https://icimence.cn/2020/07/25/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%8E%E8%AE%A1%E7%AE%97II%E9%87%8D%E7%82%B9%E6%95%B4%E7%90%86-%E7%AC%AC8-11%E7%AB%A0/index.html">
+<meta property="og:site_name" content="icimence&#39;s Tech Blog">
+<meta property="og:description" content="第八章 软件设计基础1.软件设计（名词解释）a)为使一软件系统满足规定的需求而定义系统或部件的体系结构、部件、接口和其他特征的过程； b)设计过程的结果。 2.软件设计的核心思想复杂度控制 分解、抽象、层次性 第九、十章 软件体系结构设计与构建1.体系结构概念部件+连接件+配置 部件：承载系统主要功能，包括处理与数据 连接件：定义部件间的交互，是连接的抽象表示 配置：定义了部件和连接件之间的关联方">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/seec.png">
+<meta property="article:published_time" content="2020-07-25T03:55:48.000Z">
+<meta property="article:modified_time" content="2020-08-11T04:13:15.852Z">
+<meta property="article:author" content="icimence">
+<meta property="article:tag" content="软件工程与计算Ⅱ">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/seec.png"><link rel="shortcut icon" href="https://gitee.com/icimence/CDN/raw/master/cover/shield.png"><link rel="canonical" href="https://icimence.cn/2020/07/25/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%8E%E8%AE%A1%E7%AE%97II%E9%87%8D%E7%82%B9%E6%95%B4%E7%90%86-%E7%AC%AC8-11%E7%AB%A0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '软件工程与计算II重点整理(第8-11章)',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2020-08-11 12:13:15'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.0.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://gitee.com/icimence/CDN/raw/master/cover/shield.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">83</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">41</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-rocket"></i><span> 导航</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-history"></i><span> 时间线</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fas fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-address-book"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user-circle"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="mailto:icimence@outlook.com"><i class="fa-fw fas fa-paper-plane"></i><span> 戳我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/icimence/CDN/cover/seec.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">icimence's Tech Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-rocket"></i><span> 导航</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-history"></i><span> 时间线</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fas fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-address-book"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user-circle"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="mailto:icimence@outlook.com"><i class="fa-fw fas fa-paper-plane"></i><span> 戳我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">软件工程与计算II重点整理(第8-11章)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-07-25T03:55:48.000Z" title="发表于 2020-07-25 11:55:48">2020-07-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-08-11T04:13:15.852Z" title="更新于 2020-08-11 12:13:15">2020-08-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>12分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="软件工程与计算II重点整理(第8-11章)"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2020/07/25/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%8E%E8%AE%A1%E7%AE%97II%E9%87%8D%E7%82%B9%E6%95%B4%E7%90%86-%E7%AC%AC8-11%E7%AB%A0/#post-comment"><span class="gitalk-comment-count"></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="第八章-软件设计基础"><a href="#第八章-软件设计基础" class="headerlink" title="第八章 软件设计基础"></a>第八章 软件设计基础</h2><h3 id="1-软件设计（名词解释）"><a href="#1-软件设计（名词解释）" class="headerlink" title="1.软件设计（名词解释）"></a>1.软件设计（名词解释）</h3><p>a)为使一软件系统满足规定的需求而定义系统或部件的体系结构、部件、接口和其他特征的过程；</p>
+<p>b)设计过程的结果。</p>
+<h3 id="2-软件设计的核心思想"><a href="#2-软件设计的核心思想" class="headerlink" title="2.软件设计的核心思想"></a>2.软件设计的核心思想</h3><p>复杂度控制</p>
+<p>分解、抽象、层次性</p>
+<h2 id="第九、十章-软件体系结构设计与构建"><a href="#第九、十章-软件体系结构设计与构建" class="headerlink" title="第九、十章 软件体系结构设计与构建"></a>第九、十章 软件体系结构设计与构建</h2><h3 id="1-体系结构概念"><a href="#1-体系结构概念" class="headerlink" title="1.体系结构概念"></a>1.体系结构概念</h3><p>部件+连接件+配置</p>
+<p>部件：承载系统主要功能，包括处理与数据</p>
+<p>连接件：定义部件间的交互，是连接的抽象表示</p>
+<p>配置：定义了部件和连接件之间的关联方式，将它们组织称系统的总体结构</p>
+<h3 id="2-体系结构的风格的优缺点"><a href="#2-体系结构的风格的优缺点" class="headerlink" title="2.体系结构的风格的优缺点"></a>2.体系结构的风格的优缺点</h3><p>常见风格模式：</p>
+<h4 id="1）主程序-子程序风格"><a href="#1）主程序-子程序风格" class="headerlink" title="(1）主程序/子程序风格"></a>(1）主程序/子程序风格</h4><p>部件：程序、函数、模块</p>
+<p>连接件：它们之间的调用</p>
+<p>控制从子程序层次结构顶部开始且向下移动</p>
+<p>层次化分解：基于定义使用关系</p>
+<p>单线程控制</p>
+<p>隐含子系统结构：子程序通常合并成模块</p>
+<p>层次化推理：子程序的正确性依赖于它调用的子程序的正确性</p>
+<p>优点：流程清晰，易于理解；强控制性。</p>
+<p>缺点：a.程序调用是一种强耦合的连接方式，非常依赖交互方的接口规格，使得系统难以修改和复用； b.基于程序调用（声明－使用）关系的连接方式限制了各部件之间的数据交互，可能会使得不同部件使用隐含的共享数据交流，产生不必要的公共耦合，进而破坏它的“正确性”控制能力。</p>
+<p>实现：功能分解、集中控制，每个构件一个模块实现，主要是单向依赖。使用utility或tools等基础模块</p>
+<h4 id="2）面向对象式风格"><a href="#2）面向对象式风格" class="headerlink" title="(2）面向对象式风格"></a>(2）面向对象式风格</h4><p>部件: 对象或模块</p>
+<p>连接件: 功能或调用（方法）</p>
+<p>数据表示对于其他对象是隐藏的</p>
+<p>对象负责保持数据表示的完整性（例如一些不变量）</p>
+<p>每个对象都是自主代理</p>
+<p>优点：内部实现的可修改性；易开发、易理解、易复用的结构组织。</p>
+<p>缺点：接口的耦合性；标识的耦合性；副作用（Ex：A和B都修改C）。</p>
+<p>适用于核心问题是识别和保护相关机构信息（数据）的应用</p>
+<p>数据表示和相关操作封装在抽象数据类型，例: 抽象数据类型</p>
+<p>实现：任务分解，（委托式）分散式控制，每个构件一个模块实现，使用接口将双向依赖转换为单向依赖</p>
+<p>将每个构件分割为多个模块，以保证单向依赖，使用utility或tools等基础模块</p>
+<h4 id="3）分层风格"><a href="#3）分层风格" class="headerlink" title="(3）分层风格"></a>(3）分层风格</h4><p>上层调用下层，禁止逆向调用，跨层调用</p>
+<p>部件: 通常是程序或对象的集合</p>
+<p>连接件: 通常是有限可见度下的程序调用或方法调用</p>
+<p>优点：设计机制清晰，易于理解；支持并行开发；更好的可复用性与内部可修改性。</p>
+<p>缺点：交互协议难以修改；性能损失；难以确定层次数量和粒度。</p>
+<p>应用：适用于包含不同类服务的应用，而且这些服务能够分层组织</p>
+<p>尤其当应用可能在某些层改变，例如交互，通信，硬件，平台等</p>
+<p>例子:分层通信协议，每一层在某种程度的抽象上提供了通信的基底，低层定义了低层次的交互最底层是硬件连接（物理层）</p>
+<p>实现：关注点分离（每层逐次抽象），层间接口使用固定协议（固定控制），每层一或多个模块实现，单向依赖，层间数据传递建立专门模块，使用utility或tools等基础模块</p>
+<h4 id="4）MVC风格"><a href="#4）MVC风格" class="headerlink" title="(4）MVC风格"></a>(4）MVC风格</h4><p>模型——视图——控制器</p>
+<p>Model子系统被设计成不依赖任何View或Controller子系统</p>
+<p>它们状态的改变会传播到View子系统</p>
+<p>部件：Model部件负责维护领域知识和通知视图变化；View部件负责给用户显示信息和将用户手势发送给控制器；Controller改变模型的状态、将用户操作映射到模型更新、选择视图进行响应</p>
+<p>连接件: 程序调用，消息，事件</p>
+<p>优点：易开发性；视图和控制的可修改性；适宜于网络系统开发的特征。</p>
+<p>缺点：复杂性；模型修改困难。</p>
+<p>适用于以下应用:在运行时，用户界面的改变很容易且是可能的</p>
+<p>用户界面的调整或移植不会影响该应用功能部分的设计和编码</p>
+<p>例:Web 应用</p>
+<p>实现：特定技术，通常专用于WEB：Model与Controller单向，Controller与View双向，Model与View双向</p>
+<p>典型实现：View：JSP，HTML；Controller：Servlet；Model：JavaBean</p>
+<h3 id="3-体系结构设计的过程"><a href="#3-体系结构设计的过程" class="headerlink" title="3.体系结构设计的过程"></a>3.体系结构设计的过程</h3><p>分析关键需求和限制条件；</p>
+<p>通过选择体系结构风格，确定顶层架构；</p>
+<p>实现功能需求的逻辑映射；</p>
+<p>通过构件的逐层设计从逻辑视角向物理视角的转化；</p>
+<p>添加辅助构件；</p>
+<p>完善构件之间接口的定义；</p>
+<p>完善数据的定义。</p>
+<p>迭代过程3-8</p>
+<blockquote>
+<p>安全与网络分布：方案比较</p>
+<p>方案一：哪个接口更多、更复杂？ 将RMI置于更少、更简单的层间接口</p>
+<p>方案二：哪两层之间更内聚？将RMI置于更不内聚的层间接口</p>
+<p>方案后果：更简洁、更易于修改</p>
+<p>方案一：Mainui只包含登录</p>
+<p>方案二：Mainui包含登录和主界面</p>
+<p>关键区分：是否需要共同的主界面、界面一样</p>
+</blockquote>
+<h3 id="4-包的原则"><a href="#4-包的原则" class="headerlink" title="4.包的原则"></a>4.包的原则</h3><p>最高原则：包与包之间不能有重复和冗余、复用发布等价原则、共同封闭原则、共同复用原则、无环依赖原则、稳定依赖原则、稳定抽象原则</p>
+<h4 id="（1）复用发布等价原则REP"><a href="#（1）复用发布等价原则REP" class="headerlink" title="（1）复用发布等价原则REP"></a>（1）复用发布等价原则REP</h4><p>（不要把很多用例放在一个包）为复用者聚合构件（类），单一的类通常不可复用，几个协作类组成一个包</p>
+<p>一个包中的类应该形成一个可复用和可发布的模块，模块提供一致的功能，减少复用者的工作</p>
+<h4 id="（2）共同封闭原则CCP"><a href="#（2）共同封闭原则CCP" class="headerlink" title="（2）共同封闭原则CCP"></a>（2）共同封闭原则CCP</h4><p>最小化变化给程序员造成的影响</p>
+<p>（不要把一个用例拆成多个包）当一个变化是必要的，如果该变化影响尽可能少的包，则对程序员是有利的，因为需要时间编译和链接以及重新生效</p>
+<p>把具有相似闭包的类聚合在一起，包闭合了预期的变化</p>
+<p>限制对一些包的修改，减少包的发布频率，减少程序员的工作</p>
+<h4 id="（3）共同复用原则CRP"><a href="#（3）共同复用原则CRP" class="headerlink" title="（3）共同复用原则CRP"></a>（3）共同复用原则CRP</h4><p>根据公共复用给类分组，避免给用户带来不必要的依赖</p>
+<p>常常导致细分包，获得更多更小更集中的包，减少复用者的工作</p>
+<p>CCP和CRP原则相互排斥，例如它们不能同时被满足：CRP使得复用者的工作更简单，而CCP使维护者的生活更简单；CCP努力让包尽可能大，而CRP设法让包很小。项目的早期，架构师可能以CCP为主导来辅助开发和维护。架构稳定后，架构师可能重构包结构，为了外部复用者而最大化CRP。</p>
+<h4 id="（4）无环依赖原则ACP"><a href="#（4）无环依赖原则ACP" class="headerlink" title="（4）无环依赖原则ACP"></a>（4）无环依赖原则ACP</h4><p>包的依赖结构应是一个有向无环图</p>
+<p>一块块地稳固和发布项目，以自上而下的层次结构组织包依赖</p>
+<p>解决：分解包／抽象依赖</p>
+<h4 id="（5）稳定依赖原则SDP"><a href="#（5）稳定依赖原则SDP" class="headerlink" title="（5）稳定依赖原则SDP"></a>（5）稳定依赖原则SDP</h4><p>例如：向下接口的依赖是不稳定依赖</p>
+<h4 id="（6）稳定抽象原则SAP"><a href="#（6）稳定抽象原则SAP" class="headerlink" title="（6）稳定抽象原则SAP"></a>（6）稳定抽象原则SAP</h4><p>稳定包应是抽象包，不稳定包应是具体包</p>
+<p>稳定包包含高层设计，抽象它们使得对扩展开发对修改关闭（OCP）。一些灵活性留在稳定的难以改变的包中。</p>
+<p>对象创建：方案一: Spring方案,需要事先明确依赖关系</p>
+<p>在程序启动时,第三方(初始化程序)一次性创建完成对象实例并set给上一层</p>
+<p>Service：View——Logic；DAO: Logic——Data</p>
+<p>方案二: 也适用于非层间的包依赖解除</p>
+<p>构造一个第三方(Factory)负责创建具体对象实例</p>
+<p>上层和下层都依赖于第三方，但第三方可以视作例外（即不影响层间独立关系）</p>
+<h3 id="5-体系结构构件之间接口的定义"><a href="#5-体系结构构件之间接口的定义" class="headerlink" title="5.体系结构构件之间接口的定义"></a>5.体系结构构件之间接口的定义</h3><p>根据分配的需求确定模块对外接口，如逻辑层接口根据界面的需求得到，数据层接口根据逻辑层调用得到</p>
+<p>根据刺激与响应确定接口，依据详细规格明确接口内容（数据、返回值）</p>
+<p>（1）通常情况下，VIEW的required接口可以直接作为相应Logic的Provided</p>
+<p>（2）通常情况下，LOGIC的required接口需要分解为同层模块和不同Data的Provided</p>
+<p>（3）Data一般没有层间依赖，接口通常来自于上一层的相应模块</p>
+<blockquote>
+<p>【示例】saleLogic的其他接口来源 :</p>
+<p>（1）其他被归类为saleLogic模块承担的需求，如退货用例</p>
+<p>（2）同层模块间的依赖</p>
+<p>解除双向依赖：需要被抽象为一个独立接口和独立包，saleLogic再导入上面的包</p>
+<p>独立接口和独立包也属于saleLogic模块最终承担的Provide接口，也需要转化为对Data的Required接口</p>
+<p>在分析其他模块时逐步完善，例如进行礼品赠送时查看特定客户的销售记录、库存分析时查看一定时间段内的销售记录或特定商品的销售记录</p>
+<p>在独立接口和独立包中定义有限制的领域类供外界使用，例如对象限制为查询接口，限制数据种类等等</p>
+</blockquote>
+<h3 id="6-体系结构开发集成测试用例：Stub和Driver"><a href="#6-体系结构开发集成测试用例：Stub和Driver" class="headerlink" title="6.体系结构开发集成测试用例：Stub和Driver"></a>6.体系结构开发集成测试用例：Stub和Driver</h3><p>（1）依据模块接口建立桩程序Stub——为了完成程序的编译和连接而使用的暂时代码，对外模拟和代替承担模块接口的关键类，比真实程序简单的多，使用最为简单的逻辑</p>
+<blockquote>
+<p>【示例】P177 SalesBLService_Stub</p>
+</blockquote>
+<p>（2）编写驱动程序，在桩程序帮助下进行集成测试<br>View的测试比较特殊，其他层都需要增加Driver进行测试<br>可以基于Junit编写Driver；基于接口规格设计测试用例<br>开发View层时：需要logic的stub<br>开发logic层时：需要模仿view的driver，需要data的stub，需要模拟同层调用的driver和stub<br>开发data层时：需要模拟logic的driver</p>
+<p>（3）持续集成：逐步编写各个模块内部程序，替换相应的桩程序<br>真实程序不仅实现业务逻辑，而且会使用其他模块的接口程序（真实程序或者桩程序）<br>开始：客户端: view driver, logic stub, data stub；服务器端: logic driver, data stub<br>进展：客户端: (逐步替换)driver,逐步替换logic stub, data stub；服务器端: logic driver, 逐步替换 data stub<br>最后联调：使用真实的客户端和服务器</p>
+<h2 id="第11章-人机交互设计"><a href="#第11章-人机交互设计" class="headerlink" title="第11章 人机交互设计"></a>第11章 人机交互设计</h2><h3 id="1-可用性（名词解释）"><a href="#1-可用性（名词解释）" class="headerlink" title="1.可用性（名词解释）"></a>1.可用性（名词解释）</h3><p>易用性是人机交互中一个既重要又复杂的概念。它不仅关注人使用系统的过程，同时还关注系统对使用它的人所产生的作用，因为比较复杂，所以易用性不是一个单一的质量维度，而是多维度的质量属性。从易于度量的角度讲，易用性的常用维度包括：易学性、易记性、有效率、低出错率和主观满意度。</p>
+<h3 id="2-界面设计的注意事项及解释（至少5个）"><a href="#2-界面设计的注意事项及解释（至少5个）" class="headerlink" title="2.界面设计的注意事项及解释（至少5个）"></a>2.界面设计的注意事项及解释（至少5个）</h3><p>【题型】例子违反了哪条界面设计原则</p>
+<p>（1）不要暴露内部结构</p>
+<p>例子：该设计明显暴露了软件结构，三个独立软件过程：创建、更新、解除</p>
+<p>（2）展示细节——所见即所得</p>
+<p>（3）常见界面类型：软件系统通常同时使用多种界面类型，以适应差异性的用户和任务。</p>
+<h3 id="3-精神模型，差异性"><a href="#3-精神模型，差异性" class="headerlink" title="3.精神模型，差异性"></a>3.精神模型，差异性</h3><p>（1）精神模型就是用户进行人机交互时头脑中的任务模型</p>
+<p>依据精神模型可以进行隐喻（Metaphor）设计：隐喻又被称为视觉隐喻，是视觉上的图像，但会被用户映射为业务事物。用户在识别图像时，会依据隐喻将控件功能与已知的熟悉事物联系起来，形成任务模型；隐喻本质上是在用户已有知识的基础上建立一组新的知识，实现界面视觉提示和系统功能之间的知觉联系。</p>
+<p>（2）用户希望看到的+希望用户看到的：识别并添加哪些能够帮助用户完成任务的功能，任务的频率也要纳入考虑</p>
+<p>常见错误：加入一些容易加入（例如正好是一个独立的软件过程）的功能，这会扰乱用户的精神模型，影响使用过程的顺利性</p>
+<p>（3）新手用户：关注易学性，进行业务导航，尽量避免出错</p>
+<p>专家用户：关注效率</p>
+<p>熟练用户：在易学性和效率之间进行折中</p>
+<p>好的人机交互应该为不同的用户群体提供差异化的交互机制。</p>
+<p>既为新手用户提供易学性高的人机交互机制（图形界面）</p>
+<p>又为专家用户提供效率高的人机交互机制（命令行、快捷方式、热键）</p>
+<h3 id="4-导航、反馈、协作式设计"><a href="#4-导航、反馈、协作式设计" class="headerlink" title="4.导航、反馈、协作式设计"></a>4.导航、反馈、协作式设计</h3><p>（1）导航</p>
+<p>主动将自己的产品和服务简明扼要地告诉用户，目的是为用户提供一个很好的完成任务的入口，好的导航会让这个入口非常符合人的精神模型。</p>
+<p>全局结构按照任务模型将软件产品的功能组织起来，并区分不同的重要性和主题提供给不同的用户。全局结构常用的导航控件包括窗口、菜单、列表、快捷方式、热键等等。全局结构的设计主要以功能分层和任务交互过程为主要依据。</p>
+<p>局部结构通过安排界面布局细节，制造视觉上的线索来给用户提供导航。局部结构常用的导航控件包括可视化控件布局与组合、按钮设置、文本颜色或字体大小等等。局部结构的设计主要以用户关注的任务细节为主要依据。</p>
+<p>（2）反馈</p>
+<p>让用户能够意识到行为的结果，但不能打断用户工作时的意识流</p>
+<p>用户喜欢较短的响应时间；较长的响应时间（&gt;15秒）具有破坏性；</p>
+<p>用户会根据响应时间的变化调整自己的工作方式；<br>较短的响应时间导致了较短的用户思考时间；较快的节奏可能会提高效率，但也会增加出错率；</p>
+<p>根据任务选择适当的响应时间：打字、光标移动、鼠标定位：50～150毫秒；简单频繁的任务：1秒；普通的任务：2～4秒；复杂的任务：8～12秒</p>
+<p>响应时间适度的变化是可接受的；意外延迟可能具有破坏性；经验测试有助于设置适当的响应时间。</p>
+<p>（3）协作式设计</p>
+<p>A.简洁设计（摘要图片优于文字描述）</p>
+<p>列举、隐藏、赋予（标签、图标等线索暗示）</p>
+<p>B.一致性设计（确认与删除键相对位置不一致）</p>
+<p>C.低出错率设计（用具体的指导来提示用户出错）</p>
+<p>限制输入：列表、可选框等选择性组件代替输入框；按钮代替命令行；限定输入：类型，范围，格式…</p>
+<p>限制范围：简单化单步操作</p>
+<p>辅助：事前提示；事后检查；随时可以撤销</p>
+<p>D.易记性设计</p>
+<p>减少短期记忆负担；使用逐层递进的方式展示信息；使用直观的快捷方式。重新认知比记忆更容易；设置有意义的缺省值，可以帮助用户减少记忆负担。</p>
+<h2 id="跳转链接"><a href="#跳转链接" class="headerlink" title="跳转链接"></a>跳转链接</h2><p>👉<a target="_blank" rel="noopener" href="https://samperson1997.github.io/2017/12/21/SECII-2/">软件工程与计算II重点整理(第1-5章)</a></p>
+<p>👉<a target="_blank" rel="noopener" href="https://samperson1997.github.io/2017/12/21/SECII-3/">软件工程与计算II重点整理(第6-7章)</a></p>
+<p>👉<a target="_blank" rel="noopener" href="https://samperson1997.github.io/2017/12/21/SECII-4/">软件工程与计算II重点整理(第12-15章)</a></p>
+<p>👉<a target="_blank" rel="noopener" href="https://samperson1997.github.io/2017/12/21/SECII-5/">软件工程与计算II重点整理(第16-19章)</a></p>
+<p>👉<a target="_blank" rel="noopener" href="https://samperson1997.github.io/2017/12/21/SECII-6/">软件工程与计算II重点整理(第20-23章)</a></p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p>本文转自学长博客，侵删</p>
+<p><a target="_blank" rel="noopener" href="https://samperson1997.github.io/2017/12/21/SECII-3/">https://samperson1997.github.io/2017/12/21/SECII-3/</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">icimence</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://icimence.cn/2020/07/25/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%8E%E8%AE%A1%E7%AE%97II%E9%87%8D%E7%82%B9%E6%95%B4%E7%90%86-%E7%AC%AC8-11%E7%AB%A0/">https://icimence.cn/2020/07/25/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%8E%E8%AE%A1%E7%AE%97II%E9%87%8D%E7%82%B9%E6%95%B4%E7%90%86-%E7%AC%AC8-11%E7%AB%A0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://icimence.cn" target="_blank">icimence's Tech Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%8E%E8%AE%A1%E7%AE%97%E2%85%A1/">软件工程与计算Ⅱ</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/seec.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/07/25/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%8E%E8%AE%A1%E7%AE%97II%E9%87%8D%E7%82%B9%E6%95%B4%E7%90%86-%E7%AC%AC6-7%E7%AB%A0/"><img class="prev-cover" src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/seec.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">软件工程与计算II重点整理(第6-7章)</div></div></a></div><div class="next-post pull-right"><a href="/2020/07/25/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%8E%E8%AE%A1%E7%AE%97II%E9%87%8D%E7%82%B9%E6%95%B4%E7%90%86-%E7%AC%AC12-15%E7%AB%A0/"><img class="next-cover" src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/seec.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">软件工程与计算II重点整理(第12-15章)</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2020/07/25/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%8E%E8%AE%A1%E7%AE%97II%E9%87%8D%E7%82%B9%E6%95%B4%E7%90%86-%E7%AC%AC1-5%E7%AB%A0/" title="软件工程与计算II重点整理(第1-5章)"><img class="cover" src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/seec.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-25</div><div class="title">软件工程与计算II重点整理(第1-5章)</div></div></a></div><div><a href="/2020/07/25/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%8E%E8%AE%A1%E7%AE%97II%E9%87%8D%E7%82%B9%E6%95%B4%E7%90%86-%E7%AC%AC12-15%E7%AB%A0/" title="软件工程与计算II重点整理(第12-15章)"><img class="cover" src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/seec.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-25</div><div class="title">软件工程与计算II重点整理(第12-15章)</div></div></a></div><div><a href="/2020/07/25/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%8E%E8%AE%A1%E7%AE%97II%E9%87%8D%E7%82%B9%E6%95%B4%E7%90%86-%E7%AC%AC16-19%E7%AB%A0/" title="软件工程与计算II重点整理(第16-19章)"><img class="cover" src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/seec.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-25</div><div class="title">软件工程与计算II重点整理(第16-19章)</div></div></a></div><div><a href="/2020/07/25/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%8E%E8%AE%A1%E7%AE%97II%E9%87%8D%E7%82%B9%E6%95%B4%E7%90%86-%E7%AC%AC20-23%E7%AB%A0/" title="软件工程与计算II重点整理(第20-23章)"><img class="cover" src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/seec.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-25</div><div class="title">软件工程与计算II重点整理(第20-23章)</div></div></a></div><div><a href="/2020/07/25/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%8E%E8%AE%A1%E7%AE%97II%E9%87%8D%E7%82%B9%E6%95%B4%E7%90%86-%E7%AC%AC6-7%E7%AB%A0/" title="软件工程与计算II重点整理(第6-7章)"><img class="cover" src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/seec.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-25</div><div class="title">软件工程与计算II重点整理(第6-7章)</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://gitee.com/icimence/CDN/raw/master/cover/shield.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">icimence</div><div class="author-info__description">一个菜鸡的技术博客</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">83</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">41</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/icimence"><i class="fab fa-github"></i><span>个人GitHub主页</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/icimence" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:icimence@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://icimence.cn/atom.xml" target="_blank" title="RSS订阅"><i class="fas fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">这是我的技术博客<br />请多多指教，若有任何问题希望您通过邮箱或者是gitalk评论插件给我留言，谢谢！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">第八章 软件设计基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%EF%BC%88%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A%EF%BC%89"><span class="toc-number">1.1.</span> <span class="toc-text">1.软件设计（名词解释）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3"><span class="toc-number">1.2.</span> <span class="toc-text">2.软件设计的核心思想</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B9%9D%E3%80%81%E5%8D%81%E7%AB%A0-%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E6%9E%84%E5%BB%BA"><span class="toc-number">2.</span> <span class="toc-text">第九、十章 软件体系结构设计与构建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E6%A6%82%E5%BF%B5"><span class="toc-number">2.1.</span> <span class="toc-text">1.体系结构概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%9A%84%E9%A3%8E%E6%A0%BC%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-number">2.2.</span> <span class="toc-text">2.体系结构的风格的优缺点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%EF%BC%89%E4%B8%BB%E7%A8%8B%E5%BA%8F-%E5%AD%90%E7%A8%8B%E5%BA%8F%E9%A3%8E%E6%A0%BC"><span class="toc-number">2.2.1.</span> <span class="toc-text">(1）主程序&#x2F;子程序风格</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%EF%BC%89%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%BC%8F%E9%A3%8E%E6%A0%BC"><span class="toc-number">2.2.2.</span> <span class="toc-text">(2）面向对象式风格</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%EF%BC%89%E5%88%86%E5%B1%82%E9%A3%8E%E6%A0%BC"><span class="toc-number">2.2.3.</span> <span class="toc-text">(3）分层风格</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4%EF%BC%89MVC%E9%A3%8E%E6%A0%BC"><span class="toc-number">2.2.4.</span> <span class="toc-text">(4）MVC风格</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="toc-number">2.3.</span> <span class="toc-text">3.体系结构设计的过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%8C%85%E7%9A%84%E5%8E%9F%E5%88%99"><span class="toc-number">2.4.</span> <span class="toc-text">4.包的原则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E5%A4%8D%E7%94%A8%E5%8F%91%E5%B8%83%E7%AD%89%E4%BB%B7%E5%8E%9F%E5%88%99REP"><span class="toc-number">2.4.1.</span> <span class="toc-text">（1）复用发布等价原则REP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E5%85%B1%E5%90%8C%E5%B0%81%E9%97%AD%E5%8E%9F%E5%88%99CCP"><span class="toc-number">2.4.2.</span> <span class="toc-text">（2）共同封闭原则CCP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%883%EF%BC%89%E5%85%B1%E5%90%8C%E5%A4%8D%E7%94%A8%E5%8E%9F%E5%88%99CRP"><span class="toc-number">2.4.3.</span> <span class="toc-text">（3）共同复用原则CRP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%884%EF%BC%89%E6%97%A0%E7%8E%AF%E4%BE%9D%E8%B5%96%E5%8E%9F%E5%88%99ACP"><span class="toc-number">2.4.4.</span> <span class="toc-text">（4）无环依赖原则ACP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%885%EF%BC%89%E7%A8%B3%E5%AE%9A%E4%BE%9D%E8%B5%96%E5%8E%9F%E5%88%99SDP"><span class="toc-number">2.4.5.</span> <span class="toc-text">（5）稳定依赖原则SDP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%886%EF%BC%89%E7%A8%B3%E5%AE%9A%E6%8A%BD%E8%B1%A1%E5%8E%9F%E5%88%99SAP"><span class="toc-number">2.4.6.</span> <span class="toc-text">（6）稳定抽象原则SAP</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E6%9E%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">2.5.</span> <span class="toc-text">5.体系结构构件之间接口的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%BC%80%E5%8F%91%E9%9B%86%E6%88%90%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%EF%BC%9AStub%E5%92%8CDriver"><span class="toc-number">2.6.</span> <span class="toc-text">6.体系结构开发集成测试用例：Stub和Driver</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC11%E7%AB%A0-%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1"><span class="toc-number">3.</span> <span class="toc-text">第11章 人机交互设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%8F%AF%E7%94%A8%E6%80%A7%EF%BC%88%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A%EF%BC%89"><span class="toc-number">3.1.</span> <span class="toc-text">1.可用性（名词解释）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E5%8F%8A%E8%A7%A3%E9%87%8A%EF%BC%88%E8%87%B3%E5%B0%915%E4%B8%AA%EF%BC%89"><span class="toc-number">3.2.</span> <span class="toc-text">2.界面设计的注意事项及解释（至少5个）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%B2%BE%E7%A5%9E%E6%A8%A1%E5%9E%8B%EF%BC%8C%E5%B7%AE%E5%BC%82%E6%80%A7"><span class="toc-number">3.3.</span> <span class="toc-text">3.精神模型，差异性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%AF%BC%E8%88%AA%E3%80%81%E5%8F%8D%E9%A6%88%E3%80%81%E5%8D%8F%E4%BD%9C%E5%BC%8F%E8%AE%BE%E8%AE%A1"><span class="toc-number">3.4.</span> <span class="toc-text">4.导航、反馈、协作式设计</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%B3%E8%BD%AC%E9%93%BE%E6%8E%A5"><span class="toc-number">4.</span> <span class="toc-text">跳转链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="toc-number">5.</span> <span class="toc-text">参考链接</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/03/20/%E6%80%8E%E4%B9%88%E5%9C%A8hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E4%BD%BF%E7%94%A8latex%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/" title="怎么在hexo博客中使用latex格式的数学公式"><img src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/hexo.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="怎么在hexo博客中使用latex格式的数学公式"/></a><div class="content"><a class="title" href="/2020/03/20/%E6%80%8E%E4%B9%88%E5%9C%A8hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E4%BD%BF%E7%94%A8latex%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/" title="怎么在hexo博客中使用latex格式的数学公式">怎么在hexo博客中使用latex格式的数学公式</a><time datetime="2022-01-09T15:04:09.159Z" title="更新于 2022-01-09 23:04:09">2022-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/04/10/%E5%9C%A8%E8%87%AA%E5%B7%B1%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%83%A8%E7%BD%B2hexo%E5%8D%9A%E5%AE%A2/" title="在自己的服务器上部署hexo博客"><img src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/hexo.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="在自己的服务器上部署hexo博客"/></a><div class="content"><a class="title" href="/2020/04/10/%E5%9C%A8%E8%87%AA%E5%B7%B1%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%83%A8%E7%BD%B2hexo%E5%8D%9A%E5%AE%A2/" title="在自己的服务器上部署hexo博客">在自己的服务器上部署hexo博客</a><time datetime="2022-01-09T07:35:32.204Z" title="更新于 2022-01-09 15:35:32">2022-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/05/15/Packet%20Tracer%E8%BF%9B%E8%A1%8C%E6%A8%A1%E6%8B%9FRIP%E8%B7%AF%E7%94%B1%E5%9B%9E%E8%B7%AF/" title="用Packet Tracer进行模拟RIP路由回路"><img src="https://cdn.jsdelivr.net/gh/icimence/CDN/cover/packet_tracer.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="用Packet Tracer进行模拟RIP路由回路"/></a><div class="content"><a class="title" href="/2020/05/15/Packet%20Tracer%E8%BF%9B%E8%A1%8C%E6%A8%A1%E6%8B%9FRIP%E8%B7%AF%E7%94%B1%E5%9B%9E%E8%B7%AF/" title="用Packet Tracer进行模拟RIP路由回路">用Packet Tracer进行模拟RIP路由回路</a><time datetime="2021-12-18T15:21:07.903Z" title="更新于 2021-12-18 23:21:07">2021-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/04/19/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/" title="概率论常用公式（持续更新）"><img src="https://gitee.com/icimence/CDN/raw/master/cover/macos.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="概率论常用公式（持续更新）"/></a><div class="content"><a class="title" href="/2020/04/19/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/" title="概率论常用公式（持续更新）">概率论常用公式（持续更新）</a><time datetime="2021-12-03T14:50:41.385Z" title="更新于 2021-12-03 22:50:41">2021-12-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/04/26/%E9%9D%A2%E5%90%91%E6%9C%8D%E5%8A%A1%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/" title="面向服务复习提纲"><img src="https://gitee.com/icimence/CDN/raw/master/cover/macos.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="面向服务复习提纲"/></a><div class="content"><a class="title" href="/2021/04/26/%E9%9D%A2%E5%90%91%E6%9C%8D%E5%8A%A1%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/" title="面向服务复习提纲">面向服务复习提纲</a><time datetime="2021-04-27T12:29:22.575Z" title="更新于 2021-04-27 20:29:22">2021-04-27</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://cdn.jsdelivr.net/gh/icimence/CDN/cover/seec.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By icimence</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Welcome to icimence's blog <br /> <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/"><img class="icp-icon" src="https://gitee.com/icimence/CDN/raw/master/icp.png"><span>浙ICP备19026454号-1</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'default',
+      })
+      false && mermaid.init()
+    })
+  }
+}</script><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: 'ce919651fa86e8e33e76',
+      clientSecret: 'bed4296deb273c7d9a31f4227b76f9593dedf7a8',
+      repo: 'icimence.github.io',
+      owner: 'icimence',
+      admin: ['icimence'],
+      id: '85d4338c6216a9beeb01729ade079cd4',
+      language: 'zh-CN',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !false) {
+  if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
