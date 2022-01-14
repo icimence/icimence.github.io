@@ -11,7 +11,7 @@
 <meta property="article:author" content="icimence">
 <meta property="article:tag" content="自动化测试">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/icimence/CDN/raw/master/cover/auto.jpg"><link rel="shortcut icon" href="https://gitee.com/icimence/CDN/raw/master/cover/shield.png"><link rel="canonical" href="https://icimence.cn/2020/11/03/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2%E4%B9%8B%E6%BA%90%E7%A0%81%E6%B5%8B%E8%AF%95%EF%BC%88%E4%B8%80%EF%BC%89/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.15.4/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+<meta name="twitter:image" content="https://gitee.com/icimence/CDN/raw/master/cover/auto.jpg"><link rel="shortcut icon" href="https://gitee.com/icimence/CDN/raw/master/cover/shield.png"><link rel="canonical" href="https://icimence.cn/2020/11/03/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2%E4%B9%8B%E6%BA%90%E7%A0%81%E6%B5%8B%E8%AF%95%EF%BC%88%E4%B8%80%EF%BC%89/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="manifest" href="/img/pwa/manifest.json"/><link rel="apple-touch-icon" sizes="180x180" href="/img/pwa/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/img/pwa/32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/img/pwa/16.png"/><link rel="mask-icon" href="/img/pwa/safari-pinned-tav.svg" color="#5bbad5"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.15.4/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
   root: '/',
   algolia: undefined,
   localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
@@ -237,7 +237,7 @@
 <li><p>排序步骤：</p>
 </li>
 <li><p>（1）种群构造：生成N个测试用例序列，之后随机生成切割点，互相交换两个用例序列切割点后部分的片段，仅交换相同测试用例的部分；同时以一定概率选择测试用例，并随机生成两个测试用例位置，进行互换，产生新的测试用例序列。</p>
-<p>（2）评估值计算：以语句覆盖为例，给定程序包含m个语句$M = \{s_1,s_2,…,s_m\}$和n个测试用例$T=\{t_1,t_2,…,t_n\}$，$T’$为某一次搜索中$T$的一个排序序列，$TS_i$为该测试用例序列$T’$中第一个覆盖语句$s_i$的测试用例下标，那么其适应度计算为：</p>
+<p>（2）评估值计算：以语句覆盖为例，给定程序包含m个语句$M = {s_1,s_2,…,s_m}$和n个测试用例$T={t_1,t_2,…,t_n}$，$T’$为某一次搜索中$T$的一个排序序列，$TS_i$为该测试用例序列$T’$中第一个覆盖语句$s_i$的测试用例下标，那么其适应度计算为：</p>
 <p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto4.png" alt="APSC"></p>
 </li>
 </ul>
@@ -252,20 +252,20 @@
 <h3 id="APFD"><a href="#APFD" class="headerlink" title="APFD"></a>APFD</h3><ul>
 <li><p>平均故障检测百分比（Average Percentage of Faults Detected， APFD ）</p>
 </li>
-<li><p>给定程序包含m个故障$F=\{f_1,f_2,…,f_m\}$和n个测试用例$T=\{t_1,t_2,…t_n\}$，$T’$为$T$的一个排序序列，$TF_i$为该测试用例序列$T’$中第一个检测到故障$f_i$ 的测试用例下标，则该排序序列$T’$的APFD值计算公式为</p>
+<li><p>给定程序包含m个故障$F={f_1,f_2,…,f_m}$和n个测试用例$T={t_1,t_2,…t_n}$，$T’$为$T$的一个排序序列，$TF_i$为该测试用例序列$T’$中第一个检测到故障$f_i$ 的测试用例下标，则该排序序列$T’$的APFD值计算公式为</p>
 </li>
 </ul>
 <p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto5.png" alt="APFD"></p>
 <h3 id="APFDc"><a href="#APFDc" class="headerlink" title="APFDc"></a>APFDc</h3><ul>
 <li><p>开销感知平均故障检测百分比（Cost-cognizant Average Percentage of Faults Detected， APFDc）</p>
 </li>
-<li><p>给定程序包含m个故障$F=\{f_1,f_2,…,f_m\}$，它们的严重程度分别为$Severity = \{se_1,se_2,…,se_m\}$，和n个测试用例$T=\{t_1,t_2,…t_n\}$，它们的执行时间分别是$Time=\{time_1,time_2,…,time_n\}$，$T’$为$T$的一个排序序列，$TF_i$为该测试用例序列$T’$中第一个检测到故障$f_i$ 的测试用例下标，则该排序序列$T’$的APFDc值计算公式为</p>
+<li><p>给定程序包含m个故障$F={f_1,f_2,…,f_m}$，它们的严重程度分别为$Severity = {se_1,se_2,…,se_m}$，和n个测试用例$T={t_1,t_2,…t_n}$，它们的执行时间分别是$Time={time_1,time_2,…,time_n}$，$T’$为$T$的一个排序序列，$TF_i$为该测试用例序列$T’$中第一个检测到故障$f_i$ 的测试用例下标，则该排序序列$T’$的APFDc值计算公式为</p>
 </li>
 </ul>
 <p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto6.png" alt="APFDc"></p>
 <h3 id="NAPFD"><a href="#NAPFD" class="headerlink" title="NAPFD"></a>NAPFD</h3><ul>
 <li>归一化平均故障检测百分比（ Normalized Average Percentage of Faults Detected， NAPFD ）</li>
-<li>给定程序包含m个故障$F=\{f_1,f_2,…,f_m\}$和n个测试用例$T=\{t_1,t_2,…t_n\}$，$T’$为$T$的一个排序序列，$TF_i$为该测试用例序列$T’$中第一个检测到故障$f_i$ 的测试用例下标，$p$为$T’$检测到的故障数与程序总的故障数的比值，则该排序序列$T’$的NAPFD值计算公式为</li>
+<li>给定程序包含m个故障$F={f_1,f_2,…,f_m}$和n个测试用例$T={t_1,t_2,…t_n}$，$T’$为$T$的一个排序序列，$TF_i$为该测试用例序列$T’$中第一个检测到故障$f_i$ 的测试用例下标，$p$为$T’$检测到的故障数与程序总的故障数的比值，则该排序序列$T’$的NAPFD值计算公式为</li>
 </ul>
 <p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto7.png" alt="NAPFD"></p>
 <h2 id="测试用例选择"><a href="#测试用例选择" class="headerlink" title="测试用例选择"></a>测试用例选择</h2><h3 id="简介-1"><a href="#简介-1" class="headerlink" title="简介"></a>简介</h3><ul>
@@ -275,7 +275,7 @@
 </ul>
 <h3 id="主要策略-1"><a href="#主要策略-1" class="headerlink" title="主要策略"></a>主要策略</h3><p>修改前的程序$P$，对应的测试用例集$T$，和修改后的程序$P’$。<br>寻找$T$的子集$T’$对$P’$进行测试，并且$T’$中的任意测试用例均是可以检测代码修改的测试用例。</p>
 <h4 id="最小化测试用例选择"><a href="#最小化测试用例选择" class="headerlink" title="最小化测试用例选择"></a>最小化测试用例选择</h4><ul>
-<li>从原本的测试用例集$T$中找出最小的子集$T_{min}$，$T_{min}$能够覆盖被测程序$P$中所有本次修改的、或者受本次修改影响的部分。</li>
+<li>从原本的测试用例集$T$中找出最小的子集$T<em>{min}$，$T</em>{min}$能够覆盖被测程序$P$中所有本次修改的、或者受本次修改影响的部分。</li>
 <li>每一条新增的或者被修改的语句都能够被至少一个来自原测试套件$T$的测试用例执行。</li>
 </ul>
 <h4 id="安全测试用例选择"><a href="#安全测试用例选择" class="headerlink" title="安全测试用例选择"></a>安全测试用例选择</h4><ul>
