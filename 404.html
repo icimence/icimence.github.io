@@ -50,7 +50,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2022-01-16 15:29:49'
+  postUpdate: '2022-01-16 15:47:34'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -178,7 +178,7 @@
     }
 
     const loadMermaid = () => {
-      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+      window.loadMermaid ? runMermaid() : getScript('https://lib.baomitu.com/mermaid/latest/mermaid.min.js').then(runMermaid)
     }
 
     window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)

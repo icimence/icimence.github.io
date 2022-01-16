@@ -185,7 +185,7 @@
     }
 
     const loadMermaid = () => {
-      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+      window.loadMermaid ? runMermaid() : getScript('https://lib.baomitu.com/mermaid/latest/mermaid.min.js').then(runMermaid)
     }
 
     window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
