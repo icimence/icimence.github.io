@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>web-push推送测试</title>
+      <link href="/2022/01/18/web-push%E6%8E%A8%E9%80%81%E6%B5%8B%E8%AF%95/"/>
+      <url>/2022/01/18/web-push%E6%8E%A8%E9%80%81%E6%B5%8B%E8%AF%95/</url>
+      
+        <content type="html"><![CDATA[<p> 这个文章就是用来测试web-push的</p><span id="more"></span><p>这接下来用来测试摘要功能是否正常工作</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> WebPush </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>LeetCode第32题动归思路</title>
       <link href="/2022/01/16/LeetCode%E7%AC%AC32%E9%A2%98%E5%8A%A8%E5%BD%92%E6%80%9D%E8%B7%AF/"/>
       <url>/2022/01/16/LeetCode%E7%AC%AC32%E9%A2%98%E5%8A%A8%E5%BD%92%E6%80%9D%E8%B7%AF/</url>
