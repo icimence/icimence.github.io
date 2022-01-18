@@ -6,7 +6,7 @@
   <link href="https://icimence.cn/atom.xml" rel="self"/>
   
   <link href="https://icimence.cn/"/>
-  <updated>2022-01-18T12:56:01.436Z</updated>
+  <updated>2022-01-18T12:18:48.782Z</updated>
   <id>https://icimence.cn/</id>
   
   <author>
@@ -15,73 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>我急了</title>
-    <link href="https://icimence.cn/2022/01/18/%E6%88%91%E6%80%A5%E4%BA%86/"/>
-    <id>https://icimence.cn/2022/01/18/%E6%88%91%E6%80%A5%E4%BA%86/</id>
-    <published>2022-01-18T12:55:33.000Z</published>
-    <updated>2022-01-18T12:56:01.436Z</updated>
-    
-    <content type="html"><![CDATA[<p> 我现在很急，好像有问题</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt; 我现在很急，好像有问题&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    <category term="技术笔记" scheme="https://icimence.cn/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="WebPush" scheme="https://icimence.cn/tags/WebPush/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第二次测试</title>
-    <link href="https://icimence.cn/2022/01/18/%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%B5%8B%E8%AF%95/"/>
-    <id>https://icimence.cn/2022/01/18/%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%B5%8B%E8%AF%95/</id>
-    <published>2022-01-18T12:49:20.000Z</published>
-    <updated>2022-01-18T12:50:29.283Z</updated>
-    
-    <content type="html"><![CDATA[<p> 进行第二次测试，第一次测试已经证明summary截取功能正常</p><span id="more"></span><p>第二次测试为了保险起见，再试一次</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt; 进行第二次测试，第一次测试已经证明summary截取功能正常&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="技术笔记" scheme="https://icimence.cn/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="WebPush" scheme="https://icimence.cn/tags/WebPush/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>web-push推送测试</title>
-    <link href="https://icimence.cn/2022/01/18/web-push%E6%8E%A8%E9%80%81%E6%B5%8B%E8%AF%95/"/>
-    <id>https://icimence.cn/2022/01/18/web-push%E6%8E%A8%E9%80%81%E6%B5%8B%E8%AF%95/</id>
-    <published>2022-01-18T12:38:04.000Z</published>
-    <updated>2022-01-18T12:51:22.245Z</updated>
-    
-    <content type="html"><![CDATA[<p> 这个文章就是用来测试web-push的</p><span id="more"></span><p>这接下来用来测试摘要功能是否正常工作</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt; 这个文章就是用来测试web-push的&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="技术笔记" scheme="https://icimence.cn/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="WebPush" scheme="https://icimence.cn/tags/WebPush/"/>
-    
-  </entry>
   
   <entry>
     <title>LeetCode第32题动归思路</title>
@@ -505,6 +438,78 @@
     
     
     <category term="Hexo" scheme="https://icimence.cn/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo博客添加RSS订阅</title>
+    <link href="https://icimence.cn/2020/11/06/hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0RSS%E8%AE%A2%E9%98%85/"/>
+    <id>https://icimence.cn/2020/11/06/hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0RSS%E8%AE%A2%E9%98%85/</id>
+    <published>2020-11-06T05:22:54.000Z</published>
+    <updated>2022-01-10T11:37:33.696Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="安装所需插件"><a href="#安装所需插件" class="headerlink" title="安装所需插件"></a>安装所需插件</h2><p>hexo博客中有一个可以生成RSS的xml文件的插件<code>hexo-generator-feed</code>，使用命令行对其进行安装</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-feed</span><br></pre></td></tr></table></figure><h2 id="启用插件"><a href="#启用插件" class="headerlink" title="启用插件"></a>启用插件</h2><p>安装成功之后通过hexo博客根目录下的<code>_config.yml</code>文件的修改来启用插件，修改如下：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="attr">plugins:</span></span><br><span class="line">    <span class="string">hexo-generator-feed</span></span><br><span class="line"><span class="comment">#Feed Atom</span></span><br><span class="line"><span class="attr">feed:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">atom</span> <span class="comment"># 生成的类型，RSS对应atom</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">atom.xml</span> <span class="comment"># 生成的文件名</span></span><br><span class="line">    <span class="attr">limit:</span> <span class="number">20</span> <span class="comment"># 选取推送的文章数量</span></span><br></pre></td></tr></table></figure><h2 id="生成文件"><a href="#生成文件" class="headerlink" title="生成文件"></a>生成文件</h2><p>通过<code>hexo g</code>生成新的public目录，已经能看到里面有atom.xml文件了。</p><p>发布之后就可以进行正常使用</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;安装所需插件&quot;&gt;&lt;a href=&quot;#安装所需插件&quot; class=&quot;headerlink&quot; title=&quot;安装所需插件&quot;&gt;&lt;/a&gt;安装所需插件&lt;/h2&gt;&lt;p&gt;hexo博客中有一个可以生成RSS的xml文件的插件&lt;code&gt;hexo-generator-feed&lt;/c</summary>
+      
+    
+    
+    
+    <category term="技术笔记" scheme="https://icimence.cn/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="Hexo" scheme="https://icimence.cn/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>自动化测试复习提纲之AI测试（三）</title>
+    <link href="https://icimence.cn/2020/11/03/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2%E4%B9%8BAI%E6%B5%8B%E8%AF%95%EF%BC%88%E4%B8%89%EF%BC%89/"/>
+    <id>https://icimence.cn/2020/11/03/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2%E4%B9%8BAI%E6%B5%8B%E8%AF%95%EF%BC%88%E4%B8%89%EF%BC%89/</id>
+    <published>2020-11-03T11:47:22.000Z</published>
+    <updated>2022-01-10T11:42:28.391Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="智能软件"><a href="#智能软件" class="headerlink" title="智能软件"></a>智能软件</h2><h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto25.png" alt="生命周期"></p><h4 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h4><ul><li>分类识别 -&gt; 目标检测 -&gt; 语义分割 -&gt; 实例分割</li></ul><h4 id="数据采集"><a href="#数据采集" class="headerlink" title="数据采集"></a>数据采集</h4><ul><li><p>互联网公开获取:</p><ul><li>公开数据集（kaggle、UCI）、爬虫（付费API）</li></ul></li><li><p>专业数据采集:</p><ul><li>采集内容、采集规模、预算</li><li>采集过程要尽量与实际使用场景相一致</li></ul></li></ul><h4 id="数据标注"><a href="#数据标注" class="headerlink" title="数据标注"></a>数据标注</h4><ul><li>数据清洗:根据来源不同，很多都需要清洗，例如爬虫、监控视频</li><li>数据标注:<ul><li>数据标注软件</li><li>众包任务标注</li><li>领域专家标注</li></ul></li></ul><h4 id="模型设计与训练"><a href="#模型设计与训练" class="headerlink" title="模型设计与训练"></a>模型设计与训练</h4><ul><li>神经网络</li><li>预防过拟合与欠拟合</li></ul><h4 id="模型测试与部署"><a href="#模型测试与部署" class="headerlink" title="模型测试与部署"></a>模型测试与部署</h4><ul><li>准确性、鲁棒性、安全性的保证</li><li>部署到框架中</li></ul><h3 id="智能软件测试"><a href="#智能软件测试" class="headerlink" title="智能软件测试"></a>智能软件测试</h3><h4 id="差异"><a href="#差异" class="headerlink" title="差异"></a>差异</h4><h5 id="决策逻辑"><a href="#决策逻辑" class="headerlink" title="决策逻辑"></a>决策逻辑</h5><ul><li>传统软件的决策逻辑:<ul><li>程序代码控制决策逻辑</li></ul></li><li>智能软件的决策逻辑:<ul><li>深度学习模型的结构</li><li>训练后得到的权重节点</li></ul></li></ul><h5 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h5><ul><li>传统软件系统程序特征：控制流和数据流构建的业务处理</li><li>智能软件系统程序特征：数据驱动构建的参数化数值计算</li><li>智能软件系统的缺陷往往不是显式的代码或参数错误</li></ul><h4 id="数据驱动"><a href="#数据驱动" class="headerlink" title="数据驱动"></a>数据驱动</h4><ul><li>使用容量更大、更复杂的模型，效果更好的算法</li><li>数据规模可以短时间内迅速扩大</li></ul><h4 id="难题"><a href="#难题" class="headerlink" title="难题"></a>难题</h4><ul><li>数据量不够</li><li>低质量数据</li><li>数据分布不均</li><li>不充分测试</li></ul><h2 id="模糊测试"><a href="#模糊测试" class="headerlink" title="模糊测试"></a>模糊测试</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><h4 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h4><ul><li>通过异常的输入自动化发现待测程序缺陷的技术。</li><li>预期输入：变异数据</li><li>预期输出：断言失败、无效输入、异常崩溃、错误输出</li></ul><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto26.png" alt="流程"></p><h4 id="测试难题"><a href="#测试难题" class="headerlink" title="测试难题"></a>测试难题</h4><ul><li>无法穷举所有输入</li><li>无法想到所有场景</li><li>无法判定测试的预期输出</li></ul><h4 id="解决难题"><a href="#解决难题" class="headerlink" title="解决难题"></a>解决难题</h4><ul><li>大数定律：测试次数多 + 数据随机生成 = 概率低的偶然现象发生</li></ul><h4 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h4><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto27.png" alt="对比图"></p><h3 id="技术分类"><a href="#技术分类" class="headerlink" title="技术分类"></a>技术分类</h3><h4 id="黑盒测试"><a href="#黑盒测试" class="headerlink" title="黑盒测试"></a>黑盒测试</h4><ul><li>只关注输入和输出</li><li>对界面、功能测试</li><li>用户视角</li></ul><h4 id="白盒测试"><a href="#白盒测试" class="headerlink" title="白盒测试"></a>白盒测试</h4><ul><li>测试所有路径逻辑</li><li>对软件内部动作、结构、路径测试</li></ul><h4 id="灰盒测试"><a href="#灰盒测试" class="headerlink" title="灰盒测试"></a>灰盒测试</h4><ul><li>已知逻辑指导测试</li><li>关注输出对于输入的正确性、内部表现</li></ul><h3 id="用例生成分类"><a href="#用例生成分类" class="headerlink" title="用例生成分类"></a>用例生成分类</h3><h4 id="基于生成"><a href="#基于生成" class="headerlink" title="基于生成"></a>基于生成</h4><ul><li>需要学习目标测试协议结构</li><li>从0生成测试用例</li><li>测试层次深</li></ul><h4 id="基于变异"><a href="#基于变异" class="headerlink" title="基于变异"></a>基于变异</h4><ul><li>学习已有数据模型</li><li>扩增已有测试用例</li><li>用例数量多但是不稳定</li></ul><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto28.png" alt="变异"></p><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto29.png" alt="静态动态分析"></p><h3 id="挑战"><a href="#挑战" class="headerlink" title="挑战"></a>挑战</h3><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto30.png" alt="挑战"></p><ul><li>结果很难预测</li><li>通过的准则很难确定</li><li>输出结果随时间变化</li><li>需要更高效的持续测试方法</li><li>性能依赖于数据</li></ul><h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><ul><li>识别，完善所需的所有算法。</li><li>收集大量的输入数据来训练AI。</li><li>AI如何处理输入数据。</li><li>AI会重复任务，即使数据输入是新的。</li><li>训练AI的过程永远不会结束，因为算法正被不断改进</li></ul><h3 id="方法框架"><a href="#方法框架" class="headerlink" title="方法框架"></a>方法框架</h3><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto31.png" alt="方法框架"></p><h4 id="种子集准备"><a href="#种子集准备" class="headerlink" title="种子集准备"></a>种子集准备</h4><ul><li>初始种子</li><li>预处理</li><li>种子打包形成语料集</li><li>语料集筛选规则</li></ul><h4 id="过程引导"><a href="#过程引导" class="headerlink" title="过程引导"></a>过程引导</h4><ul><li>语料集采样：语料集采样根据模糊测试变异方法从送入过程引导的语料集中形成符合变异方法输入的种子元组。</li><li>能量函数：旨在通过对语料集进行变异成功率检测实现在同样的测试计算资源尽可能生成多的能够成功变异的测试数据。</li><li>数据变异：根据所选用的变异方法，对选取的原始测试数据施加扰动，生成新的测试输入。</li><li>健康测试：根据所测试的程序制定了一定的规则用来检测模糊测试变异的测试数据是否有效。</li></ul><h4 id="结果验证"><a href="#结果验证" class="headerlink" title="结果验证"></a>结果验证</h4><ul><li>结果参照物：是否产生运行崩溃、结果参考物对比</li><li><p>结果分析：覆盖率分析、传统反馈</p></li><li></li></ul><h3 id="测试数据生成"><a href="#测试数据生成" class="headerlink" title="测试数据生成"></a>测试数据生成</h3><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto32.png" alt="测试数据生成"></p><h4 id="文本数据"><a href="#文本数据" class="headerlink" title="文本数据"></a>文本数据</h4><ul><li>加噪：同义词替换、随即插入、随即交换、随即删除</li><li>回译：中文翻译英文再翻译回中文</li></ul><h4 id="图像数据"><a href="#图像数据" class="headerlink" title="图像数据"></a>图像数据</h4><ul><li>翻转、旋转、缩放等等</li></ul><h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ul><li>结果反馈和结果分析都由深度学习模型提供</li><li>模型同时指导语料集的维护（灰盒测试）</li></ul><h4 id="模型反馈"><a href="#模型反馈" class="headerlink" title="模型反馈"></a>模型反馈</h4><ul><li>测试覆盖率划分语料集优先级<ul><li>提高测试覆盖率——新的种子</li><li>更易变异——更高的优先级</li><li>被选取次数较少——更高的优先级</li></ul></li></ul><h4 id="算子测试数据生成"><a href="#算子测试数据生成" class="headerlink" title="算子测试数据生成"></a>算子测试数据生成</h4><ul><li>组成神经网络模型，算子接口<ul><li>目标：测试算子库，精准快速测试</li><li>方法：差分测试与模糊测试结合</li></ul></li></ul><h2 id="图像扩增"><a href="#图像扩增" class="headerlink" title="图像扩增"></a>图像扩增</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><h4 id="数据扩增"><a href="#数据扩增" class="headerlink" title="数据扩增"></a>数据扩增</h4><ul><li>通过轻微变换现有数据或创建新的合成图像来得到新数据的技术。应用领域有图像扩增、文本扩增、雷达扩增……</li></ul><h4 id="基本原则"><a href="#基本原则" class="headerlink" title="基本原则"></a>基本原则</h4><ul><li>扩增后的标签保持不变/相应修改标签。Ex. 6 -&gt; 9 (x)</li><li>扩增需要基于先验知识。针对不同任务和场景，数据扩增的策略不同。Ex. 猫身上增加斑点</li><li>不引入无关的数据。Ex. 猫的图片集中添加狗</li></ul><h4 id="图像基本属性"><a href="#图像基本属性" class="headerlink" title="图像基本属性"></a>图像基本属性</h4><ul><li>亮度：颜色的明暗变化。灰度图像的明暗与灰度值有关。</li><li>对比度：一幅图像中明暗区域最亮的白和最暗的黑之间不同亮度层级的测量，也体现了从黑到白的渐变层次。</li><li>饱和度：色彩的鲜艳程度，也称作纯度。饱和度为0就是灰度图像。</li><li>灰度直方图：描述图像中灰度分布情况，描述图像中具有该灰度级的像素的个数。$p(r_k)=\frac{n_k}{MN},r_k灰度级,n_k具有灰度R_k的像素个数,MN总像素个数$。</li></ul><h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><h4 id="原样本扩增"><a href="#原样本扩增" class="headerlink" title="原样本扩增"></a>原样本扩增</h4><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto33.png" alt="原样本扩增"></p><h4 id="单样本扩增"><a href="#单样本扩增" class="headerlink" title="单样本扩增"></a>单样本扩增</h4><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto34.png" alt="单样本扩增"></p><ul><li>两阶段：找到可能包含物体的区域 -&gt; 对该区域进行分类</li><li>单阶段：图片缩放划分等分网络，并且卷积后过滤获得最后预测框。</li><li>特征合成：基于规则、基于分割确定合成区域</li></ul><h4 id="多样本扩增"><a href="#多样本扩增" class="headerlink" title="多样本扩增"></a>多样本扩增</h4><ul><li><p>样本级合成：标签a的特征 + 标签b的特征 = 标签a</p><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto35.png" alt="多样本扩增"></p></li><li><p>特征级合成：将不同特征在同一张图上面重新排列组合</p></li><li><p>标签降级：变成不同的特征</p></li></ul><h3 id="医疗图像扩增"><a href="#医疗图像扩增" class="headerlink" title="医疗图像扩增"></a>医疗图像扩增</h3><h4 id="难点"><a href="#难点" class="headerlink" title="难点"></a>难点</h4><ul><li>患者隐私保护，医学影像匮乏</li><li>共享临床数据困难</li><li>影像质量参差不齐</li><li>需要专家手动贴标签</li></ul><h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ul><li>图像中不同形式的细微结构可能代表某种病变</li><li>不能保证扩增的质量</li><li>不同疾病要使用不同的扩增方法</li></ul><h4 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h4><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto36.png" alt="过程"></p><ul><li>无损变换：不改变其中内在的病症特征，避免破坏医学图像中的关键结构。Ex. 翻转、倾斜</li><li>非刚性变换：人体组织器官、细胞生长、病变皆非刚性。通过非线性的拉伸、扩张等方法改变图像的内部信息。Ex. 弹性变换、高斯畸变。</li><li>基础图像变换： Ex. 随即裁剪、随即擦除、缩放变换</li><li>病灶区域扩增<ul><li>通过对一张图像的病灶区域覆盖范围进行变化，模拟病症发展的范围。</li><li>随机组合病情某个时期可能出现的征象。</li><li>可改变征象在图像中的位置以及出现的数量。</li></ul></li><li>非病灶区域扩增：保留关键信息，保证扩增数据的有效性。测试医疗图像分类模型针对非病灶区域的分类结果是否具有不变性。Ex. 对非病灶区域添加噪声、颜色变换……</li></ul><h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><ul><li>在系统优化层面，通过医疗图像数据扩增技术扩展训练数据集，从而提高系统的精度和泛化能力。</li><li>在系统评估层面，将扩增后得到的医疗数据集作为测试数据集，通过大量数据的测试，对医疗智能诊断系统的鲁棒性进行评估。</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;智能软件&quot;&gt;&lt;a href=&quot;#智能软件&quot; class=&quot;headerlink&quot; title=&quot;智能软件&quot;&gt;&lt;/a&gt;智能软件&lt;/h2&gt;&lt;h3 id=&quot;生命周期&quot;&gt;&lt;a href=&quot;#生命周期&quot; class=&quot;headerlink&quot; title=&quot;生命周期&quot;&gt;&lt;/a</summary>
+      
+    
+    
+    
+    <category term="学习笔记" scheme="https://icimence.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="自动化测试" scheme="https://icimence.cn/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>自动化测试复习提纲之移动测试（二）</title>
+    <link href="https://icimence.cn/2020/11/03/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2%E4%B9%8B%E7%A7%BB%E5%8A%A8%E6%B5%8B%E8%AF%95%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
+    <id>https://icimence.cn/2020/11/03/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2%E4%B9%8B%E7%A7%BB%E5%8A%A8%E6%B5%8B%E8%AF%95%EF%BC%88%E4%BA%8C%EF%BC%89/</id>
+    <published>2020-11-03T11:47:07.000Z</published>
+    <updated>2022-01-10T11:42:28.391Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="基于图像理解的移动应用自动化测试"><a href="#基于图像理解的移动应用自动化测试" class="headerlink" title="基于图像理解的移动应用自动化测试"></a>基于图像理解的移动应用自动化测试</h2><h3 id="自动化脚本录制与回放"><a href="#自动化脚本录制与回放" class="headerlink" title="自动化脚本录制与回放"></a>自动化脚本录制与回放</h3><h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><ul><li>GUI测试脚本录制<ul><li>基于坐标</li><li>基于控件树</li><li>基于图像</li></ul></li><li>大多数移动应用在不同平台上设计的UI布局结构极为相似，因此可以利用这种相似性进行移动应用的GUI 测试脚本录制与回放</li></ul><h4 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h4><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto9.png" alt="框架"></p><h4 id="脚本结构"><a href="#脚本结构" class="headerlink" title="脚本结构"></a>脚本结构</h4><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto10.png" alt="脚本结构"></p><h4 id="脚本录制"><a href="#脚本录制" class="headerlink" title="脚本录制"></a>脚本录制</h4><ul><li>屏幕截图</li><li>控件截图</li><li>操作类型与操作位置</li><li>设备分辨率、设备序列号</li></ul><h4 id="脚本回放"><a href="#脚本回放" class="headerlink" title="脚本回放"></a>脚本回放</h4><h5 id="图像特征对比"><a href="#图像特征对比" class="headerlink" title="图像特征对比"></a>图像特征对比</h5><ul><li>根据图标的特征进行比对，找到正确图标。</li><li>根据屏幕特征点进行比对，找到正确跳转画面。</li><li>最后，根据两个特征描述进行特征匹配，确定需要进行操作的控件。</li></ul><h5 id="布局刻画"><a href="#布局刻画" class="headerlink" title="布局刻画"></a>布局刻画</h5><ul><li>计算机视觉算法找到所有GUI截图中的控件位置</li><li>利用OCR技术提取GUI截图中的文本</li><li>为所提取出来的控件划分控件组、行和列</li></ul><h5 id="坐标校正"><a href="#坐标校正" class="headerlink" title="坐标校正"></a>坐标校正</h5><ul><li>基于布局识别的控件定位<ul><li>容易受不同平台的外部布局的影响</li><li>不易受到图像变化的影响</li></ul></li><li>基于图像匹配的控件定位<ul><li>容易受到图像变化的影响</li><li>不易受到不同平台的外部布局的影响</li></ul></li><li>为了结合二者的优点，提升算法的鲁棒性，引入权重参数$r$<ul><li>$final = r<em>layout + (1-r)</em>image$</li></ul></li></ul><h3 id="基于图文理解的报告排序"><a href="#基于图文理解的报告排序" class="headerlink" title="基于图文理解的报告排序"></a>基于图文理解的报告排序</h3><h4 id="众包测试"><a href="#众包测试" class="headerlink" title="众包测试"></a>众包测试</h4><ul><li>可以向开发者提供多种不同软硬件平台支持的真实用户数据和操作信息</li><li>测试报告数量庞大、人工审查过于耗时</li><li>需要有种定义和排序测试报告的技术</li></ul><h4 id="测试报告"><a href="#测试报告" class="headerlink" title="测试报告"></a>测试报告</h4><ul><li>少量文字 + BUG截图</li><li>原则：越早发现的BUG，越容易修复</li></ul><h4 id="技术概述"><a href="#技术概述" class="headerlink" title="技术概述"></a>技术概述</h4><ul><li>文本 + 图片结合分析</li></ul><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto11.png" alt="技术概述"></p><h4 id="文本处理"><a href="#文本处理" class="headerlink" title="文本处理"></a>文本处理</h4><ul><li><p>自然语言处理</p><ul><li><p>关键词提取：通过CRF（Conditional Random Fields）来分词</p></li><li><p>文本距离：采用SVM(Support Vector Machine)来标记词性</p></li></ul></li><li><p>Jaccard距离</p><ul><li>测试报告集$R(r) = {(S_i, T_i)|i=0,…,n}$，$S$是屏幕截图，$T$是文本</li><li>计算文本$T_i$间的距离</li></ul><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto12.png" alt="DT"></p></li></ul><h4 id="截图处理"><a href="#截图处理" class="headerlink" title="截图处理"></a>截图处理</h4><ul><li><p>操作</p><ul><li><p>图片 -&gt; 特征向量</p></li><li><p>分辨率、背景问题，不可直接简单RGB计算</p></li><li><p>chi-square距离</p><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto13.png" alt="chi-square"></p><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto14.png" alt="chi-square"></p></li></ul></li><li><p>截图的集合</p><ul><li><p>设定阈值$\gamma$筛选出内容相同的图片并求平均合并（同一份报告中的图片筛选 -&gt; 不同报告图片集合筛选）</p></li><li><p>测试报告$r_i,r_j$，筛选后的截图集合$S_i,S_j$</p><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto15.png" alt="DS"></p></li></ul></li></ul><h4 id="图文结合"><a href="#图文结合" class="headerlink" title="图文结合"></a>图文结合</h4><ul><li>文本DT，图片DS</li><li>DT相同，则判为相似</li><li>无截图DS，则DT决定</li><li>其他计算BD</li></ul><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto16.png" alt="BD"></p><h3 id="基于深度图文理解的报告排序"><a href="#基于深度图文理解的报告排序" class="headerlink" title="基于深度图文理解的报告排序"></a>基于深度图文理解的报告排序</h3><ul><li>就是上面那个报告排序的改进版</li></ul><h4 id="技术框架"><a href="#技术框架" class="headerlink" title="技术框架"></a>技术框架</h4><ul><li>计算机视觉提取控件</li><li>NLP技术分解文本</li><li>建立DeepFeature<ul><li>Bug Feature (BFT):$W_p + P$</li><li>Context Feature (CFT):$W_c + R$</li></ul></li></ul><h4 id="特征提取"><a href="#特征提取" class="headerlink" title="特征提取"></a>特征提取</h4><ul><li><p>图片特征</p><ul><li>问题控件：定位产生Bug的控件元素</li><li>上下文控件：除问题控件之外的其他控件</li></ul></li><li><p>文本特征</p><ul><li>DL算法处理文本</li><li>Bug描述</li><li>复现步骤</li></ul></li></ul><h4 id="特征聚合"><a href="#特征聚合" class="headerlink" title="特征聚合"></a>特征聚合</h4><ul><li>Bug Feature (BFT)：与缺陷直接相关，包括问题控件和缺陷描述</li><li>Context Feature (CFT)：为缺陷构建上下文，包括上下文控件和复现步骤</li></ul><h4 id="相似度计算"><a href="#相似度计算" class="headerlink" title="相似度计算"></a>相似度计算</h4><ul><li>将所有报告初始化到未排序报告池中</li><li>向已排序报告池中添加Null Report<ul><li>Null Report：一种预定义的测试报告</li></ul></li><li>从未排序报告池中，选出一份和已排序报告池中最不相似的报告加入到已排序报告池中，循环调用</li></ul><h3 id="基于图像理解的测试报告生成"><a href="#基于图像理解的测试报告生成" class="headerlink" title="基于图像理解的测试报告生成"></a>基于图像理解的测试报告生成</h3><h4 id="背景描述"><a href="#背景描述" class="headerlink" title="背景描述"></a>背景描述</h4><ul><li>移动应用测试报告<ul><li>测试环境</li><li>缺陷截图</li><li>缺陷描述</li></ul></li><li>期望通过Computer Vision和Deep Learning来综合理解截图，然后自动生成文本描述。</li></ul><h4 id="技术框架-1"><a href="#技术框架-1" class="headerlink" title="技术框架"></a>技术框架</h4><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto17.png" alt="框架"></p><ul><li>截图翻译：从模块截图提取特征向量，生成缺陷描述</li><li>文本提取：从截图提取文本信息并通过关键词列表筛选缺陷相关文本</li><li>报告生成：聚类生成的文本，最终缺陷报告。</li></ul><h4 id="截图翻译"><a href="#截图翻译" class="headerlink" title="截图翻译"></a>截图翻译</h4><ul><li>将缺陷截图转化为一组描述</li><li>截图编码器：从截图中提取缺陷特征<ul><li>CNN：Inception-v3转化截图</li></ul></li><li>缺陷描述解码器：通过缺陷特征生成描述<ul><li>RNNs：最大化目标函数</li><li>LSTM：Long Short Term Memory，缺陷描述语言模型</li><li>Softmax层：生成下一个相关词汇</li><li>BeamSearch：生成描述</li></ul></li></ul><h4 id="文本提取"><a href="#文本提取" class="headerlink" title="文本提取"></a>文本提取</h4><ul><li>目的是识别截图中的缺陷相关文本最为描述</li><li>字符识别器：从截图中提取文本<ul><li>OCR</li></ul></li><li>关键词过滤器：筛选出缺陷相关的文本<ul><li>预定义的关键词列表</li></ul></li></ul><h4 id="报告生成"><a href="#报告生成" class="headerlink" title="报告生成"></a>报告生成</h4><ul><li>将截图翻译模块和文本提取模块的输出结合起来：使用文本聚类聚合不同类型的缺陷</li><li>两个模块可能产生类似的报告，讲述相同的缺陷。</li><li>处理文本聚类的方法：<ul><li>TF－IDF：将文本转化为向量</li><li>K-Means：聚类算法</li></ul></li></ul><h2 id="基于群智协同的众包测试"><a href="#基于群智协同的众包测试" class="headerlink" title="基于群智协同的众包测试"></a>基于群智协同的众包测试</h2><h3 id="协作式众包测试"><a href="#协作式众包测试" class="headerlink" title="协作式众包测试"></a>协作式众包测试</h3><ul><li>协同测试：众测系统上发布测试任务（任务发布者）</li><li>质量保证：众包工人参与测试任务，协作方式完成BUG报告（众包工人）</li><li>聚合交付：识别并剔除恶意众包工人，审核报告并交付缺陷列表（管理者）</li></ul><h3 id="协同推荐"><a href="#协同推荐" class="headerlink" title="协同推荐"></a>协同推荐</h3><ul><li>信息共享：用户在提交报告时进行实施实时相似报告推荐，避免重复报告。</li><li>任务分配：用户提交报告后会对其进行审核报告推荐和测试页面推荐，避免部分页面无法被测试。</li><li>协作方式：用户对于相似报告和审核报告的推荐结果，可以点赞、踩点，利用用户的交叉审核，验证报告有效性。</li></ul><h4 id="推荐算法"><a href="#推荐算法" class="headerlink" title="推荐算法"></a>推荐算法</h4><ul><li>相似报告推荐：找报告间向量最短的</li><li>测试页面推荐：多元加权最短路径</li><li>审核报告推荐：基于用户历史评分的矩阵分解</li></ul><h3 id="质量保证"><a href="#质量保证" class="headerlink" title="质量保证"></a>质量保证</h3><h4 id="众包工人"><a href="#众包工人" class="headerlink" title="众包工人"></a>众包工人</h4><ul><li>竞争式提交：不借鉴他人BUG报告，独立测试并提交报告。整体贡献归个人所有。</li><li>协作式提交：借鉴他人BUG报告，复制粘贴他人报告生成子报告。整体贡献归该报告生成路径上的众包工人共同所有。</li><li>审核：审核他人BUG报告，对他人报告点赞点踩，公众投票提供报告质量参考。</li></ul><h4 id="顺序图"><a href="#顺序图" class="headerlink" title="顺序图"></a>顺序图</h4><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto18.png" alt="顺序图"></p><h4 id="顺序"><a href="#顺序" class="headerlink" title="顺序"></a>顺序</h4><ul><li>分析报告质量：分析报告BUG报告基本属性</li><li>提取报告质量：根据BUG报告属性与指标字典提取质量指标。</li><li>指标阶跃变换：根据节约变换函数将数值型的指标映射为相应的好与坏等级。</li><li>检测报告有效行：有效指标数量超过阈值则有效。</li></ul><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto19.png" alt="流程图"></p><h4 id="反馈与监控"><a href="#反馈与监控" class="headerlink" title="反馈与监控"></a>反馈与监控</h4><ul><li>反馈<ul><li>报告有效性反馈</li><li>报告重复性反馈</li><li>Fork操作反馈</li><li>点赞反馈</li><li>点踩反馈</li></ul></li><li>监控<ul><li>失信行为监控</li><li>点赞关系监控</li><li>踩点关系监控</li><li>Fork关系监控</li></ul></li></ul><h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto20.png" alt="小结"></p><h3 id="聚合交付"><a href="#聚合交付" class="headerlink" title="聚合交付"></a>聚合交付</h3><ul><li>聚合阶段 -&gt; 融合阶段 -&gt; 围绕报告融合构建审核业务流程</li><li>构建一套基于报告融合的测试报告处理流程</li></ul><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto21.png" alt="聚合"></p><h4 id="聚合阶段"><a href="#聚合阶段" class="headerlink" title="聚合阶段"></a>聚合阶段</h4><ul><li>将原始报告拆分成图片与文本信息，计算相似度取平均。</li><li>聚类算法将相似报告聚合到一起。</li><li>保持算法的可替换性、可扩展性。</li></ul><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto22.png" alt="聚合阶段"></p><h4 id="融合阶段"><a href="#融合阶段" class="headerlink" title="融合阶段"></a>融合阶段</h4><ul><li>主报告选取</li><li>差异点识别</li><li>差一点聚类及合并</li><li>差异点排序</li></ul><h4 id="审核业务"><a href="#审核业务" class="headerlink" title="审核业务"></a>审核业务</h4><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto23.png" alt="审核业务"></p><h3 id="总体架构"><a href="#总体架构" class="headerlink" title="总体架构"></a>总体架构</h3><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto24.png" alt="总体架构"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;基于图像理解的移动应用自动化测试&quot;&gt;&lt;a href=&quot;#基于图像理解的移动应用自动化测试&quot; class=&quot;headerlink&quot; title=&quot;基于图像理解的移动应用自动化测试&quot;&gt;&lt;/a&gt;基于图像理解的移动应用自动化测试&lt;/h2&gt;&lt;h3 id=&quot;自动化脚本录制与回</summary>
+      
+    
+    
+    
+    <category term="学习笔记" scheme="https://icimence.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="自动化测试" scheme="https://icimence.cn/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
