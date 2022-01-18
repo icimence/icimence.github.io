@@ -6,7 +6,7 @@
   <link href="https://icimence.cn/atom.xml" rel="self"/>
   
   <link href="https://icimence.cn/"/>
-  <updated>2022-01-18T12:50:29.283Z</updated>
+  <updated>2022-01-18T12:56:01.436Z</updated>
   <id>https://icimence.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我急了</title>
+    <link href="https://icimence.cn/2022/01/18/%E6%88%91%E6%80%A5%E4%BA%86/"/>
+    <id>https://icimence.cn/2022/01/18/%E6%88%91%E6%80%A5%E4%BA%86/</id>
+    <published>2022-01-18T12:55:33.000Z</published>
+    <updated>2022-01-18T12:56:01.436Z</updated>
+    
+    <content type="html"><![CDATA[<p> 我现在很急，好像有问题</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt; 我现在很急，好像有问题&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="技术笔记" scheme="https://icimence.cn/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="WebPush" scheme="https://icimence.cn/tags/WebPush/"/>
+    
+  </entry>
   
   <entry>
     <title>第二次测试</title>
@@ -472,30 +497,6 @@
       
     <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;由于我的hexo博客的搭建时间比较早，主题更新之后只支持更新的hexo版本，所以需要对已有的hexo博客的版本进行升级。&lt;/p&gt;
 &lt;h2 i</summary>
-      
-    
-    
-    
-    <category term="技术笔记" scheme="https://icimence.cn/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="Hexo" scheme="https://icimence.cn/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo博客添加RSS订阅</title>
-    <link href="https://icimence.cn/2020/11/06/hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0RSS%E8%AE%A2%E9%98%85/"/>
-    <id>https://icimence.cn/2020/11/06/hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0RSS%E8%AE%A2%E9%98%85/</id>
-    <published>2020-11-06T05:22:54.000Z</published>
-    <updated>2022-01-10T11:37:33.696Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="安装所需插件"><a href="#安装所需插件" class="headerlink" title="安装所需插件"></a>安装所需插件</h2><p>hexo博客中有一个可以生成RSS的xml文件的插件<code>hexo-generator-feed</code>，使用命令行对其进行安装</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-feed</span><br></pre></td></tr></table></figure><h2 id="启用插件"><a href="#启用插件" class="headerlink" title="启用插件"></a>启用插件</h2><p>安装成功之后通过hexo博客根目录下的<code>_config.yml</code>文件的修改来启用插件，修改如下：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="attr">plugins:</span></span><br><span class="line">    <span class="string">hexo-generator-feed</span></span><br><span class="line"><span class="comment">#Feed Atom</span></span><br><span class="line"><span class="attr">feed:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">atom</span> <span class="comment"># 生成的类型，RSS对应atom</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">atom.xml</span> <span class="comment"># 生成的文件名</span></span><br><span class="line">    <span class="attr">limit:</span> <span class="number">20</span> <span class="comment"># 选取推送的文章数量</span></span><br></pre></td></tr></table></figure><h2 id="生成文件"><a href="#生成文件" class="headerlink" title="生成文件"></a>生成文件</h2><p>通过<code>hexo g</code>生成新的public目录，已经能看到里面有atom.xml文件了。</p><p>发布之后就可以进行正常使用</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;安装所需插件&quot;&gt;&lt;a href=&quot;#安装所需插件&quot; class=&quot;headerlink&quot; title=&quot;安装所需插件&quot;&gt;&lt;/a&gt;安装所需插件&lt;/h2&gt;&lt;p&gt;hexo博客中有一个可以生成RSS的xml文件的插件&lt;code&gt;hexo-generator-feed&lt;/c</summary>
       
     
     
