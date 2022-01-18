@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>第二次测试</title>
+      <link href="/2022/01/18/%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%B5%8B%E8%AF%95/"/>
+      <url>/2022/01/18/%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%B5%8B%E8%AF%95/</url>
+      
+        <content type="html"><![CDATA[<p> 进行第二次测试，第一次测试已经证明summary截取功能正常</p><span id="more"></span><p>第二次测试为了保险起见，再试一次</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> WebPush </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>web-push推送测试</title>
       <link href="/2022/01/18/web-push%E6%8E%A8%E9%80%81%E6%B5%8B%E8%AF%95/"/>
       <url>/2022/01/18/web-push%E6%8E%A8%E9%80%81%E6%B5%8B%E8%AF%95/</url>
