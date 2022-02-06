@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>flutter问题汇总</title>
+      <link href="/2022/02/06/flutter%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"/>
+      <url>/2022/02/06/flutter%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</url>
+      
+        <content type="html"><![CDATA[<h2 id="关于flutter启动web"><a href="#关于flutter启动web" class="headerlink" title="关于flutter启动web"></a>关于flutter启动web</h2><p>flutter在启动web的debug模式的时候会出现端口的问题，这时候只需要通过启动参数调整启动的端口号即可，代码如下</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter -d chrome --web-hostname 127.0.0.1 --web-port 8888</span><br></pre></td></tr></table></figure><p>指定端口之后问题就可以解决了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Flutter </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>LeetCode第32题动归思路</title>
       <link href="/2022/01/16/LeetCode%E7%AC%AC32%E9%A2%98%E5%8A%A8%E5%BD%92%E6%80%9D%E8%B7%AF/"/>
       <url>/2022/01/16/LeetCode%E7%AC%AC32%E9%A2%98%E5%8A%A8%E5%BD%92%E6%80%9D%E8%B7%AF/</url>
@@ -1917,9 +1942,9 @@
       
         <tags>
             
-            <tag> MySQL </tag>
-            
             <tag> SpringBoot </tag>
+            
+            <tag> MySQL </tag>
             
         </tags>
       

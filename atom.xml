@@ -6,7 +6,7 @@
   <link href="https://icimence.cn/atom.xml" rel="self"/>
   
   <link href="https://icimence.cn/"/>
-  <updated>2022-01-18T12:18:48.782Z</updated>
+  <updated>2022-02-06T02:18:54.258Z</updated>
   <id>https://icimence.cn/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>flutter问题汇总</title>
+    <link href="https://icimence.cn/2022/02/06/flutter%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"/>
+    <id>https://icimence.cn/2022/02/06/flutter%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</id>
+    <published>2022-02-06T02:11:52.000Z</published>
+    <updated>2022-02-06T02:18:54.258Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="关于flutter启动web"><a href="#关于flutter启动web" class="headerlink" title="关于flutter启动web"></a>关于flutter启动web</h2><p>flutter在启动web的debug模式的时候会出现端口的问题，这时候只需要通过启动参数调整启动的端口号即可，代码如下</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter -d chrome --web-hostname 127.0.0.1 --web-port 8888</span><br></pre></td></tr></table></figure><p>指定端口之后问题就可以解决了。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;关于flutter启动web&quot;&gt;&lt;a href=&quot;#关于flutter启动web&quot; class=&quot;headerlink&quot; title=&quot;关于flutter启动web&quot;&gt;&lt;/a&gt;关于flutter启动web&lt;/h2&gt;&lt;p&gt;flutter在启动web的debug模式的</summary>
+      
+    
+    
+    
+    <category term="技术笔记" scheme="https://icimence.cn/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="Flutter" scheme="https://icimence.cn/tags/Flutter/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode第32题动归思路</title>
@@ -478,30 +502,6 @@
       
       
     <summary type="html">&lt;h2 id=&quot;智能软件&quot;&gt;&lt;a href=&quot;#智能软件&quot; class=&quot;headerlink&quot; title=&quot;智能软件&quot;&gt;&lt;/a&gt;智能软件&lt;/h2&gt;&lt;h3 id=&quot;生命周期&quot;&gt;&lt;a href=&quot;#生命周期&quot; class=&quot;headerlink&quot; title=&quot;生命周期&quot;&gt;&lt;/a</summary>
-      
-    
-    
-    
-    <category term="学习笔记" scheme="https://icimence.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="自动化测试" scheme="https://icimence.cn/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>自动化测试复习提纲之移动测试（二）</title>
-    <link href="https://icimence.cn/2020/11/03/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2%E4%B9%8B%E7%A7%BB%E5%8A%A8%E6%B5%8B%E8%AF%95%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
-    <id>https://icimence.cn/2020/11/03/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2%E4%B9%8B%E7%A7%BB%E5%8A%A8%E6%B5%8B%E8%AF%95%EF%BC%88%E4%BA%8C%EF%BC%89/</id>
-    <published>2020-11-03T11:47:07.000Z</published>
-    <updated>2022-01-10T11:42:28.391Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="基于图像理解的移动应用自动化测试"><a href="#基于图像理解的移动应用自动化测试" class="headerlink" title="基于图像理解的移动应用自动化测试"></a>基于图像理解的移动应用自动化测试</h2><h3 id="自动化脚本录制与回放"><a href="#自动化脚本录制与回放" class="headerlink" title="自动化脚本录制与回放"></a>自动化脚本录制与回放</h3><h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><ul><li>GUI测试脚本录制<ul><li>基于坐标</li><li>基于控件树</li><li>基于图像</li></ul></li><li>大多数移动应用在不同平台上设计的UI布局结构极为相似，因此可以利用这种相似性进行移动应用的GUI 测试脚本录制与回放</li></ul><h4 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h4><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto9.png" alt="框架"></p><h4 id="脚本结构"><a href="#脚本结构" class="headerlink" title="脚本结构"></a>脚本结构</h4><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto10.png" alt="脚本结构"></p><h4 id="脚本录制"><a href="#脚本录制" class="headerlink" title="脚本录制"></a>脚本录制</h4><ul><li>屏幕截图</li><li>控件截图</li><li>操作类型与操作位置</li><li>设备分辨率、设备序列号</li></ul><h4 id="脚本回放"><a href="#脚本回放" class="headerlink" title="脚本回放"></a>脚本回放</h4><h5 id="图像特征对比"><a href="#图像特征对比" class="headerlink" title="图像特征对比"></a>图像特征对比</h5><ul><li>根据图标的特征进行比对，找到正确图标。</li><li>根据屏幕特征点进行比对，找到正确跳转画面。</li><li>最后，根据两个特征描述进行特征匹配，确定需要进行操作的控件。</li></ul><h5 id="布局刻画"><a href="#布局刻画" class="headerlink" title="布局刻画"></a>布局刻画</h5><ul><li>计算机视觉算法找到所有GUI截图中的控件位置</li><li>利用OCR技术提取GUI截图中的文本</li><li>为所提取出来的控件划分控件组、行和列</li></ul><h5 id="坐标校正"><a href="#坐标校正" class="headerlink" title="坐标校正"></a>坐标校正</h5><ul><li>基于布局识别的控件定位<ul><li>容易受不同平台的外部布局的影响</li><li>不易受到图像变化的影响</li></ul></li><li>基于图像匹配的控件定位<ul><li>容易受到图像变化的影响</li><li>不易受到不同平台的外部布局的影响</li></ul></li><li>为了结合二者的优点，提升算法的鲁棒性，引入权重参数$r$<ul><li>$final = r<em>layout + (1-r)</em>image$</li></ul></li></ul><h3 id="基于图文理解的报告排序"><a href="#基于图文理解的报告排序" class="headerlink" title="基于图文理解的报告排序"></a>基于图文理解的报告排序</h3><h4 id="众包测试"><a href="#众包测试" class="headerlink" title="众包测试"></a>众包测试</h4><ul><li>可以向开发者提供多种不同软硬件平台支持的真实用户数据和操作信息</li><li>测试报告数量庞大、人工审查过于耗时</li><li>需要有种定义和排序测试报告的技术</li></ul><h4 id="测试报告"><a href="#测试报告" class="headerlink" title="测试报告"></a>测试报告</h4><ul><li>少量文字 + BUG截图</li><li>原则：越早发现的BUG，越容易修复</li></ul><h4 id="技术概述"><a href="#技术概述" class="headerlink" title="技术概述"></a>技术概述</h4><ul><li>文本 + 图片结合分析</li></ul><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto11.png" alt="技术概述"></p><h4 id="文本处理"><a href="#文本处理" class="headerlink" title="文本处理"></a>文本处理</h4><ul><li><p>自然语言处理</p><ul><li><p>关键词提取：通过CRF（Conditional Random Fields）来分词</p></li><li><p>文本距离：采用SVM(Support Vector Machine)来标记词性</p></li></ul></li><li><p>Jaccard距离</p><ul><li>测试报告集$R(r) = {(S_i, T_i)|i=0,…,n}$，$S$是屏幕截图，$T$是文本</li><li>计算文本$T_i$间的距离</li></ul><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto12.png" alt="DT"></p></li></ul><h4 id="截图处理"><a href="#截图处理" class="headerlink" title="截图处理"></a>截图处理</h4><ul><li><p>操作</p><ul><li><p>图片 -&gt; 特征向量</p></li><li><p>分辨率、背景问题，不可直接简单RGB计算</p></li><li><p>chi-square距离</p><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto13.png" alt="chi-square"></p><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto14.png" alt="chi-square"></p></li></ul></li><li><p>截图的集合</p><ul><li><p>设定阈值$\gamma$筛选出内容相同的图片并求平均合并（同一份报告中的图片筛选 -&gt; 不同报告图片集合筛选）</p></li><li><p>测试报告$r_i,r_j$，筛选后的截图集合$S_i,S_j$</p><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto15.png" alt="DS"></p></li></ul></li></ul><h4 id="图文结合"><a href="#图文结合" class="headerlink" title="图文结合"></a>图文结合</h4><ul><li>文本DT，图片DS</li><li>DT相同，则判为相似</li><li>无截图DS，则DT决定</li><li>其他计算BD</li></ul><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto16.png" alt="BD"></p><h3 id="基于深度图文理解的报告排序"><a href="#基于深度图文理解的报告排序" class="headerlink" title="基于深度图文理解的报告排序"></a>基于深度图文理解的报告排序</h3><ul><li>就是上面那个报告排序的改进版</li></ul><h4 id="技术框架"><a href="#技术框架" class="headerlink" title="技术框架"></a>技术框架</h4><ul><li>计算机视觉提取控件</li><li>NLP技术分解文本</li><li>建立DeepFeature<ul><li>Bug Feature (BFT):$W_p + P$</li><li>Context Feature (CFT):$W_c + R$</li></ul></li></ul><h4 id="特征提取"><a href="#特征提取" class="headerlink" title="特征提取"></a>特征提取</h4><ul><li><p>图片特征</p><ul><li>问题控件：定位产生Bug的控件元素</li><li>上下文控件：除问题控件之外的其他控件</li></ul></li><li><p>文本特征</p><ul><li>DL算法处理文本</li><li>Bug描述</li><li>复现步骤</li></ul></li></ul><h4 id="特征聚合"><a href="#特征聚合" class="headerlink" title="特征聚合"></a>特征聚合</h4><ul><li>Bug Feature (BFT)：与缺陷直接相关，包括问题控件和缺陷描述</li><li>Context Feature (CFT)：为缺陷构建上下文，包括上下文控件和复现步骤</li></ul><h4 id="相似度计算"><a href="#相似度计算" class="headerlink" title="相似度计算"></a>相似度计算</h4><ul><li>将所有报告初始化到未排序报告池中</li><li>向已排序报告池中添加Null Report<ul><li>Null Report：一种预定义的测试报告</li></ul></li><li>从未排序报告池中，选出一份和已排序报告池中最不相似的报告加入到已排序报告池中，循环调用</li></ul><h3 id="基于图像理解的测试报告生成"><a href="#基于图像理解的测试报告生成" class="headerlink" title="基于图像理解的测试报告生成"></a>基于图像理解的测试报告生成</h3><h4 id="背景描述"><a href="#背景描述" class="headerlink" title="背景描述"></a>背景描述</h4><ul><li>移动应用测试报告<ul><li>测试环境</li><li>缺陷截图</li><li>缺陷描述</li></ul></li><li>期望通过Computer Vision和Deep Learning来综合理解截图，然后自动生成文本描述。</li></ul><h4 id="技术框架-1"><a href="#技术框架-1" class="headerlink" title="技术框架"></a>技术框架</h4><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto17.png" alt="框架"></p><ul><li>截图翻译：从模块截图提取特征向量，生成缺陷描述</li><li>文本提取：从截图提取文本信息并通过关键词列表筛选缺陷相关文本</li><li>报告生成：聚类生成的文本，最终缺陷报告。</li></ul><h4 id="截图翻译"><a href="#截图翻译" class="headerlink" title="截图翻译"></a>截图翻译</h4><ul><li>将缺陷截图转化为一组描述</li><li>截图编码器：从截图中提取缺陷特征<ul><li>CNN：Inception-v3转化截图</li></ul></li><li>缺陷描述解码器：通过缺陷特征生成描述<ul><li>RNNs：最大化目标函数</li><li>LSTM：Long Short Term Memory，缺陷描述语言模型</li><li>Softmax层：生成下一个相关词汇</li><li>BeamSearch：生成描述</li></ul></li></ul><h4 id="文本提取"><a href="#文本提取" class="headerlink" title="文本提取"></a>文本提取</h4><ul><li>目的是识别截图中的缺陷相关文本最为描述</li><li>字符识别器：从截图中提取文本<ul><li>OCR</li></ul></li><li>关键词过滤器：筛选出缺陷相关的文本<ul><li>预定义的关键词列表</li></ul></li></ul><h4 id="报告生成"><a href="#报告生成" class="headerlink" title="报告生成"></a>报告生成</h4><ul><li>将截图翻译模块和文本提取模块的输出结合起来：使用文本聚类聚合不同类型的缺陷</li><li>两个模块可能产生类似的报告，讲述相同的缺陷。</li><li>处理文本聚类的方法：<ul><li>TF－IDF：将文本转化为向量</li><li>K-Means：聚类算法</li></ul></li></ul><h2 id="基于群智协同的众包测试"><a href="#基于群智协同的众包测试" class="headerlink" title="基于群智协同的众包测试"></a>基于群智协同的众包测试</h2><h3 id="协作式众包测试"><a href="#协作式众包测试" class="headerlink" title="协作式众包测试"></a>协作式众包测试</h3><ul><li>协同测试：众测系统上发布测试任务（任务发布者）</li><li>质量保证：众包工人参与测试任务，协作方式完成BUG报告（众包工人）</li><li>聚合交付：识别并剔除恶意众包工人，审核报告并交付缺陷列表（管理者）</li></ul><h3 id="协同推荐"><a href="#协同推荐" class="headerlink" title="协同推荐"></a>协同推荐</h3><ul><li>信息共享：用户在提交报告时进行实施实时相似报告推荐，避免重复报告。</li><li>任务分配：用户提交报告后会对其进行审核报告推荐和测试页面推荐，避免部分页面无法被测试。</li><li>协作方式：用户对于相似报告和审核报告的推荐结果，可以点赞、踩点，利用用户的交叉审核，验证报告有效性。</li></ul><h4 id="推荐算法"><a href="#推荐算法" class="headerlink" title="推荐算法"></a>推荐算法</h4><ul><li>相似报告推荐：找报告间向量最短的</li><li>测试页面推荐：多元加权最短路径</li><li>审核报告推荐：基于用户历史评分的矩阵分解</li></ul><h3 id="质量保证"><a href="#质量保证" class="headerlink" title="质量保证"></a>质量保证</h3><h4 id="众包工人"><a href="#众包工人" class="headerlink" title="众包工人"></a>众包工人</h4><ul><li>竞争式提交：不借鉴他人BUG报告，独立测试并提交报告。整体贡献归个人所有。</li><li>协作式提交：借鉴他人BUG报告，复制粘贴他人报告生成子报告。整体贡献归该报告生成路径上的众包工人共同所有。</li><li>审核：审核他人BUG报告，对他人报告点赞点踩，公众投票提供报告质量参考。</li></ul><h4 id="顺序图"><a href="#顺序图" class="headerlink" title="顺序图"></a>顺序图</h4><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto18.png" alt="顺序图"></p><h4 id="顺序"><a href="#顺序" class="headerlink" title="顺序"></a>顺序</h4><ul><li>分析报告质量：分析报告BUG报告基本属性</li><li>提取报告质量：根据BUG报告属性与指标字典提取质量指标。</li><li>指标阶跃变换：根据节约变换函数将数值型的指标映射为相应的好与坏等级。</li><li>检测报告有效行：有效指标数量超过阈值则有效。</li></ul><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto19.png" alt="流程图"></p><h4 id="反馈与监控"><a href="#反馈与监控" class="headerlink" title="反馈与监控"></a>反馈与监控</h4><ul><li>反馈<ul><li>报告有效性反馈</li><li>报告重复性反馈</li><li>Fork操作反馈</li><li>点赞反馈</li><li>点踩反馈</li></ul></li><li>监控<ul><li>失信行为监控</li><li>点赞关系监控</li><li>踩点关系监控</li><li>Fork关系监控</li></ul></li></ul><h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto20.png" alt="小结"></p><h3 id="聚合交付"><a href="#聚合交付" class="headerlink" title="聚合交付"></a>聚合交付</h3><ul><li>聚合阶段 -&gt; 融合阶段 -&gt; 围绕报告融合构建审核业务流程</li><li>构建一套基于报告融合的测试报告处理流程</li></ul><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto21.png" alt="聚合"></p><h4 id="聚合阶段"><a href="#聚合阶段" class="headerlink" title="聚合阶段"></a>聚合阶段</h4><ul><li>将原始报告拆分成图片与文本信息，计算相似度取平均。</li><li>聚类算法将相似报告聚合到一起。</li><li>保持算法的可替换性、可扩展性。</li></ul><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto22.png" alt="聚合阶段"></p><h4 id="融合阶段"><a href="#融合阶段" class="headerlink" title="融合阶段"></a>融合阶段</h4><ul><li>主报告选取</li><li>差异点识别</li><li>差一点聚类及合并</li><li>差异点排序</li></ul><h4 id="审核业务"><a href="#审核业务" class="headerlink" title="审核业务"></a>审核业务</h4><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto23.png" alt="审核业务"></p><h3 id="总体架构"><a href="#总体架构" class="headerlink" title="总体架构"></a>总体架构</h3><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/auto24.png" alt="总体架构"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;基于图像理解的移动应用自动化测试&quot;&gt;&lt;a href=&quot;#基于图像理解的移动应用自动化测试&quot; class=&quot;headerlink&quot; title=&quot;基于图像理解的移动应用自动化测试&quot;&gt;&lt;/a&gt;基于图像理解的移动应用自动化测试&lt;/h2&gt;&lt;h3 id=&quot;自动化脚本录制与回</summary>
       
     
     
