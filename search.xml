@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>python虚拟环境</title>
+      <link href="/2022/02/20/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/"/>
+      <url>/2022/02/20/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</url>
+      
+        <content type="html"><![CDATA[<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>因为有人来问关于机器学习python环境的相关问题，就大致写一下</p><h2 id="python版本介绍"><a href="#python版本介绍" class="headerlink" title="python版本介绍"></a>python版本介绍</h2><p>这部分其实没啥好写的，下载的时候就能注意到python的版本，如果涉及到多个python版本的切换问题还是推荐使用<code>anaconda</code>作为开发的辅助工具。</p><h2 id="VirtualEnv介绍"><a href="#VirtualEnv介绍" class="headerlink" title="VirtualEnv介绍"></a>VirtualEnv介绍</h2><p>这是一个关键性的工具，其目的是搭建虚拟且独立的python环境，可以让每个项目环境独立，并保持环境的干净，最重要的就是解决包冲突的问题。</p><p>下面来介绍一下在各个平台对python的virtualenv的使用，所有平台都通过pip进行virtualenv的安装</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install virtualenv</span><br></pre></td></tr></table></figure><p>之后就可以使用virtualenv实现虚拟环境的使用了</p><div class="tabs" id="virtualenv"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#virtualenv-1">Windows</button></li><li class="tab"><button type="button" data-href="#virtualenv-2">Linux</button></li><li class="tab"><button type="button" data-href="#virtualenv-3">MacOS</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="virtualenv-1"><p>以下代码是首次创建文件夹并创建虚拟环境</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir pythonTest</span><br><span class="line"><span class="built_in">cd</span> pythonTest</span><br><span class="line">virtualenv env</span><br></pre></td></tr></table></figure><p>要激活虚拟环境只需要在拥有虚拟环境的文件目录下</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">env/Scripts/activate</span><br></pre></td></tr></table></figure><p>env是创建的虚拟环境文件夹的名称，如果在执行后，看到如下标志说明已经成功激活了虚拟环境</p><p><img src="https://gitee.com/icimence/CDN/raw/master/postimg/virtualenv.png" alt=""></p><p>脱离虚拟环境也只需要</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deactivate</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="virtualenv-2"><p>暂时没有写，偷懒</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="virtualenv-3"><p>暂时没有写，偷懒</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div><h2 id="torch报错信息的部分解释"><a href="#torch报错信息的部分解释" class="headerlink" title="torch报错信息的部分解释"></a>torch报错信息的部分解释</h2><p>因为某位初学者给出的报错信息如下，就进行一个初步的解释</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ERROR: Could not find a version that satisfies the requirement torch&lt;1.6.0,&gt;=1.2.0 (from convlab-2) (from versions: 1.7.0, 1.7.1, 1.8.0, 1.8.1, 1.9.0, 1.9.1, 1.10.0,</span><br><span class="line">1.10.1, 1.10.2)</span><br><span class="line">ERROR: No matching distribution found <span class="keyword">for</span> torch&lt;1.6.0,&gt;=1.2.0</span><br></pre></td></tr></table></figure><p>这个报错信息其实已经非常明确的写明了出错的原因，由于项目指定的pytorch版本为&gt;=1.2.0且&lt;1.6.0，很显然，这位仁兄电脑上肯定是没有的，如果已经安装过其他版本的pytorch重新安装指定版本就会发生版本冲突。</p><h2 id="pip安装指定版本的包"><a href="#pip安装指定版本的包" class="headerlink" title="pip安装指定版本的包"></a>pip安装指定版本的包</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install &lt;packageName&gt;==&lt;version&gt;</span><br></pre></td></tr></table></figure><p>将尖括号中的参数进行替换即可</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>flutter问题汇总</title>
       <link href="/2022/02/06/flutter%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"/>
       <url>/2022/02/06/flutter%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</url>
@@ -1942,9 +1967,9 @@
       
         <tags>
             
-            <tag> SpringBoot </tag>
-            
             <tag> MySQL </tag>
+            
+            <tag> SpringBoot </tag>
             
         </tags>
       
