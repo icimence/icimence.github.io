@@ -4,6 +4,58 @@
   
     
     <entry>
+      <title>剑指Offer刷题笔记</title>
+      <link href="/2022/10/22/%E5%89%91%E6%8C%87Offer%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/"/>
+      <url>/2022/10/22/%E5%89%91%E6%8C%87Offer%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>因为最近要找实习，行业形势还收紧，压力巨大，所以打算奋起刷题，暂时把剑指Offer第一部分的刷题感想放在这里。本文不给出标准答案，便于根据思路编写代码。（本人是菜鸡，希望有人指正错误，别再给菜狗上压力了）。</p><h2 id="09"><a href="#09" class="headerlink" title="09"></a>09</h2><p>题目很简洁，使用两个栈实现一个队列，两个方法，一个是向队列尾部添加元素，一个是从队列头部取出元素。</p><h3 id="我自己的解答"><a href="#我自己的解答" class="headerlink" title="我自己的解答"></a>我自己的解答</h3><blockquote><p>我自己的方法是一个stack存储数据，另一个stack完全用来辅助，插入时插入进数据队列中，取出时将所有的数据栈中的取出并压入第二个stack中，最后拿到栈底元素，重新将所有的第二个stack中的元素取出并压入第一个stack</p><p>我自己的这个方法就是相当于每次都是把整个栈清空了一次并且重新写入，显然是效率非常低的方法</p></blockquote><h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>题解首先使用一个stack用来存储所有的数据，加入时直接压栈，取出时首先判断另一个stack是否为空，如果是空的将第一个stack中的所有元素取出并</p><p>压入第二个stack中，所以只要是出队列首先检查第二个stack是否还有元素，如果没有，则重新从第一个stack中进行倒序入栈的操作。<a href="[用两个栈实现队列 - 用两个栈实现队列 - 力扣（LeetCode）](https://leetcode.cn/problems/yong-liang-ge-zhan-shi-xian-dui-lie-lcof/solution/mian-shi-ti-09-yong-liang-ge-zhan-shi-xian-dui-l-3/">代码链接</a>)</p><h2 id="30"><a href="#30" class="headerlink" title="30"></a>30</h2><p>题目也比较简单，实现一个栈，可以在O(1)时间内完成push和pop和min三个函数</p><h3 id="我自己的解答-1"><a href="#我自己的解答-1" class="headerlink" title="我自己的解答"></a>我自己的解答</h3><blockquote><p>首先可以很容易注意到push和pop是不需要注意的，因为这两个操作本身就是O(1)，min因为要求O(1)所以一定需要有一个额外的数据结构存储最小值，考虑到需要在出栈之后保存正确的最小数结果，可以使用另一个栈记录每一个元素在压入时对应的最小值，在元素出栈时压入的最小值也一同出栈即可。</p></blockquote><p>思路与题解一致，不再展示题解的解法</p><h2 id="06"><a href="#06" class="headerlink" title="06"></a>06</h2><p>题目要求从尾到头打印一个单向链表</p><h3 id="我自己的解答-2"><a href="#我自己的解答-2" class="headerlink" title="我自己的解答"></a>我自己的解答</h3><blockquote><p>我使用了一个List用来存储顺序的结果，然后使用循环倒序输出</p></blockquote><h3 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h3><p>这种题目从正序变为倒序需要直接想到stack</p><h3 id="24"><a href="#24" class="headerlink" title="24"></a>24</h3><p>题目要求反转一个链表，本题实在是过于简单不描述了，答案的代码略优，可以免去输入为空的特殊情况讨论，直接放答案在这里</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">reverseList</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        ListNode prev = <span class="keyword">null</span>;</span><br><span class="line">        ListNode curr = head;</span><br><span class="line">        <span class="keyword">while</span> (curr != <span class="keyword">null</span>) &#123;</span><br><span class="line">            ListNode next = curr.next;</span><br><span class="line">            curr.next = prev;</span><br><span class="line">            prev = curr;</span><br><span class="line">            curr = next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> prev;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">作者：LeetCode-Solution</span><br><span class="line">链接：https:<span class="comment">//leetcode.cn/problems/fan-zhuan-lian-biao-lcof/solution/fan-zhuan-lian-biao-by-leetcode-solution-jvs5/</span></span><br><span class="line">来源：力扣（LeetCode）</span><br><span class="line">著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+            <tag> Dynamic Programming </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>算法红书笔记</title>
+      <link href="/2022/09/22/%E7%AE%97%E6%B3%95%E7%BA%A2%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+      <url>/2022/09/22/%E7%AE%97%E6%B3%95%E7%BA%A2%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>算法大多和使用的编程语言无关，学习算法的主要原因是因为能够节省非常多资源，通常比直接使用金钱购买更好的硬件设备拥有更好的效果。</p><h2 id="算法代码示例"><a href="#算法代码示例" class="headerlink" title="算法代码示例"></a>算法代码示例</h2><h3 id="最大公约数（gcd）"><a href="#最大公约数（gcd）" class="headerlink" title="最大公约数（gcd）"></a>最大公约数（gcd）</h3><p>欧几里得算法</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (q == <span class="number">0</span>)<span class="keyword">return</span> q;</span><br><span class="line">    <span class="keyword">int</span> r  = p % q;</span><br><span class="line">    <span class="keyword">return</span> gcd(q,r);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Algorithm </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>MySQL语法参考</title>
       <link href="/2022/02/27/MySQL%E8%AF%AD%E6%B3%95%E5%8F%82%E8%80%83/"/>
       <url>/2022/02/27/MySQL%E8%AF%AD%E6%B3%95%E5%8F%82%E8%80%83/</url>
