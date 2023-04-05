@@ -6,7 +6,7 @@
   <link href="https://icimence.cn/atom.xml" rel="self"/>
   
   <link href="https://icimence.cn/"/>
-  <updated>2022-10-23T08:04:01.193Z</updated>
+  <updated>2023-04-05T16:47:36.394Z</updated>
   <id>https://icimence.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>kubernetes学习笔记（一）</title>
+    <link href="https://icimence.cn/2023/04/05/kubernetes%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>https://icimence.cn/2023/04/05/kubernetes%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/</id>
+    <published>2023-04-05T14:08:57.000Z</published>
+    <updated>2023-04-05T16:47:36.394Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="组件介绍"><a href="#组件介绍" class="headerlink" title="组件介绍"></a>组件介绍</h2><p>在一个kubernetes集群中所包含的组件内容</p><p><img src="https://d33wubrfki0l68.cloudfront.net/2475489eaf20163ec0f54ddc1d92aa8d4c87c96b/e7c81/images/docs/components-of-kubernetes.svg" alt="Components of Kubernetes"></p><p>Pod是一个k8s独有的概念，可以表示封装一个或者多个的容器，更加强调这是一个运行环境，而不是指一个强调提供应用程序运行的容器。且Pod提供一个共享的命名空间和存储卷，在一个Pod中的容器之间可以非常方便的进行通讯。Pod是k8s最小的调度单位。</p><h3 id="Control-Plane组件介绍"><a href="#Control-Plane组件介绍" class="headerlink" title="Control Plane组件介绍"></a>Control Plane组件介绍</h3><h4 id="kube-apiserver"><a href="#kube-apiserver" class="headerlink" title="kube-apiserver"></a>kube-apiserver</h4><p>该组件是Kubernetes API Server的主要实现，而Kubernetes API Server则负责暴露集群的接口，是control plane的前端。可以通过部署多个apiserver实例来进行负载均衡。</p><h4 id="etcd"><a href="#etcd" class="headerlink" title="etcd"></a>etcd</h4><p>提供高可用并且一致性的键值对存储，作为Kuberntes的后台数据库，但是需要保证有<a href="https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/#backing-up-an-etcd-cluster">数据备份</a>。</p><h4 id="kube-scheduler"><a href="#kube-scheduler" class="headerlink" title="kube-scheduler"></a>kube-scheduler</h4><p>负责将创建出来的pod（可以理解为运行的容器）指派到node（集群中的机器）。</p><p>在安排的过程中的影响因素主要有：</p><ul><li>单个pod或者多个pod的资源需求</li><li>软硬件的约束策略</li><li>亲和性和反亲和性的规范</li><li>数据位置</li><li>工作负载</li><li>deadline</li></ul><h4 id="kube-controller-manager"><a href="#kube-controller-manager" class="headerlink" title="kube-controller-manager"></a>kube-controller-manager</h4><p>负责运行contoller（用于从apiserver获取当前集群状态，同时尝试将当前集群状态转移到期望的集群状态）进程。</p><p>controller可以分为以下这些：</p><ol><li>Node controller：当node挂掉时负责通知和响应</li><li>Job controller：检测代表一次性任务的Job对象，然后创建Pods来运行这些任务直到完成。</li><li>EndPointSlice controller： 提供Service和Pod之间的连接</li><li>ServiceAccount controller： 为新的命名空间创建默认的服务账号</li></ol><h4 id="cloud-controller-manager"><a href="#cloud-controller-manager" class="headerlink" title="cloud-controller-manager"></a>cloud-controller-manager</h4><p>它可以使用云提供商提供的接口，将控制平面在自己机器上部署，同时通过一系列的API将node部署在云提供商的服务器中。</p><h3 id="Node组件介绍"><a href="#Node组件介绍" class="headerlink" title="Node组件介绍"></a>Node组件介绍</h3><p>node就是运行节点，负责维护运行的Pod并提供Kubernetes运行环境</p><h4 id="kubelet"><a href="#kubelet" class="headerlink" title="kubelet"></a>kubelet</h4><p>保证容器正常运行在Pod中，接受指定的PodSpec（指定的一些容器规格，比如说镜像，命令，参数，环境变量等等）、</p><h4 id="kube-proxy"><a href="#kube-proxy" class="headerlink" title="kube-proxy"></a>kube-proxy</h4><p>负责node上的网络代理，实现了一部分的服务，维护一些node上的网络规则（集群内部或者外部的与pod之间的网络通信）</p><h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><h4 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h4><p>大部分的k8s集群还是需要DNS做解析的。</p><h4 id="DashBoard"><a href="#DashBoard" class="headerlink" title="DashBoard"></a>DashBoard</h4><p>仪表盘，可以使用Web用户界面管理集群中的应用程序以及集群本身</p><h4 id="Cluster-level-Logging"><a href="#Cluster-level-Logging" class="headerlink" title="Cluster-level Logging"></a>Cluster-level Logging</h4><p>集群日志可以将所有的容器日志进行汇总，并且提供一个中心化的访问查询接口。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;组件介绍&quot;&gt;&lt;a href=&quot;#组件介绍&quot; class=&quot;headerlink&quot; title=&quot;组件介绍&quot;&gt;&lt;/a&gt;组件介绍&lt;/h2&gt;&lt;p&gt;在一个kubernetes集群中所包含的组件内容&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://d33wubrfki0l</summary>
+      
+    
+    
+    
+    <category term="学习笔记" scheme="https://icimence.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="kubernetes" scheme="https://icimence.cn/tags/kubernetes/"/>
+    
+  </entry>
   
   <entry>
     <title>剑指Offer刷题笔记</title>
@@ -488,30 +513,6 @@
     
     
     <category term="商务智能" scheme="https://icimence.cn/tags/%E5%95%86%E5%8A%A1%E6%99%BA%E8%83%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>操作系统问答三</title>
-    <link href="https://icimence.cn/2020/11/30/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%97%AE%E7%AD%94%E4%B8%89/"/>
-    <id>https://icimence.cn/2020/11/30/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%97%AE%E7%AD%94%E4%B8%89/</id>
-    <published>2020-11-30T07:59:14.000Z</published>
-    <updated>2022-03-26T14:13:50.386Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="解释中断向量"><a href="#解释中断向量" class="headerlink" title="解释中断向量"></a>解释中断向量</h2><p>​    对应每个中断源设置一个向量，这些向量顺序寸在主存储器的特定存储区。向量的内容是相应中断服务程序的起始地址和处理机状态字。在响应中断时，由中断系统硬件提供向量地址，处理机根据该地址取得向量，并转入相应的中断服务程序。</p><p>​    把中断/异常与相应的处理方法对应起来，每种中断都会对应一个中断向量号，而这个向量号通过中断描述符表就与相对应的中断处理程序对应起来了。</p><h2 id="解释中断类型码"><a href="#解释中断类型码" class="headerlink" title="解释中断类型码"></a>解释中断类型码</h2><p>​    把每个中断服务程序进行编号，这个号就代表一个中断服务程序，就是中断类型码，是计算机用来查找中断向量用的。中断指令格式一般为”INT n”，其中 n 被称为中断类型码</p><h2 id="解释中断向量表"><a href="#解释中断向量表" class="headerlink" title="解释中断向量表"></a>解释中断向量表</h2><p>​    中断向量表是指中断服务程序入口地址的偏移量与段基值，一个中断向量占据 4 字节空间。中断向量表是 8086 系统内存中最低端 1K 字节空间，它的作用就是按照中断类型号从小到大的顺序存储对应的中断向量，总共存储 256 个中断向量。</p><p>​    中断向量表在内存单元的最低处，地址空间为 00000H 003FFH(0-1024B)。</p><p>​    这个地址正好和中断类型码有一种对应的关系：中断类型码*4(一个中断向量所占的空间) 就等于这个中断向量的首地址。</p><h2 id="实模式下中断程序地址如何得到？"><a href="#实模式下中断程序地址如何得到？" class="headerlink" title="实模式下中断程序地址如何得到？"></a>实模式下中断程序地址如何得到？</h2><p>​    中断指令”INT n”表示调用 n 号中断处理程序，根据中断类型码 n×4 得到中断向量首地址，从中断向量表中取得中断向量地址（段地址存入 CS，偏移量存入 IP），在中断处理程序中，用中断返回指令 IRET 使CPU 返回主程序断点继续执行；</p><h2 id="保护模式下中断程序地址如何得到？"><a href="#保护模式下中断程序地址如何得到？" class="headerlink" title="保护模式下中断程序地址如何得到？"></a>保护模式下中断程序地址如何得到？</h2><p>​    先获得IDT，查询 IDT 以IDTR 指定的 IDT 基地址为起始地址，调用号 N*8 算出偏移量， 即为 N 号终端们描述符首地址，由此处取出中断门 8 字节；查询描述符表根据中断门的选择子和偏移量得到中断程序地址。</p><h2 id="中断向量地址如何得到？"><a href="#中断向量地址如何得到？" class="headerlink" title="中断向量地址如何得到？"></a>中断向量地址如何得到？</h2><p>​    中断类型号 * 4 = 存放中断向量的首地址</p><h2 id="实模式下如何根据中断向量的地址得到中断程序地址？"><a href="#实模式下如何根据中断向量的地址得到中断程序地址？" class="headerlink" title="实模式下如何根据中断向量的地址得到中断程序地址？"></a>实模式下如何根据中断向量的地址得到中断程序地址？</h2><p>​    中断向量高 2 字节存放基址，低 2 字节存放段内偏移量，由基址和偏移量得到中断程序地址。</p><h2 id="解释中断描述符"><a href="#解释中断描述符" class="headerlink" title="解释中断描述符"></a>解释中断描述符</h2><p>​    中断描述符除了含有中断处理程序地址信息外，还包括许多属性和类型位。每个中断描述符占用连续的 8 个字节，分为 3 类：任务门，中断门和自陷门，CPU 对不同的门有不同的处理方式。</p><p>​    低地址的 0、1 字节是中断代码的偏移量 A15-A0；高地址的 6、7 字节是中断代码的偏移量 A31-A16；2、3 字节是段选择符，段选择符和偏移量用来形成中断服务子程序的入口地址；4、5 两个字节称为访问权限字节，标识该中断描述符是否有效、服务程序的特权级和描述符的类型等信息。</p><h2 id="保护模式下中断描述符表如何得到？"><a href="#保护模式下中断描述符表如何得到？" class="headerlink" title="保护模式下中断描述符表如何得到？"></a>保护模式下中断描述符表如何得到？</h2><p>​    装载中断描述符表寄存器 CPU 切换到保护模式前，运行于实模式下的初始化程序必须使用 LIDT 指令装载中断描述符表 IDT，将 IDT 基地址（32 位）与段界值（16 位）装入IDTR（一个 48 位的全地址寄存器，中断描述符表寄存器），基地址定义 IDT 在存储器中的起始点，段界值定义 IDT 所占的字节数。在返回实模式或系统复位时，IDTR 中自动装入 000000H 的基地址值与 03FFH 的段界值。</p><h2 id="保护模式下中断门如何得到？"><a href="#保护模式下中断门如何得到？" class="headerlink" title="保护模式下中断门如何得到？"></a>保护模式下中断门如何得到？</h2><p>​    查中断描述符表以 IDTR 指定的中断描述符表的基地址为起始地址，用调用号 N*8 算出偏移量，即为 N 号中断门描述符的首地址，由此处取出中断门的 8 个字节。</p><h2 id="保护模式下如何根据中断门得到中断处理程序地址？"><a href="#保护模式下如何根据中断门得到中断处理程序地址？" class="headerlink" title="保护模式下如何根据中断门得到中断处理程序地址？"></a>保护模式下如何根据中断门得到中断处理程序地址？</h2><p>​    查全局或局部描述符表根据中断门中的选择子（段选择符）和偏移量得到中断处理程序入口</p><h2 id="中断的分类，举例不同类型的中断？"><a href="#中断的分类，举例不同类型的中断？" class="headerlink" title="中断的分类，举例不同类型的中断？"></a>中断的分类，举例不同类型的中断？</h2><p>从中断源的角度分类：</p><ol><li><p>由计算机硬件异常或故障引起的中断，也称为内部异常中断；</p></li><li><p>由程序中执行了中断指令引起的中断，也称为软中断。由程序员通过 INT 或 INT3</p><blockquote><p>指令触发，通常当作 trap 处理，用处是实现系统调用</p></blockquote></li><li><p>外部设备（如输入输出设备）请求引起的中断，也称为外部中断或 I/O 中断</p></li></ol><p>另一个角度分类主要有两类：</p><ol><li><p>中断：由 CPU 以外的事件引起的中断，如 I/O 中断、时钟中断、控制台中断等；</p></li><li><p>异常：来自 CPU 的内部事件或程序执行中的事件引起的过程，如由于 CPU 本身故障、程序故障和请求系统服务的指令引起的中断等。</p></li></ol><p>外部中断的分类：</p><ol><li><p>可屏蔽中断：禁止响应某个中断，保证在执行一些重要程序中不响应中断，以免造成迟缓而引起错误；</p></li><li><p>不可屏蔽中断：重启、电源故障、内存出错、总线出错等影响整个系统工作的中断是不能屏蔽的。</p></li></ol><h2 id="中断与异常的区别？"><a href="#中断与异常的区别？" class="headerlink" title="中断与异常的区别？"></a>中断与异常的区别？</h2><ol><li><p>中断时 CPU 所具备的功能，通常因为硬件而随机发生；</p><blockquote><p>异常是软件运行过程中的一种开发过程中给没有考虑到的程序错误。</p></blockquote></li><li><p>中断是 CPU 暂停当前工作，有计划地去处理其他的事情，中断的发生一般是可以预知的，处理过程也是事先制定好的，处理中断时程序是正常运行的；</p><blockquote><p>异常是 CPU 遇到了无法响应的工作，而后进入一种非正常状态。异常的出现表面程序有缺陷。</p></blockquote></li><li><p>中断是异步的，异常是同步的。</p><blockquote><p>中断是来自处理器外部的 I/O 设备的信号的结果，它不是由指令流中某条指令执行引起的，从这个意义上讲，它是异步的，是来自指令流之外的；</p><p>异常是执行当前指令流中的某条指令的结果，是来自指令流内部的，从这个意义上来讲，它是同步的。</p></blockquote></li><li><p>返回点不同。良性的如中断和 trap，只是在正常的工作流之外执行额外的操作， 然后继续干没干完的活。因此处理程序完了以后返回到原指令流的下一条指令， 继续执行。</p><blockquote><p>恶性的如 fault 和 abort，对于可修复 fault，由于是在上一条指令执行过程中发生（是由正在执行的指令引发的）的，在修复 fault 后，会重新执行该指令；至于不可修复的 fault 和 abort，则不会再返回。</p></blockquote></li><li><p>中断是由于当前程序无关的中断信号触发的，CPU 对中断的响应是被动的，且与 CPU 模式无关，既可以发生在用户态，又可以发生在核心态。</p><blockquote><p>异常是由控制单元产生的，大部分异常发生在用户态。</p></blockquote></li></ol><h2 id="实模式和保护模式下的中断处理差别"><a href="#实模式和保护模式下的中断处理差别" class="headerlink" title="实模式和保护模式下的中断处理差别"></a>实模式和保护模式下的中断处理差别</h2><p>保护模式下的中断处理与实模式下的中断处理最大的区别在于寻找中断处理代码入口的方式，在保护模式下，为每个中断和异常定义了一个中断描述符，用来说明中断和异</p><p>常服务程序的入口地址的属性，由中断描述符表取代了实模式下的中断向量表。而实模式的中断向量表固定在存储器的最底部，保护模式下的 IDT 则是可以改变的。</p><h2 id="如何识别键盘组合键（如-Shift-a），是否有其他解决方案？"><a href="#如何识别键盘组合键（如-Shift-a），是否有其他解决方案？" class="headerlink" title="如何识别键盘组合键（如 Shift+a），是否有其他解决方案？"></a>如何识别键盘组合键（如 Shift+a），是否有其他解决方案？</h2><p>定义 6 个 Boolean 变量来表示键盘左右 shift、alt、ctrl 键状态，当被按下时，对应变量变为 true，放开弹起时对应变量改为 false。如果键（如左或右 shift）状态值为 true，此时按下另一个键（a），column 值变为 1，此时则取keymap[column]，即 keymap[]中第二列相应的值，此处为 A。</p><h2 id="IDT-是什么，有什么作用？"><a href="#IDT-是什么，有什么作用？" class="headerlink" title="IDT 是什么，有什么作用？"></a>IDT 是什么，有什么作用？</h2><p>中断描述符表，用于将每个异常或中断向量分别与他们的处理过程联系起来，最大只有</p><p>256 项（2K 大小）。</p><h2 id="IDT-中有几种描述符？"><a href="#IDT-中有几种描述符？" class="headerlink" title="IDT 中有几种描述符？"></a>IDT 中有几种描述符？</h2><p>IDT 中可以存放 3 种类型的门描述符：中断门描述符、任务门描述符、自陷门描述符。</p><h2 id="异常的分类？"><a href="#异常的分类？" class="headerlink" title="异常的分类？"></a>异常的分类？</h2><ol><li><p>故障（fault）：是一种可被更正的异常，而且一旦被更正，程序可以不失连续性地继续执行。返回地址是产生 fault 的指令。</p></li><li><p>陷阱（trap）：是一种在发生 trap 的指令执行之后立即被报告的异常，它也允许程序或任务不失连续性地继续执行。返回地址是产生 trap 的指令之后的那条指令。</p></li><li><p>异常中止（abort）：不总是报告精确异常发生位置的异常，不允许程序或任务继续执行，而是用来报告严重错误的。</p></li></ol><h2 id="用户态和内核态的特权级分别为多少？"><a href="#用户态和内核态的特权级分别为多少？" class="headerlink" title="用户态和内核态的特权级分别为多少？"></a>用户态和内核态的特权级分别为多少？</h2><p>用户态特权级为 3，内核态特权级为 0</p><h2 id="中断向量表中，每个中断有几个字节？里面的结构是什么？"><a href="#中断向量表中，每个中断有几个字节？里面的结构是什么？" class="headerlink" title="中断向量表中，每个中断有几个字节？里面的结构是什么？"></a>中断向量表中，每个中断有几个字节？里面的结构是什么？</h2><p>每个中断向量包含 4 字节，低地址两字节放偏移，高地址两字节放段描述符。</p><h2 id="中断和异常的共同点（至少-2-点），不同点（至少-3-点）共同点："><a href="#中断和异常的共同点（至少-2-点），不同点（至少-3-点）共同点：" class="headerlink" title="中断和异常的共同点（至少 2 点），不同点（至少 3 点）共同点："></a>中断和异常的共同点（至少 2 点），不同点（至少 3 点）共同点：</h2><h3 id="共同点："><a href="#共同点：" class="headerlink" title="共同点："></a>共同点：</h3><ol><li><p>都是程序执行过程中的强制性转移，转移到相应的处理程序。</p></li><li><p>都是软件或赢家发生了某种情形而通知处理器的行为不同点：</p></li></ol><h3 id="不同点："><a href="#不同点：" class="headerlink" title="不同点："></a>不同点：</h3><ol><li><p>中断时 CPU 所具备的功能，通常因为硬件而随机发生；</p><blockquote><p>异常是软件运行过程中的一种开发过程中给没有考虑到的程序错误。</p></blockquote></li><li><p>中断是 CPU 暂停当前工作，有计划地去处理其他的事情，中断的发生一般是可以预知的，处理过程也是事先制定好的，处理中断时程序是正常运行的；</p><blockquote><p>异常是 CPU 遇到了无法响应的工作，而后进入一种非正常状态。异常的出现表面程序有缺陷。</p></blockquote></li><li><p>中断是异步的，异常是同步的。</p><blockquote><p>中断是来自处理器外部的 I/O 设备的信号的结果，它不是由指令流中某条指令执行引起的，从这个意义上讲，它是异步的，是来自指令流之外的；</p><p>异常是执行当前指令流中的某条指令的结果，是来自指令流内部的，从这个意义上来讲，它是同步的。</p></blockquote></li><li><p>返回点不同。良性的如中断和 trap，只是在正常的工作流之外执行额外的操作， 然后继续干没干完的活。因此处理程序完了以后返回到原指令流的下一条指令， 继续执行。</p><blockquote><p>恶性的如 fault 和 abort，对于可修复 fault，由于是在上一条指令执行过程中发</p><p>生（是由正在执行的指令引发的）的，在修复 fault 后，会重新执行该指令；至于不可修复的 fault 和 abort，则不会再返回。</p></blockquote></li><li><p>中断是由于当前程序无关的中断信号触发的，CPU 对中断的响应是被动的，且与 CPU 模式无关，既可以发生在用户态，又可以发生在核心态。</p><blockquote><p>异常是由控制单元产生的，大部分异常发生在用户态。</p></blockquote></li></ol>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;解释中断向量&quot;&gt;&lt;a href=&quot;#解释中断向量&quot; class=&quot;headerlink&quot; title=&quot;解释中断向量&quot;&gt;&lt;/a&gt;解释中断向量&lt;/h2&gt;&lt;p&gt;​    对应每个中断源设置一个向量，这些向量顺序寸在主存储器的特定存储区。向量的内容是相应中断服务程序的起</summary>
-      
-    
-    
-    
-    <category term="学习笔记" scheme="https://icimence.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="OS" scheme="https://icimence.cn/tags/OS/"/>
     
   </entry>
   
